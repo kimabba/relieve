@@ -76,15 +76,15 @@ export default function TheSanctuary() {
 
   return (
     <section className="py-20 lg:py-28 bg-white dark:bg-[#2c2c24] overflow-hidden relative">
-      {/* Background Decoration */}
+      {/* Background Decoration - Stitch Style */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 -skew-x-12 translate-x-1/2" />
 
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
-          {/* Image Grid */}
+          {/* Stitch-style Image Grid */}
           <div className="w-full lg:w-1/2 grid grid-cols-2 gap-4">
             <div className="space-y-4 mt-8">
-              <div className="relative h-64 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+              <div className="relative h-64 rounded-[12px] overflow-hidden shadow-stitch-lg hover:shadow-stitch-xl transition-shadow">
                 <Image
                   src={images.main}
                   alt={locale === "ko" ? "편안한 스파 인테리어" : "Calm spa interior"}
@@ -93,15 +93,15 @@ export default function TheSanctuary() {
                   sizes="(max-width: 768px) 50vw, 25vw"
                 />
               </div>
-              <div className="p-4 bg-background-light dark:bg-background-dark rounded-xl border border-primary/20 text-center">
-                <span className="text-primary font-bold text-2xl">24°C</span>
-                <p className="text-xs uppercase tracking-wider mt-1 text-text-muted">
+              <div className="p-6 bg-background-light dark:bg-background-dark rounded-[12px] border border-primary/20 text-center shadow-stitch">
+                <span className="text-primary font-bold text-3xl">24°C</span>
+                <p className="text-xs uppercase tracking-wider mt-2 text-text-muted font-medium">
                   {content.tempLabel}
                 </p>
               </div>
             </div>
             <div className="space-y-4">
-              <div className="p-4 bg-primary/10 rounded-xl text-center flex flex-col items-center justify-center h-32">
+              <div className="p-6 bg-primary/10 rounded-[12px] text-center flex flex-col items-center justify-center h-32">
                 <span className="material-symbols-outlined text-4xl text-primary mb-2">
                   chair
                 </span>
@@ -109,7 +109,7 @@ export default function TheSanctuary() {
                   {content.adjustableLabel}
                 </p>
               </div>
-              <div className="relative h-64 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+              <div className="relative h-64 rounded-[12px] overflow-hidden shadow-stitch-lg hover:shadow-stitch-xl transition-shadow">
                 <Image
                   src={images.secondary}
                   alt={locale === "ko" ? "편안한 수건과 쿠션" : "Comfortable pillows and towels"}
@@ -121,36 +121,36 @@ export default function TheSanctuary() {
             </div>
           </div>
 
-          {/* Text Content */}
+          {/* Text Content - Stitch Style */}
           <div className="w-full lg:w-1/2 flex flex-col gap-6">
             <div>
-              <span className="text-primary font-bold text-sm tracking-widest uppercase">
+              <span className="section-label">
                 {content.sectionLabel}
               </span>
               <h2 className="font-display text-3xl lg:text-4xl font-bold mt-2 mb-4 text-text-main dark:text-white">
                 {content.title}
                 <br />
-                <span className="italic">{content.titleHighlight}</span>
+                <span className="text-primary italic">{content.titleHighlight}</span>
               </h2>
               <p className="text-text-muted dark:text-gray-300 text-lg leading-relaxed">
                 {content.description}
               </p>
             </div>
 
-            {/* Features */}
-            <div className="flex flex-col gap-4 mt-4">
+            {/* Stitch-style Features List */}
+            <div className="flex flex-col gap-5 mt-4">
               {content.features.map((feature, index) => (
-                <div key={index} className="flex gap-4 items-start">
-                  <div className="min-w-[40px] h-[40px] rounded-full bg-secondary-bg dark:bg-white/10 flex items-center justify-center text-text-main dark:text-white">
-                    <span className="material-symbols-outlined text-[20px]">
+                <div key={index} className="flex gap-4 items-start group">
+                  <div className="size-12 rounded-[10px] bg-secondary-bg dark:bg-white/10 flex items-center justify-center text-text-main dark:text-white shrink-0 group-hover:bg-primary/10 transition-colors">
+                    <span className="material-symbols-outlined text-xl">
                       {feature.icon}
                     </span>
                   </div>
                   <div>
-                    <h4 className="font-bold text-lg text-text-main dark:text-white">
+                    <h4 className="font-bold text-lg text-text-main dark:text-white mb-1">
                       {feature.title}
                     </h4>
-                    <p className="text-sm text-text-muted dark:text-gray-400 mt-1">
+                    <p className="text-sm text-text-muted dark:text-gray-400 leading-relaxed">
                       {feature.description}
                     </p>
                   </div>

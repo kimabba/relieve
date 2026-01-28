@@ -11,18 +11,21 @@ const aftercareData = {
     steps: [
       {
         icon: "schedule",
+        time: "0시간",
         title: "시술 직후",
         description:
           "헐렁하고 통기성 좋은 면 소재 옷을 입으세요. 뜨거운 샤워나 사우나 같은 열기를 피해주세요.",
       },
       {
         icon: "calendar_today",
+        time: "24시간",
         title: "24시간 후",
         description:
           "권장 천연 오일로 보습을 시작하세요. 피부를 부드럽고 촉촉하게 유지합니다.",
       },
       {
         icon: "event_repeat",
+        time: "72시간",
         title: "3일 후",
         description:
           "슈가 스크럽으로 부드럽게 각질 제거를 시작하세요. 인그로운 헤어 예방을 위해 주 2~3회 반복합니다.",
@@ -37,18 +40,21 @@ const aftercareData = {
     steps: [
       {
         icon: "schedule",
+        time: "0 hrs",
         title: "Immediately After",
         description:
           "Wear loose, cotton clothing to allow skin to breathe. Avoid heat sources like hot showers or saunas.",
       },
       {
         icon: "calendar_today",
+        time: "24 hrs",
         title: "24 Hours Later",
         description:
           "Begin moisturizing with our recommended organic oils to keep skin supple and hydrated.",
       },
       {
         icon: "event_repeat",
+        time: "72 hrs",
         title: "3 Days Later",
         description:
           "Exfoliate gently with a sugar scrub to prevent ingrown hairs. Continue 2-3 times per week.",
@@ -62,47 +68,53 @@ export default function AftercareTips() {
   const content = locale === "ko" ? aftercareData.ko : aftercareData.en;
 
   return (
-    <div className="bg-secondary-bg dark:bg-white/5 p-6 lg:p-8 rounded-2xl border border-accent-gold/10">
-      {/* Section Header */}
-      <div className="border-b border-primary/20 pb-4 mb-6">
-        <span className="text-accent-gold font-bold tracking-widest uppercase text-xs mb-2 block">
-          {content.sectionLabel}
-        </span>
-        <h4 className="font-display text-xl font-bold text-text-main dark:text-white">
+    <div className="bg-white dark:bg-[#32322a] p-6 lg:p-8 rounded-[12px] shadow-stitch">
+      {/* Stitch-style Section Header */}
+      <div className="mb-8">
+        <span className="section-label">{content.sectionLabel}</span>
+        <h4 className="font-display text-xl font-bold text-text-main dark:text-white mt-1">
           {content.title}
         </h4>
-        <p className="mt-2 text-text-muted dark:text-gray-400 text-sm">
+        <p className="mt-2 text-text-muted dark:text-gray-400 text-sm leading-relaxed">
           {content.description}
         </p>
       </div>
 
-      {/* Timeline */}
-      <div className="flex flex-col gap-0">
-        {content.steps.map((step, index) => (
-          <div key={index} className="flex gap-4 group">
-            {/* Icon Column */}
-            <div className="flex flex-col items-center">
-              <div className="w-10 h-10 rounded-full bg-accent-gold/10 text-accent-gold flex items-center justify-center shrink-0 border border-accent-gold/20 group-hover:bg-accent-gold group-hover:text-white transition-colors duration-300">
-                <span className="material-symbols-outlined text-[20px]">
-                  {step.icon}
-                </span>
-              </div>
-              {index < content.steps.length - 1 && (
-                <div className="w-[1px] bg-accent-gold/20 h-full my-2" />
-              )}
-            </div>
+      {/* Stitch-style Timeline */}
+      <div className="relative">
+        {/* Timeline Line */}
+        <div className="absolute left-5 top-6 bottom-6 w-[2px] bg-primary/20" />
 
-            {/* Content */}
-            <div className={index < content.steps.length - 1 ? "pb-6 pt-2" : "pt-2"}>
-              <h5 className="text-base font-bold text-text-main dark:text-white font-display">
-                {step.title}
-              </h5>
-              <p className="text-text-muted dark:text-gray-400 text-sm mt-1 leading-relaxed">
-                {step.description}
-              </p>
+        <div className="flex flex-col gap-0">
+          {content.steps.map((step, index) => (
+            <div key={index} className="flex gap-4 group relative">
+              {/* Icon Column */}
+              <div className="flex flex-col items-center z-10">
+                <div className="size-10 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-colors duration-300 shadow-stitch-sm">
+                  <span className="material-symbols-outlined text-lg">
+                    {step.icon}
+                  </span>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div
+                className={`flex-1 ${index < content.steps.length - 1 ? "pb-8" : ""}`}
+              >
+                {/* Time Badge */}
+                <span className="inline-block text-xs font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full mb-2">
+                  {step.time}
+                </span>
+                <h5 className="text-base font-bold text-text-main dark:text-white font-display">
+                  {step.title}
+                </h5>
+                <p className="text-text-muted dark:text-gray-400 text-sm mt-1 leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Sans, Noto_Serif } from "next/font/google";
+import { Manrope, Noto_Serif } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -9,10 +9,11 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { LocalBusinessJsonLd, FAQJsonLd } from "@/components/shared/JsonLd";
 
-const notoSans = Noto_Sans({
+// Stitch design system fonts
+const manrope = Manrope({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-noto-sans",
+  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-manrope",
   display: "swap",
 });
 
@@ -114,7 +115,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={`${notoSans.variable} ${notoSerif.variable}`}>
+    <html lang={locale} className={`${manrope.variable} ${notoSerif.variable}`}>
       <head>
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"

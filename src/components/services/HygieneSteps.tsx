@@ -88,57 +88,85 @@ export default function HygieneSteps() {
   const content = locale === "ko" ? hygieneData.ko : hygieneData.en;
 
   return (
-    <section className="bg-accent-gold/5 dark:bg-accent-gold/10 py-20 lg:py-28 border-y border-accent-gold/10 dark:border-accent-gold/5">
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center gap-12">
-        {/* Header */}
-        <div className="text-center max-w-2xl">
-          <span className="text-accent-gold font-bold tracking-widest uppercase text-xs mb-3 block">
-            {content.sectionLabel}
-          </span>
-          <h2 className="font-display text-3xl lg:text-4xl font-bold text-text-main dark:text-white mb-6">
+    <section className="py-20 lg:py-28 bg-secondary-bg dark:bg-[#32322a]">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Stitch-style Header */}
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <span className="section-label">{content.sectionLabel}</span>
+          <h2 className="font-display text-3xl lg:text-4xl font-bold text-text-main dark:text-white mb-4">
             {content.title}
           </h2>
-          <p className="text-text-muted dark:text-gray-300">
+          <p className="text-text-muted dark:text-gray-400 text-lg">
             {content.description}
           </p>
         </div>
 
-        {/* Steps Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 w-full">
+        {/* Stitch-style Steps Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {content.steps.map((step, index) => (
             <div
               key={index}
-              className={`bg-white dark:bg-background-dark p-6 rounded-2xl flex flex-col items-center text-center gap-4 transition-shadow ${
+              className={`group bg-white dark:bg-background-dark p-6 rounded-[12px] flex flex-col items-center text-center transition-all duration-300 hover:-translate-y-1 relative ${
                 step.highlight
-                  ? "shadow-lg border-2 border-accent-gold/20 scale-105 z-10"
-                  : "shadow-sm border border-gray-100 dark:border-white/5 hover:shadow-md"
+                  ? "shadow-stitch-lg ring-2 ring-primary/20 scale-[1.02]"
+                  : "shadow-stitch hover:shadow-stitch-md"
               }`}
             >
+              {/* Step Number - Absolute positioned */}
+              <span className="absolute top-4 right-4 text-3xl font-bold text-primary/10 group-hover:text-primary/20 transition-colors">
+                {step.step}
+              </span>
+
               {/* Icon */}
               <div
-                className={`w-12 h-12 rounded-full flex items-center justify-center mb-2 ${
+                className={`size-14 rounded-full flex items-center justify-center mb-4 transition-colors ${
                   step.highlight
-                    ? "bg-accent-gold text-white shadow-lg shadow-accent-gold/30"
-                    : "bg-secondary-bg dark:bg-white/10 text-accent-gold"
+                    ? "bg-primary text-white shadow-stitch"
+                    : "bg-primary/10 text-primary group-hover:bg-primary/20"
                 }`}
               >
-                <span className="material-symbols-outlined">{step.icon}</span>
+                <span className="material-symbols-outlined text-2xl">
+                  {step.icon}
+                </span>
               </div>
 
               {/* Content */}
-              <div>
-                <span className="block text-xs font-bold text-accent-gold mb-1 uppercase tracking-wider">
-                  Step {step.step}
+              <h4 className="font-display font-bold text-text-main dark:text-white mb-2">
+                {step.title}
+              </h4>
+              <p className="text-xs text-text-muted dark:text-gray-400 leading-relaxed">
+                {step.description}
+              </p>
+
+              {/* Highlight Badge */}
+              {step.highlight && (
+                <span className="mt-4 text-[10px] font-bold uppercase tracking-wider bg-primary/10 text-primary px-3 py-1 rounded-full">
+                  99.9%
                 </span>
-                <h4 className="font-bold text-text-main dark:text-white mb-2">
-                  {step.title}
-                </h4>
-                <p className="text-xs text-text-muted dark:text-gray-400">
-                  {step.description}
-                </p>
-              </div>
+              )}
             </div>
           ))}
+        </div>
+
+        {/* Stitch-style Trust Banner */}
+        <div className="mt-12 bg-white dark:bg-background-dark rounded-[12px] p-6 shadow-stitch flex flex-col sm:flex-row items-center justify-center gap-4 text-center sm:text-left">
+          <div className="size-12 rounded-full bg-accent-teal/10 flex items-center justify-center">
+            <span className="material-symbols-outlined text-accent-teal text-2xl">
+              verified_user
+            </span>
+          </div>
+          <div>
+            <p className="font-display font-bold text-text-main dark:text-white">
+              {locale === "ko"
+                ? "의료급 멸균 인증"
+                : "Medical-Grade Sterilization Certified"}
+            </p>
+            <p className="text-sm text-text-muted dark:text-gray-400">
+              {locale === "ko"
+                ? "모든 위생 프로세스는 의료 기준을 충족합니다"
+                : "All hygiene processes meet medical standards"}
+            </p>
+          </div>
         </div>
       </div>
     </section>

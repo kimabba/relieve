@@ -5,14 +5,26 @@ import Image from "next/image";
 
 const heroData = {
   ko: {
+    badge: "프라이빗 예약",
     title: "예약 및 이용 안내",
     description:
       "편안함을 위한 프라이빗 공간입니다. 임산부 고객님의 특별한 필요를 이해하고, 원활하고 편안한 예약 경험을 제공해드립니다.",
+    features: [
+      { icon: "lock", text: "100% 프라이빗" },
+      { icon: "schedule", text: "유연한 예약" },
+      { icon: "support_agent", text: "1:1 상담" },
+    ],
   },
   en: {
+    badge: "Private Booking",
     title: "Reservation & Care Guide",
     description:
       "A private sanctuary dedicated to your comfort. We understand the unique needs of expectant mothers and have designed a seamless, supportive booking experience just for you.",
+    features: [
+      { icon: "lock", text: "100% Private" },
+      { icon: "schedule", text: "Flexible Booking" },
+      { icon: "support_agent", text: "1:1 Consultation" },
+    ],
   },
 };
 
@@ -24,7 +36,7 @@ export default function ReservationHero() {
   const content = locale === "ko" ? heroData.ko : heroData.en;
 
   return (
-    <section className="relative min-h-[320px] md:min-h-[400px] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[400px] md:min-h-[480px] flex items-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
@@ -35,19 +47,52 @@ export default function ReservationHero() {
           sizes="100vw"
           priority
         />
-        {/* Teal Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-accent-teal/85 to-accent-teal/60" />
+        {/* Stitch-style Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-[600px] py-12">
-        <h1 className="text-white text-3xl sm:text-4xl lg:text-5xl font-display font-bold leading-tight tracking-tight mb-4">
-          {content.title}
-        </h1>
-        <p className="text-white/90 text-base sm:text-lg leading-relaxed">
-          {content.description}
-        </p>
+      {/* Stitch-style Content - Left Aligned */}
+      <div className="relative z-10 max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 w-full py-16">
+        <div className="max-w-xl">
+          {/* Badge */}
+          <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <span className="material-symbols-outlined text-primary text-base">
+              calendar_month
+            </span>
+            {content.badge}
+          </span>
+
+          {/* Title */}
+          <h1 className="text-white text-3xl sm:text-4xl lg:text-5xl font-display font-bold leading-tight tracking-tight mb-4">
+            {content.title}
+          </h1>
+
+          {/* Description */}
+          <p className="text-white/80 text-base sm:text-lg leading-relaxed mb-8">
+            {content.description}
+          </p>
+
+          {/* Stitch-style Feature Pills */}
+          <div className="flex flex-wrap gap-3">
+            {content.features.map((feature, index) => (
+              <div
+                key={index}
+                className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-[12px] border border-white/10"
+              >
+                <span className="material-symbols-outlined text-primary text-lg">
+                  {feature.icon}
+                </span>
+                <span className="text-white text-sm font-medium">
+                  {feature.text}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
+
+      {/* Decorative Element */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background-light dark:from-background-dark to-transparent" />
     </section>
   );
 }

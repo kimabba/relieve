@@ -5,7 +5,9 @@ import Image from "next/image";
 
 const testimonialsData = {
   ko: {
+    sectionLabel: "고객 후기",
     title: "임산부 고객님 후기",
+    description: "실제 임산부 고객님들의 솔직한 경험담을 확인해보세요.",
     testimonials: [
       {
         text: "34주에 시술받는 게 걱정됐는데, 선생님이 정말 편안하게 해주셨어요. 임산부 전용 쿠션이 정말 좋았습니다.",
@@ -31,7 +33,9 @@ const testimonialsData = {
     ],
   },
   en: {
+    sectionLabel: "Client Reviews",
     title: "Stories from Mothers",
+    description: "Read honest experiences from expectant mothers who visited us.",
     testimonials: [
       {
         text: "I was terrified to get waxed at 34 weeks, but the team made me feel so dignified and comfortable. The pillows were a game changer.",
@@ -64,52 +68,63 @@ export default function MaternityTestimonials() {
     locale === "ko" ? testimonialsData.ko : testimonialsData.en;
 
   return (
-    <section className="py-20 lg:py-28 bg-background-light dark:bg-background-dark border-t border-primary/10">
+    <section className="py-20 lg:py-28 bg-secondary-bg dark:bg-[#32322a]">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Title */}
-        <h2 className="text-center font-display text-3xl lg:text-4xl font-bold mb-16 text-text-main dark:text-white">
-          {content.title}
-        </h2>
+        {/* Stitch-style Header */}
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <span className="section-label">
+            {content.sectionLabel}
+          </span>
+          <h2 className="font-display text-3xl lg:text-4xl font-bold text-text-main dark:text-white mb-4">
+            {content.title}
+          </h2>
+          <p className="text-text-muted dark:text-gray-400 text-lg">
+            {content.description}
+          </p>
+        </div>
 
-        {/* Testimonials Grid */}
+        {/* Stitch-style Testimonials Grid with border-l */}
         <div className="grid md:grid-cols-3 gap-8">
           {content.testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className={`bg-white dark:bg-[#2c2c24] p-8 rounded-2xl shadow-sm border border-transparent hover:border-primary/20 transition-all ${
-                index === 1 ? "md:-mt-4" : ""
-              }`}
+              className="bg-white dark:bg-background-dark p-8 rounded-[12px] shadow-stitch border-l-4 border-primary hover:shadow-stitch-md transition-all duration-300"
             >
               {/* Stars */}
               <div className="flex gap-1 text-primary mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <span key={i} className="material-symbols-outlined text-sm">
+                  <span key={i} className="material-symbols-outlined text-base">
                     star
                   </span>
                 ))}
               </div>
 
               {/* Quote */}
-              <p className="text-lg italic font-medium mb-6 text-text-main dark:text-gray-200">
+              <p className="text-text-main dark:text-gray-200 text-lg italic leading-relaxed mb-6">
                 &ldquo;{testimonial.text}&rdquo;
               </p>
 
-              {/* Author */}
-              <div className="flex items-center gap-3">
-                <div className="size-10 rounded-full bg-gray-200 overflow-hidden relative">
+              {/* Author - Stitch Style */}
+              <div className="flex items-center gap-3 pt-4 border-t border-gray-100 dark:border-white/10">
+                <div className="size-12 rounded-full bg-gray-200 overflow-hidden relative">
                   <Image
                     src={testimonial.image}
                     alt={testimonial.name}
                     fill
                     className="object-cover"
-                    sizes="40px"
+                    sizes="48px"
                   />
                 </div>
                 <div>
-                  <p className="font-bold text-sm text-text-main dark:text-white">
+                  <p className="font-semibold text-sm text-text-main dark:text-white">
                     {testimonial.name}
                   </p>
-                  <p className="text-xs text-text-muted">{testimonial.week}</p>
+                  <p className="text-xs text-text-muted dark:text-gray-400 flex items-center gap-1">
+                    <span className="material-symbols-outlined text-primary text-sm">
+                      pregnant_woman
+                    </span>
+                    {testimonial.week}
+                  </p>
                 </div>
               </div>
             </div>

@@ -80,44 +80,55 @@ export default function FAQ() {
   };
 
   return (
-    <section className="section-padding bg-secondary-bg dark:bg-[#32322a]">
-      <div className="container-main">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="font-display text-3xl font-bold text-text-main dark:text-white mb-8 text-center">
+    <section className="py-20 lg:py-28 bg-secondary-bg dark:bg-[#32322a]">
+      <div className="max-w-[900px] mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Stitch-style Header */}
+        <div className="text-center mb-12">
+          <span className="section-label">FAQ</span>
+          <h2 className="font-display text-3xl lg:text-4xl font-bold text-text-main dark:text-white mb-4">
             {t("faq")}
           </h2>
+        </div>
 
-          <div className="space-y-4">
-            {faqItems.map((item, index) => (
-              <div
-                key={index}
-                className="bg-white dark:bg-background-dark rounded-xl overflow-hidden shadow-sm"
+        {/* Stitch-style Accordion FAQ */}
+        <div className="space-y-4">
+          {faqItems.map((item, index) => (
+            <div
+              key={index}
+              className="bg-white dark:bg-background-dark rounded-[12px] overflow-hidden shadow-stitch"
+            >
+              <button
+                onClick={() => toggleItem(index)}
+                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-primary/5 transition-colors"
               >
-                <button
-                  onClick={() => toggleItem(index)}
-                  className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-gray-50 dark:hover:bg-[#32322a] transition-colors"
+                <span className="font-semibold text-text-main dark:text-white pr-4">
+                  {isKo ? item.questionKo : item.questionEn}
+                </span>
+                <div
+                  className={`size-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0 transition-transform duration-300 ${
+                    openIndex === index ? "rotate-180" : ""
+                  }`}
                 >
-                  <span className="font-medium text-text-main dark:text-white pr-4">
-                    {isKo ? item.questionKo : item.questionEn}
-                  </span>
-                  <span
-                    className={`material-symbols-outlined text-primary transition-transform ${
-                      openIndex === index ? "rotate-180" : ""
-                    }`}
-                  >
+                  <span className="material-symbols-outlined text-primary text-lg">
                     expand_more
                   </span>
-                </button>
-                {openIndex === index && (
-                  <div className="px-6 pb-4">
+                </div>
+              </button>
+              <div
+                className={`overflow-hidden transition-all duration-300 ${
+                  openIndex === index ? "max-h-96" : "max-h-0"
+                }`}
+              >
+                <div className="px-6 pb-5 pt-0">
+                  <div className="border-t border-gray-100 dark:border-white/10 pt-4">
                     <p className="text-text-muted dark:text-gray-400 leading-relaxed">
                       {isKo ? item.answerKo : item.answerEn}
                     </p>
                   </div>
-                )}
+                </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

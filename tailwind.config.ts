@@ -25,21 +25,37 @@ const config: Config = {
       },
       fontFamily: {
         display: ["var(--font-noto-serif)", "Noto Serif", "serif"],
-        body: ["var(--font-noto-sans)", "Noto Sans", "sans-serif"],
+        body: ["var(--font-manrope)", "Manrope", "sans-serif"],
       },
       borderRadius: {
-        DEFAULT: "0.5rem",
+        DEFAULT: "0.75rem", // 12px - Stitch default
+        sm: "0.5rem",
+        md: "0.75rem",
         lg: "1rem",
         xl: "1.5rem",
+        "2xl": "2rem",
         full: "9999px",
+      },
+      boxShadow: {
+        // Stitch whisper-soft ambient drop shadows
+        "stitch-sm": "0 2px 8px rgba(184, 156, 111, 0.06)",
+        stitch: "0 4px 20px rgba(184, 156, 111, 0.08)",
+        "stitch-md": "0 8px 30px rgba(184, 156, 111, 0.10)",
+        "stitch-lg": "0 12px 40px rgba(184, 156, 111, 0.12)",
+        "stitch-xl": "0 20px 50px rgba(184, 156, 111, 0.15)",
       },
       animation: {
         "fade-in-up": "fadeInUp 0.6s ease-out forwards",
+        "fade-in": "fadeIn 0.4s ease-out forwards",
       },
       keyframes: {
         fadeInUp: {
           "0%": { opacity: "0", transform: "translateY(20px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
         },
       },
     },
