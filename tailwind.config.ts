@@ -10,6 +10,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Joyful Bloom Theme
+        "primary-joy": "#FFD93D",
+        "accent-pink": "#FF9292",
+        "bg-cream": "#FFF9F0",
+        "text-soft": "#4A4A4A",
+        // Original Theme
         primary: "#b89c6f",
         "primary-dark": "#9a825a",
         "background-light": "#faf7f5",
