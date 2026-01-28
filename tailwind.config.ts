@@ -16,8 +16,12 @@ const config: Config = {
         "background-dark": "#282820",
         "secondary-bg": "#F3EFE9",
         "accent-green": "#5C6F68",
+        "accent-teal": "#4b7c7c",
+        "accent-gold": "#c4a36e",
         "text-main": "#282820",
         "text-muted": "#5d5d55",
+        "warm-grey": "#7e776d",
+        "subtle-gray": "#7f776c",
       },
       fontFamily: {
         display: ["var(--font-noto-serif)", "Noto Serif", "serif"],
