@@ -34,15 +34,23 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-primary hover:bg-primary-dark text-white font-bold py-2.5 px-6 rounded-lg transition-colors shadow-sm;
+    @apply bg-primary hover:bg-primary-dark text-white font-bold py-2.5 px-6 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md hover:-translate-y-0.5;
   }
 
   .btn-secondary {
-    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold py-2.5 px-6 rounded-lg transition-colors;
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold py-2.5 px-6 rounded-lg transition-all duration-200;
   }
 
   .btn-ghost {
-    @apply bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white border border-white/40 font-medium py-2.5 px-6 rounded-lg transition-colors;
+    @apply bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white border border-white/40 font-medium py-2.5 px-6 rounded-lg transition-all duration-200;
+  }
+
+  .btn-lg {
+    @apply h-14 px-10 text-lg;
+  }
+
+  .btn-md {
+    @apply h-12 px-8 text-base;
   }
 
   .section-padding {

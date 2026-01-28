@@ -3,8 +3,9 @@
 import { useLocale } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { menuItems } from "@/lib/data";
+import Image from "next/image";
 
-// Service images from Stitch template
+// Service images from Stitch template - optimized with Next.js Image
 const serviceImages = [
   "https://lh3.googleusercontent.com/aida-public/AB6AXuCQ4zUxJQd2KYz2FH7jgPe0YWj9uSPfwx8mblhgwuAHpbM6dYW1a2cKhQVQXsVmZy1qekmKSTlFmcR8slWNw5JIQwjP-2QY5xp1cCSEyRBdJnJvXR3YDdSuGtHCq8OmWG7X2DqjSKgVnI_SNLK45RgWRmyFhkdJSNKLQNBQ_g2x-uALt_1p1g-BPrNijMqIVpgNj9aA3vdUq3nLqzRy2VkpbzJX4yEHDy8Hc0bW6pVkKhgmhb-6lsC1yIp2vb31-WBpNKZ7LwUl0iY",
   "https://lh3.googleusercontent.com/aida-public/AB6AXuBfFKiVjdA3BYslFpLRpWLVNgfm_Gm-EPnRBOvUCvYLdpPt3zEWa4PL_Vy3MKJQ5qiG8pRwzGLqNJGqGjFbTYfQGw9n-e2LJxS0xpPHWqd4IvPfKLsU5GWwJhVyKiAcWUQzD5Qd6qRJRBR2jJTyJ8J5RV8DL9RqEWS3fUOJBqQkgQTEZHhNPJVLJPqZpH6FXLwmJR3KHpQkXRc7nRPWZ2qK5yTLQRZH7qS7P0fNPYzXWJHQ2J7rPfJKQRQRYJVZNJHG8GQzPL6Q",
@@ -47,13 +48,15 @@ export default function ServiceHighlights() {
               key={service.name}
               className="group bg-white dark:bg-[#32322a] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500"
             >
-              {/* Card Image */}
-              <div className="h-64 overflow-hidden">
-                <div
-                  className="w-full h-full bg-cover bg-center transform group-hover:scale-105 transition-transform duration-700"
-                  style={{
-                    backgroundImage: `url("${serviceImages[index % serviceImages.length]}")`,
-                  }}
+              {/* Card Image - Next.js Image for optimization */}
+              <div className="relative h-64 overflow-hidden">
+                <Image
+                  src={serviceImages[index % serviceImages.length]}
+                  alt={isKo ? service.name : service.nameEn}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover transform group-hover:scale-105 transition-transform duration-700"
+                  priority={index === 0}
                 />
               </div>
 
