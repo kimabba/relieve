@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "광주왁싱 슈가링 릴리브 | 운암동 프리미엄 슈가링 전문",
+    "description": "광주 북구 운암동 프리미엄 슈가링 전문샵. 임산부왁싱, 브라질리언왁싱, 남성왁싱. 국제대회 그랑프리 수상 전문가의 꼼꼼한 시술. 724건 리뷰."
+  },
+  "nav": {
+    "home": "홈",
+    "services": "서비스/메뉴",
+    "about": "소개",
+    "location": "오시는길",
+    "reservation": "예약",
+    "blog": "소식",
+    "book": "예약하기"
+  },
+  "hero": {
+    "badge": "2025 한국왁싱뷰티협회 교육이사",
+    "title": "프리미엄 슈가링 전문 케어",
+    "subtitle": "천연 성분의 부드러운 슈가링으로 더 편안하고 안전한 제모를 경험하세요",
+    "ctaPrimary": "서비스 보기",
+    "ctaSecondary": "전문가 소개"
+  },
+  "whySugaring": {
+    "title": "왜 슈가링인가요?",
+    "description1": "일반 왁싱과 달리 슈가링은 설탕, 레몬, 물 세 가지 천연 성분만으로 만든 페이스트를 사용합니다. 죽은 피부 세포와 털에만 부착되어 살아있는 피부에는 자극을 주지 않습니다.",
+    "description2": "이 고대 기법은 통증이 현저히 적고 자극을 최소화하여 민감한 피부를 가진 분들과 임산부에게 최적의 선택입니다.",
+    "feature1Title": "수용성",
+    "feature1Desc": "따뜻한 물로 쉽게 세척, 끈적임 없음",
+    "feature2Title": "저자극성",
+    "feature2Desc": "가장 민감한 피부에도 안전"
+  },
+  "services": {
+    "title": "서비스 메뉴",
+    "subtitle": "고객님의 편안함을 최우선으로 생각합니다",
+    "viewAll": "전체 메뉴 보기",
+    "bookNow": "예약하기",
+    "firstVisit": "첫 방문 할인",
+    "premium": "프리미엄",
+    "annual": "연간 이용권",
+    "lash": "속눈썹"
+  },
+  "reviews": {
+    "title": "고객 리뷰",
+    "subtitle": "724건의 리뷰가 증명합니다",
+    "totalReviews": "전체 리뷰",
+    "participants": "참여자"
+  },
+  "safety": {
+    "title": "안전 약속",
+    "subtitle": "고객님과 아기를 위한 최고의 위생 기준"
+  },
+  "cta": {
+    "title": "지금 예약하세요",
+    "subtitle": "프리미엄 슈가링 경험을 시작하세요",
+    "button": "네이버 예약"
+  },
+  "footer": {
+    "description": "프리미엄 슈가링 전문샵. 임산부를 위한 안전하고 부드러운 케어를 제공합니다.",
+    "services": "서비스",
+    "company": "회사 정보",
+    "visitUs": "방문 안내",
+    "rights": "All rights reserved."
+  },
+  "about": {
+    "title": "전문가 소개",
+    "subtitle": "국제대회 수상 경력의 슈가링 전문가",
+    "certifications": "자격증 및 수상 경력",
+    "philosophy": "철학",
+    "philosophyDesc": "릴리브는 고객님의 피부 건강과 편안함을 최우선으로 생각합니다. 천연 성분과 전문 기술로 최상의 결과를 제공합니다."
+  },
+  "location": {
+    "title": "오시는길",
+    "subtitle": "광주 북구 운암동에서 만나요",
+    "address": "주소",
+    "parking": "주차 안내",
+    "hours": "영업시간",
+    "contact": "연락처",
+    "navigation": "길 찾기"
+  },
+  "reservation": {
+    "title": "예약 안내",
+    "subtitle": "편리하게 예약하세요",
+    "naverBooking": "네이버 예약",
+    "phoneBooking": "전화 예약",
+    "payment": "결제 수단",
+    "faq": "자주 묻는 질문"
+  },
+  "common": {
+    "learnMore": "자세히 보기",
+    "price": "가격",
+    "won": "원"
+  }
+}

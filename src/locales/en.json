@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "Gwangju Sugaring Relieve | Premium Sugaring Center",
+    "description": "Premium sugaring center in Unam-dong, Gwangju. Maternity waxing, Brazilian waxing, men's waxing. International competition winner. 724 reviews."
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "location": "Location",
+    "reservation": "Book",
+    "blog": "Blog",
+    "book": "Book Now"
+  },
+  "hero": {
+    "badge": "2025 Korea Waxing Beauty Assoc. Education Director",
+    "title": "Premium Sugaring Care",
+    "subtitle": "Experience gentler, safer hair removal with all-natural sugaring",
+    "ctaPrimary": "View Services",
+    "ctaSecondary": "About Expert"
+  },
+  "whySugaring": {
+    "title": "Why Sugaring?",
+    "description1": "Unlike traditional waxing, sugaring uses a paste made from just three natural ingredients: sugar, lemon, and water. It adheres only to dead skin cells and hair, never to live skin.",
+    "description2": "This ancient technique is significantly less painful and minimizes irritation, making it the premier choice for sensitive skin and expectant mothers.",
+    "feature1Title": "Water Soluble",
+    "feature1Desc": "Easy cleanup with warm water, no sticky residue",
+    "feature2Title": "Hypoallergenic",
+    "feature2Desc": "Safe for the most sensitive skin types"
+  },
+  "services": {
+    "title": "Service Menu",
+    "subtitle": "Your comfort is our priority",
+    "viewAll": "View Full Menu",
+    "bookNow": "Book Now",
+    "firstVisit": "First Visit Special",
+    "premium": "Premium",
+    "annual": "Annual Pass",
+    "lash": "Eyelash"
+  },
+  "reviews": {
+    "title": "Customer Reviews",
+    "subtitle": "724 reviews speak for themselves",
+    "totalReviews": "Total Reviews",
+    "participants": "Participants"
+  },
+  "safety": {
+    "title": "Safety Promise",
+    "subtitle": "Highest hygiene standards for you and your baby"
+  },
+  "cta": {
+    "title": "Book Now",
+    "subtitle": "Start your premium sugaring experience",
+    "button": "Naver Booking"
+  },
+  "footer": {
+    "description": "Premium sugaring center. Safe and gentle care for expectant mothers.",
+    "services": "Services",
+    "company": "Company",
+    "visitUs": "Visit Us",
+    "rights": "All rights reserved."
+  },
+  "about": {
+    "title": "About Expert",
+    "subtitle": "International competition award-winning sugaring specialist",
+    "certifications": "Certifications & Awards",
+    "philosophy": "Philosophy",
+    "philosophyDesc": "Relieve prioritizes your skin health and comfort. We deliver the best results with natural ingredients and expert techniques."
+  },
+  "location": {
+    "title": "Location",
+    "subtitle": "Visit us in Unam-dong, Buk-gu, Gwangju",
+    "address": "Address",
+    "parking": "Parking Info",
+    "hours": "Business Hours",
+    "contact": "Contact",
+    "navigation": "Get Directions"
+  },
+  "reservation": {
+    "title": "Reservation",
+    "subtitle": "Book your appointment easily",
+    "naverBooking": "Naver Booking",
+    "phoneBooking": "Phone Booking",
+    "payment": "Payment Methods",
+    "faq": "FAQ"
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "price": "Price",
+    "won": "KRW"
+  }
+}

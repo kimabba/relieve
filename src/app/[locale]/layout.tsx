@@ -1,0 +1,135 @@
+import type { Metadata } from "next";
+import { Noto_Sans, Noto_Serif } from "next/font/google";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
+import { notFound } from "next/navigation";
+import { routing } from "@/i18n/routing";
+import "../globals.css";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import { LocalBusinessJsonLd, FAQJsonLd } from "@/components/shared/JsonLd";
+
+const notoSans = Noto_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-noto-sans",
+  display: "swap",
+});
+
+const notoSerif = Noto_Serif({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-noto-serif",
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://relieve.kr"),
+  title: {
+    default: "광주왁싱 슈가링 릴리브 | 운암동 프리미엄 슈가링 전문",
+    template: "%s | 광주왁싱 슈가링 릴리브",
+  },
+  description:
+    "광주 북구 운암동 프리미엄 슈가링 전문샵. 임산부왁싱, 브라질리언왁싱, 남성왁싱. 국제대회 그랑프리 수상 전문가의 꼼꼼한 시술. 724건 리뷰.",
+  keywords: [
+    "광주왁싱",
+    "광주슈가링",
+    "운암동왁싱",
+    "임산부왁싱",
+    "브라질리언왁싱",
+    "남자왁싱",
+    "광주북구왁싱",
+    "슈가링",
+    "왁싱샵",
+    "광주뷰티",
+  ],
+  authors: [{ name: "광주왁싱 슈가링 릴리브" }],
+  creator: "광주왁싱 슈가링 릴리브",
+  publisher: "광주왁싱 슈가링 릴리브",
+  formatDetection: {
+    email: false,
+    address: true,
+    telephone: true,
+  },
+  openGraph: {
+    title: "광주왁싱 슈가링 릴리브",
+    description: "프리미엄 슈가링 전문샵 - 국제대회 그랑프리 수상 전문가",
+    type: "website",
+    locale: "ko_KR",
+    alternateLocale: "en_US",
+    siteName: "광주왁싱 슈가링 릴리브",
+    images: [
+      {
+        url: "https://ldb-phinf.pstatic.net/20240912_148/1726129302827Yc1Ak_JPEG/%BB%E7%BA%BB_-KakaoTalk_20240624_150315412.jpg",
+        width: 1200,
+        height: 630,
+        alt: "광주왁싱 슈가링 릴리브",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "광주왁싱 슈가링 릴리브",
+    description: "프리미엄 슈가링 전문샵 - 국제대회 그랑프리 수상",
+    images: [
+      "https://ldb-phinf.pstatic.net/20240912_148/1726129302827Yc1Ak_JPEG/%BB%E7%BA%BB_-KakaoTalk_20240624_150315412.jpg",
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "/",
+    languages: {
+      ko: "/ko",
+      en: "/en",
+    },
+  },
+  verification: {
+    google: "google-site-verification-code",
+  },
+};
+
+type Props = {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+};
+
+export default async function LocaleLayout({ children, params }: Props) {
+  const { locale } = await params;
+
+  // Validate locale
+  if (!routing.locales.includes(locale as "ko" | "en")) {
+    notFound();
+  }
+
+  const messages = await getMessages();
+
+  return (
+    <html lang={locale} className={`${notoSans.variable} ${notoSerif.variable}`}>
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+          rel="stylesheet"
+        />
+        <LocalBusinessJsonLd />
+        <FAQJsonLd />
+      </head>
+      <body className="bg-background-light dark:bg-background-dark text-text-main dark:text-background-light overflow-x-hidden transition-colors duration-300">
+        <NextIntlClientProvider messages={messages}>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </NextIntlClientProvider>
+      </body>
+    </html>
+  );
+}

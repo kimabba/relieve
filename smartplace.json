@@ -1,0 +1,144 @@
+{
+  "placeInfo": {
+    "id": "1053630091",
+    "name": "광주왁싱 슈가링 릴리브",
+    "naverMapUrl": "https://map.naver.com/p/entry/place/1053630091",
+    "businessType": "place",
+    "category": {
+      "main": "왁싱,제모",
+      "categoryCodeList": ["223267", "223268", "1005184", "1005191"]
+    }
+  },
+  "location": {
+    "address": {
+      "jibun": "광주 북구 운암동 1051-6",
+      "road": "광주 북구 북문대로 154 3층",
+      "formatted": "광주 북구 운암동"
+    },
+    "coordinate": {
+      "latitude": 35.1825701,
+      "longitude": 126.8726567
+    },
+    "navigationApps": ["네이버맵", "카카오맵", "T맵"]
+  },
+  "contact": {
+    "phone": "0507-1472-0432",
+    "talktalk": true
+  },
+  "businessHours": {
+    "status": "영업 종료",
+    "openTime": "10:00",
+    "description": "10:00에 영업 시작"
+  },
+  "services": {
+    "booking": true,
+    "delivery": false,
+    "nPay": true,
+    "nPayPromotion": false,
+    "order": false
+  },
+  "facilities": {
+    "total": 5,
+    "list": [
+      "예약",
+      "무선 인터넷",
+      "반려동물 동반",
+      "남/녀 화장실 구분",
+      "대기공간"
+    ]
+  },
+  "parking": {
+    "available": true,
+    "description": "황솔촌 운암점 주차장에 주차하세요! 1시간 주차권 발급해드립니다 :-)"
+  },
+  "paymentMethods": {
+    "total": 3,
+    "list": [
+      "지역화폐 (모바일형)",
+      "지역화폐 (카드형)",
+      "제로페이"
+    ]
+  },
+  "introduction": {
+    "certifications": [
+      "2025 한국왁싱뷰티협회 교육이사 위촉",
+      "2025 국제왁싱기능경기대회 심사위원 위촉",
+      "2024 국제왁싱기능경기대회 심사위원 위촉",
+      "2023 국제왁싱기능경기대회 프로부 그랑프리대상 수상",
+      "MELLOW 슈퍼바이저 교육과정 이수",
+      "브라질리언 메디컬 교육강사 취득",
+      "슈가링전문지도자 자격증 취득",
+      "미용전문교육강사 취득",
+      "피부국가자격증 보유"
+    ],
+    "keywords": ["왁싱", "슈가링왁싱", "브라질리언왁싱", "남자왁싱", "임산부왁싱"]
+  },
+  "menu": {
+    "priceList": [
+      {"name": "임산부 왁싱 첫 방문 할인", "price": 80000},
+      {"name": "여성 브라질리언 첫 방문 할인", "price": 50000},
+      {"name": "남성 브라질리언 첫 방문 할인", "price": 70000},
+      {"name": "디자인 세라클 스케일링 (여)", "price": 130000},
+      {"name": "디자인 세라클 스케일링 (남)", "price": 160000},
+      {"name": "브라질리언 1년 무제한 이용권 (여)", "price": 500000},
+      {"name": "브라질리언 1년 무제한 이용권 (남)", "price": 700000},
+      {"name": "노글루 보톡스펌(기본)", "price": 40000},
+      {"name": "블랙틴트펌(염색)", "price": 45000}
+    ]
+  },
+  "booking": {
+    "services": [
+      {
+        "name": "슈가링 왁싱, 속눈썹 펌 예약",
+        "description": "★ 2025 한국왁싱뷰티협회 교육이사 위촉 ★ 2025 국제왁싱기능경기대회 심사위원 위촉",
+        "reviewCount": 464
+      },
+      {
+        "name": "회원권 예약",
+        "description": "★ 2025 한국왁싱뷰티협회 교육이사 위촉 ★ 2025 국제왁싱기능경기대회 심사위원 위촉",
+        "reviewCount": 247
+      }
+    ],
+    "bookingUrl": "https://booking.naver.com/booking/13/bizes/84..."
+  },
+  "reviews": {
+    "visitor": {
+      "total": 724,
+      "participantCount": 487,
+      "highlights": [
+        {"keyword": "시술이 꼼꼼해요", "count": 651},
+        {"keyword": "친절해요", "count": 610},
+        {"keyword": "손이 빨라요", "count": 480},
+        {"keyword": "매장이 청결해요", "count": 464},
+        {"keyword": "분위기가 편안해요", "count": 379}
+      ]
+    },
+    "blog": {
+      "total": 164
+    }
+  },
+  "sns": {
+    "blog": true,
+    "instagram": true
+  },
+  "events": [
+    {
+      "title": "Y존 테라피 런칭 !!",
+      "period": "2025.12.18. ~ 2026.01.31."
+    }
+  ],
+  "images": {
+    "mainImages": [
+      "https://ldb-phinf.pstatic.net/20240912_148/1726129302827Yc1Ak_JPEG/%BB%E7%BA%BB_-KakaoTalk_20240624_150315412.jpg",
+      "https://ldb-phinf.pstatic.net/20250529_63/17484907191722GUYN_JPEG/KakaoTalk_20250529_125034083.jpg",
+      "https://ldb-phinf.pstatic.net/20231129_198/1701253646386fGCnv_JPEG/KakaoTalk_20231129_192709012.jpg",
+      "https://ldb-phinf.pstatic.net/20250529_270/1748490388217fp4Gh_JPEG/KakaoTalk_20250529_124518958.jpg"
+    ],
+    "photoCategories": ["업체", "클립", "내부", "외부"]
+  },
+  "metadata": {
+    "collectedAt": "2026-01-20T21:45:00+09:00",
+    "dataSource": "네이버 지도 스마트플레이스",
+    "placeStatus": "알림받는중"
+  }
+}
