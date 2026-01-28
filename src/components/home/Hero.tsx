@@ -9,87 +9,81 @@ export default function Hero() {
 
   return (
     <header className="relative w-full min-h-[600px] lg:min-h-[700px] overflow-hidden">
-      {/* Background Image with Stitch-style Overlay */}
-      <div
-        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url("https://lh3.googleusercontent.com/aida-public/AB6AXuCVIaYYMSSK6GivUSwyg1AYyb3_4DY9V0TZy83V9BL_Jqd9W-bK81gM8ENuFYXeALaHgXbiXxOLyS5tnAtwxkEGmL-XS7qbeBjduWG4rzDijWmwhcEYJ9kINEtwZUxiNftVHoXUaK1ktKQZrJwjafVI29r-pXq1Q4SWdKmTWKohtXOICpwAeB5q2w-znRHa3g-SvEITdHsDpkKlmov-2lwmRLU2Bqo41Zhqfwi_cREBF4hEqhvDL1wrNPrRwBWcS8Rni29vTWR8Tlc")`,
-        }}
-      >
-        {/* Stitch gradient overlay - darker on left for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
+      {/* Background with Bloom warm gradient */}
+      <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-secondary-bg via-background-light to-accent-green/10">
+        {/* Decorative elements */}
+        <div className="absolute top-20 right-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-20 w-96 h-96 bg-accent-green/10 rounded-full blur-3xl"></div>
       </div>
 
-      {/* Content - Stitch left-aligned layout */}
-      <div className="relative h-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center min-h-[600px] lg:min-h-[700px]">
-        <div className="max-w-xl animate-fade-in-up py-20">
-          {/* Stitch-style Badge */}
-          <span className="inline-flex items-center gap-2 py-2 px-4 rounded-full bg-white/15 backdrop-blur-md text-white text-xs font-semibold uppercase tracking-wider mb-8 border border-white/20">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-            {isKo ? "프리미엄 슈가링 전문" : "Premium Sugaring Specialist"}
+      {/* Content - Bloom centered layout */}
+      <div className="relative h-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center min-h-[600px] lg:min-h-[700px]">
+        <div className="max-w-3xl text-center animate-fade-in-up py-20">
+          {/* Bloom-style Badge */}
+          <span className="inline-flex items-center gap-2 py-2 px-5 rounded-full bg-white/80 backdrop-blur-sm text-text-main text-xs font-semibold uppercase tracking-wider mb-8 border border-primary/20 shadow-stitch">
+            <span className="material-symbols-outlined text-primary text-sm">local_florist</span>
+            {isKo ? "임산부 전용 슈가링 케어" : "Maternity Sugaring Care"}
           </span>
 
-          {/* Title - Stitch typography */}
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6 tracking-tight">
+          {/* Title - Bloom typography */}
+          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-text-main leading-[1.15] mb-6 tracking-tight">
             {isKo ? (
               <>
-                당신의 여정을 위한
+                소중한 당신을 위한
                 <br />
-                <span className="text-primary">안전하고 부드러운</span> 케어
+                <span className="text-primary">따뜻하고 안전한</span> 케어
               </>
             ) : (
               <>
-                Safe & Gentle Care
+                Warm & Safe Care
                 <br />
-                for <span className="text-primary">Your Journey</span>
+                for <span className="text-primary">Your Precious Journey</span>
               </>
             )}
           </h1>
 
-          {/* Subtitle - Stitch style */}
-          <p className="text-lg text-white/90 mb-10 font-light leading-relaxed max-w-md">
+          {/* Subtitle - Bloom style */}
+          <p className="text-lg text-text-muted mb-10 leading-relaxed max-w-xl mx-auto">
             {isKo
-              ? "천연 유기농 슈가링의 순수함을 경험하세요. 임산부를 위해 특별히 설계된 부드럽고 효과적이며 안전한 케어입니다."
-              : "Experience the purity of organic sugaring. A gentle, effective, and safe ritual designed specifically for expectant mothers."}
+              ? "천연 성분으로 만든 순수한 슈가링. 임산부를 위해 특별히 설계된 부드럽고 안전한 케어로 편안한 휴식을 경험하세요."
+              : "Pure sugaring with natural ingredients. Experience comfortable relaxation with gentle, safe care designed for expectant mothers."}
           </p>
 
-          {/* Stitch-style CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4">
+          {/* Bloom-style CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/services"
-              className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white text-base font-semibold h-14 px-8 rounded-[12px] transition-all duration-300 shadow-stitch-md hover:shadow-stitch-lg hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white text-base font-semibold h-14 px-8 rounded-full transition-all duration-300 shadow-stitch-md hover:shadow-stitch-lg hover:-translate-y-0.5"
             >
-              {isKo ? "시술 메뉴 보기" : "View Treatments"}
+              {isKo ? "케어 메뉴 보기" : "View Treatments"}
               <span className="material-symbols-outlined text-lg">arrow_forward</span>
             </Link>
             <Link
               href="/about"
-              className="inline-flex items-center justify-center bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white border-2 border-white/30 hover:border-white/50 text-base font-medium h-14 px-8 rounded-[12px] transition-all duration-300"
+              className="inline-flex items-center justify-center bg-white hover:bg-secondary-bg text-text-main border-2 border-primary/20 hover:border-primary/40 text-base font-medium h-14 px-8 rounded-full transition-all duration-300 shadow-stitch"
             >
-              {isKo ? "전문가 소개" : "Our Philosophy"}
+              {isKo ? "더 알아보기" : "Learn More"}
             </Link>
           </div>
 
-          {/* Trust indicators - Stitch style */}
-          <div className="flex items-center gap-6 mt-12 pt-8 border-t border-white/20">
-            <div className="text-center">
-              <span className="block text-2xl font-bold text-white">724+</span>
-              <span className="text-xs text-white/70 uppercase tracking-wider">
-                {isKo ? "리뷰" : "Reviews"}
+          {/* Trust indicators - Bloom style */}
+          <div className="flex flex-wrap items-center justify-center gap-8 mt-14 pt-10">
+            <div className="flex items-center gap-3 px-5 py-3 bg-white/60 rounded-full shadow-stitch-sm">
+              <span className="material-symbols-outlined text-primary">verified</span>
+              <span className="text-sm font-medium text-text-main">
+                {isKo ? "724+ 리뷰" : "724+ Reviews"}
               </span>
             </div>
-            <div className="w-px h-10 bg-white/20"></div>
-            <div className="text-center">
-              <span className="block text-2xl font-bold text-white">100%</span>
-              <span className="text-xs text-white/70 uppercase tracking-wider">
-                {isKo ? "천연성분" : "Natural"}
+            <div className="flex items-center gap-3 px-5 py-3 bg-white/60 rounded-full shadow-stitch-sm">
+              <span className="material-symbols-outlined text-accent-green">eco</span>
+              <span className="text-sm font-medium text-text-main">
+                {isKo ? "100% 천연성분" : "100% Natural"}
               </span>
             </div>
-            <div className="w-px h-10 bg-white/20"></div>
-            <div className="text-center">
-              <span className="block text-2xl font-bold text-primary">★ 4.9</span>
-              <span className="text-xs text-white/70 uppercase tracking-wider">
-                {isKo ? "평점" : "Rating"}
+            <div className="flex items-center gap-3 px-5 py-3 bg-white/60 rounded-full shadow-stitch-sm">
+              <span className="material-symbols-outlined text-primary">star</span>
+              <span className="text-sm font-medium text-text-main">
+                {isKo ? "평점 4.9" : "4.9 Rating"}
               </span>
             </div>
           </div>

@@ -24,32 +24,33 @@ export default function ServiceHighlights() {
   };
 
   return (
-    <section className="py-20 lg:py-28 bg-background-light dark:bg-background-dark">
+    <section className="py-20 lg:py-28 bg-secondary-bg/30 dark:bg-background-dark">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Stitch-style Header */}
+        {/* Bloom-style Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="section-label">
-            {isKo ? "서비스 메뉴" : "Service Menu"}
+          <span className="inline-flex items-center gap-2 text-primary font-medium tracking-widest text-sm uppercase mb-4">
+            <span className="material-symbols-outlined text-lg">auto_awesome</span>
+            {isKo ? "케어 메뉴" : "Care Menu"}
           </span>
           <h2 className="font-display text-3xl lg:text-4xl font-bold text-text-main dark:text-white mb-4">
-            {isKo ? "시그니처 시술" : "Signature Treatments"}
+            {isKo ? "당신을 위한 특별한 케어" : "Special Care for You"}
           </h2>
           <p className="text-text-muted dark:text-gray-400 text-lg">
             {isKo
-              ? "첫 방문 고객님을 위한 특별 혜택과 함께 프리미엄 케어를 경험하세요"
+              ? "첫 방문 고객님께 드리는 특별 혜택으로 프리미엄 케어를 경험하세요"
               : "Experience premium care with special benefits for first-time visitors"}
           </p>
         </div>
 
-        {/* Stitch-style 3-Column Service Cards */}
+        {/* Bloom-style 3-Column Service Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {featuredServices.map((service, index) => (
             <div
               key={service.name}
-              className="group bg-white dark:bg-[#32322a] rounded-[12px] overflow-hidden shadow-stitch hover:shadow-stitch-lg transition-all duration-500 hover:-translate-y-2"
+              className="group bg-white dark:bg-[#32322a] rounded-2xl overflow-hidden shadow-stitch hover:shadow-stitch-lg transition-all duration-500 hover:-translate-y-2 border border-primary/5"
             >
               {/* Card Image */}
-              <div className="relative h-56 overflow-hidden">
+              <div className="relative h-52 overflow-hidden">
                 <Image
                   src={serviceImages[index % serviceImages.length]}
                   alt={isKo ? service.name : service.nameEn}
@@ -58,13 +59,14 @@ export default function ServiceHighlights() {
                   className="object-cover transform group-hover:scale-105 transition-transform duration-700"
                   priority={index === 0}
                 />
-                {/* First Visit Badge */}
-                <div className="absolute top-4 left-4 bg-primary text-white text-xs font-bold uppercase tracking-wider py-1.5 px-3 rounded-full">
+                {/* First Visit Badge - Bloom style */}
+                <div className="absolute top-4 left-4 bg-primary/90 backdrop-blur-sm text-white text-xs font-bold uppercase tracking-wider py-2 px-4 rounded-full flex items-center gap-1.5">
+                  <span className="material-symbols-outlined text-sm">local_florist</span>
                   {isKo ? "첫 방문 특가" : "First Visit"}
                 </div>
               </div>
 
-              {/* Card Content - Stitch Style */}
+              {/* Card Content - Bloom Style */}
               <div className="p-6">
                 <h3 className="font-display text-xl font-bold text-text-main dark:text-white mb-2">
                   {isKo ? service.name : service.nameEn}
@@ -73,8 +75,8 @@ export default function ServiceHighlights() {
                   {isKo ? service.description : service.descriptionEn}
                 </p>
 
-                {/* Price & CTA Row - Stitch Layout */}
-                <div className="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-white/10">
+                {/* Price & CTA Row - Bloom Layout */}
+                <div className="flex items-center justify-between pt-4 border-t border-primary/10 dark:border-white/10">
                   <div>
                     <span className="text-xs text-text-muted dark:text-gray-500 uppercase tracking-wider">
                       {isKo ? "가격" : "Price"}
@@ -85,7 +87,7 @@ export default function ServiceHighlights() {
                   </div>
                   <Link
                     href="/reservation"
-                    className="inline-flex items-center gap-1.5 text-primary font-semibold text-sm uppercase tracking-wide group-hover:gap-2.5 transition-all duration-300"
+                    className="inline-flex items-center gap-1.5 bg-primary/10 hover:bg-primary text-primary hover:text-white font-semibold text-sm py-2.5 px-5 rounded-full transition-all duration-300"
                   >
                     {isKo ? "예약" : "Book"}
                     <span className="material-symbols-outlined text-base">
@@ -98,11 +100,11 @@ export default function ServiceHighlights() {
           ))}
         </div>
 
-        {/* View All Button - Stitch Style */}
+        {/* View All Button - Bloom Style */}
         <div className="mt-16 text-center">
           <Link
             href="/services"
-            className="inline-flex items-center justify-center gap-2 h-14 px-10 border-2 border-primary text-primary hover:bg-primary hover:text-white text-base font-semibold rounded-[12px] transition-all duration-300"
+            className="inline-flex items-center justify-center gap-2 h-14 px-10 bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white text-base font-semibold rounded-full transition-all duration-300 shadow-stitch"
           >
             {isKo ? "전체 메뉴 보기" : "View All Services"}
             <span className="material-symbols-outlined text-lg">

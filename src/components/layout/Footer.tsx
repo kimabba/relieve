@@ -11,15 +11,15 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-background-dark pt-20 pb-8 text-white">
+    <footer className="bg-text-main pt-20 pb-8 text-white">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
-          {/* Brand - Stitch Style */}
+          {/* Brand - Bloom Style */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-6">
-              <div className="size-11 rounded-[10px] bg-primary/20 flex items-center justify-center">
+              <div className="size-11 rounded-full bg-primary/20 flex items-center justify-center">
                 <span className="material-symbols-outlined text-primary text-2xl">
-                  spa
+                  local_florist
                 </span>
               </div>
               <div>
@@ -27,14 +27,14 @@ export default function Footer() {
                   {isKo ? "릴리브" : "Relieve"}
                 </span>
                 <span className="text-[10px] text-gray-400 uppercase tracking-wider">
-                  {isKo ? "프리미엄 슈가링" : "Premium Sugaring"}
+                  {isKo ? "임산부 슈가링 케어" : "Maternity Sugaring"}
                 </span>
               </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               {isKo
-                ? "광주 북구의 프리미엄 슈가링 전문샵. 천연 성분과 전문적인 기술로 당신의 아름다움을 완성합니다."
-                : "Premium sugaring specialist in Gwangju. Perfecting your beauty with natural ingredients and professional expertise."}
+                ? "임산부를 위한 따뜻하고 안전한 슈가링 케어. 천연 성분으로 소중한 순간을 함께합니다."
+                : "Warm and safe sugaring care for expectant mothers. Natural ingredients for your precious moments."}
             </p>
             {/* Social Icons - Stitch Style */}
             <div className="flex gap-3">

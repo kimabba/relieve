@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Manrope, Noto_Serif } from "next/font/google";
+import { Nunito, Merriweather } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -9,18 +9,19 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { LocalBusinessJsonLd, FAQJsonLd } from "@/components/shared/JsonLd";
 
-// Stitch design system fonts
-const manrope = Manrope({
+// Bloom & Rest design system fonts
+const nunito = Nunito({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-  variable: "--font-manrope",
+  weight: ["400", "600", "700"],
+  variable: "--font-nunito",
   display: "swap",
 });
 
-const notoSerif = Noto_Serif({
+const merriweather = Merriweather({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-noto-serif",
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-merriweather",
   display: "swap",
 });
 
@@ -115,7 +116,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={`${manrope.variable} ${notoSerif.variable}`}>
+    <html lang={locale} className={`${nunito.variable} ${merriweather.variable}`}>
       <head>
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"

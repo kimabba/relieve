@@ -25,14 +25,14 @@ export default function Header() {
   };
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-primary/5 dark:border-white/5 shadow-stitch-sm">
+    <nav className="sticky top-0 z-50 w-full bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-primary/10 dark:border-white/5 shadow-stitch-sm">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* Logo - Stitch Style */}
+          {/* Logo - Bloom Style */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="size-11 rounded-[10px] bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-all duration-300">
+            <div className="size-11 rounded-full bg-secondary-bg flex items-center justify-center group-hover:bg-primary/20 transition-all duration-300 border border-primary/10">
               <span className="material-symbols-outlined text-2xl text-primary">
-                spa
+                local_florist
               </span>
             </div>
             <div className="flex flex-col">
@@ -40,7 +40,7 @@ export default function Header() {
                 {isKo ? "릴리브" : "Relieve"}
               </span>
               <span className="text-[10px] text-text-muted dark:text-gray-400 uppercase tracking-wider -mt-0.5">
-                {isKo ? "프리미엄 슈가링" : "Premium Sugaring"}
+                {isKo ? "임산부 슈가링 케어" : "Maternity Sugaring"}
               </span>
             </div>
           </Link>

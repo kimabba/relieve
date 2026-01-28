@@ -10,7 +10,20 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Bloom & Rest Theme
+        // Bloom & Rest Theme (Primary)
+        primary: "#d97e6a",
+        "primary-dark": "#c46a56",
+        "background-light": "#fdfaf6",
+        "background-dark": "#3d3530",
+        "secondary-bg": "#f4dada",
+        "accent-green": "#a4b494",
+        "accent-teal": "#8fa882",
+        "accent-gold": "#d97e6a",
+        "text-main": "#5c4a43",
+        "text-muted": "#7a6a5f",
+        "warm-grey": "#9a8a7f",
+        "subtle-gray": "#b5a89e",
+        // Legacy bloom aliases
         "bloom-primary": "#d97e6a",
         "bloom-secondary": "#a4b494",
         "bloom-accent": "#f4dada",
@@ -18,28 +31,15 @@ const config: Config = {
         "bloom-surface": "#ffffff",
         "bloom-text": "#5c4a43",
         "bloom-muted": "#7a6a5f",
-        // Joyful Bloom Theme
+        // Joyful Bloom Theme (for /joyful page)
         "primary-joy": "#FFD93D",
         "accent-pink": "#FF9292",
         "bg-cream": "#FFF9F0",
         "text-soft": "#4A4A4A",
-        // Original Theme
-        primary: "#b89c6f",
-        "primary-dark": "#9a825a",
-        "background-light": "#faf7f5",
-        "background-dark": "#282820",
-        "secondary-bg": "#F3EFE9",
-        "accent-green": "#5C6F68",
-        "accent-teal": "#4b7c7c",
-        "accent-gold": "#c4a36e",
-        "text-main": "#282820",
-        "text-muted": "#5d5d55",
-        "warm-grey": "#7e776d",
-        "subtle-gray": "#7f776c",
       },
       fontFamily: {
-        display: ["var(--font-noto-serif)", "Noto Serif", "serif"],
-        body: ["var(--font-manrope)", "Manrope", "sans-serif"],
+        display: ["var(--font-merriweather)", "Merriweather", "serif"],
+        body: ["var(--font-nunito)", "Nunito", "sans-serif"],
       },
       borderRadius: {
         DEFAULT: "0.75rem", // 12px - Stitch default
@@ -51,12 +51,12 @@ const config: Config = {
         full: "9999px",
       },
       boxShadow: {
-        // Stitch whisper-soft ambient drop shadows
-        "stitch-sm": "0 2px 8px rgba(184, 156, 111, 0.06)",
-        stitch: "0 4px 20px rgba(184, 156, 111, 0.08)",
-        "stitch-md": "0 8px 30px rgba(184, 156, 111, 0.10)",
-        "stitch-lg": "0 12px 40px rgba(184, 156, 111, 0.12)",
-        "stitch-xl": "0 20px 50px rgba(184, 156, 111, 0.15)",
+        // Bloom warm ambient drop shadows (terracotta tinted)
+        "stitch-sm": "0 2px 8px rgba(217, 126, 106, 0.08)",
+        stitch: "0 4px 20px rgba(217, 126, 106, 0.10)",
+        "stitch-md": "0 8px 30px rgba(217, 126, 106, 0.12)",
+        "stitch-lg": "0 12px 40px rgba(217, 126, 106, 0.15)",
+        "stitch-xl": "0 20px 50px rgba(217, 126, 106, 0.18)",
       },
       animation: {
         "fade-in-up": "fadeInUp 0.6s ease-out forwards",
