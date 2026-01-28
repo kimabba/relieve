@@ -10,6 +10,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Bloom & Rest Theme
+        "bloom-primary": "#d97e6a",
+        "bloom-secondary": "#a4b494",
+        "bloom-accent": "#f4dada",
+        "bloom-bg": "#fdfaf6",
+        "bloom-surface": "#ffffff",
+        "bloom-text": "#5c4a43",
+        "bloom-muted": "#7a6a5f",
         // Joyful Bloom Theme
         "primary-joy": "#FFD93D",
         "accent-pink": "#FF9292",
