@@ -2,6 +2,7 @@
 
 import { useLocale } from "next-intl";
 import { reviews } from "@/lib/data";
+import { motion } from "framer-motion";
 
 const testimonials = [
   {
@@ -35,113 +36,162 @@ export default function ReviewHighlights() {
   const isKo = locale === "ko";
 
   return (
-    <section className="py-20 lg:py-28 bg-white">
-      <div className="section-container">
-        {/* Joy-style Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="section-label">
+    <section className="relative py-24 lg:py-32 bg-[#FFFAF4] overflow-hidden">
+      {/* Background Decorations */}
+      <div className="absolute top-0 left-0 w-72 h-72 bg-gradient-to-br from-[#FFB5C5]/15 to-transparent rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-[#9B8AC4]/10 to-transparent rounded-full blur-3xl" />
+
+      <div className="section-container relative">
+        {/* Section Header */}
+        <motion.div
+          className="text-center max-w-2xl mx-auto mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <span className="inline-flex items-center gap-2 py-2 px-5 rounded-full bg-[#FFB5C5]/10 text-[#E07070] text-sm font-bold mb-6">
+            <span className="material-symbols-outlined text-base">favorite</span>
             {isKo ? "고객 후기" : "Client Stories"}
           </span>
-          <h2 className="section-title mb-4">
+          <h2
+            className="text-4xl lg:text-5xl font-bold text-gray-800 mb-4"
+            style={{ fontFamily: "'Playfair Display', serif" }}
+          >
             {isKo ? "고객님들의 따뜻한 후기" : "Warm Words from Our Clients"}
           </h2>
-          <p className="text-joy-textLight text-lg">
+          <p className="text-gray-600 text-lg">
             {isKo
               ? "임산부 고객님들의 실제 경험을 확인해 보세요"
               : "Read real experiences from expectant mothers"}
           </p>
-        </div>
+        </motion.div>
 
-        {/* Stats Row */}
-        <div className="flex flex-wrap justify-center gap-6 lg:gap-10 mb-16">
-          <div className="text-center px-8 py-6 bg-joy-bg rounded-2xl min-w-[160px]">
-            <span className="block text-4xl lg:text-5xl font-bold text-joy-pink mb-2">
-              {reviews.total.toLocaleString()}
-            </span>
-            <span className="text-joy-textLight text-sm font-medium uppercase tracking-wider">
-              {isKo ? "총 리뷰" : "Reviews"}
-            </span>
-          </div>
-          <div className="text-center px-8 py-6 bg-joy-bg rounded-2xl min-w-[160px]">
-            <span className="block text-4xl lg:text-5xl font-bold text-joy-teal mb-2">
-              {reviews.participantCount.toLocaleString()}
-            </span>
-            <span className="text-joy-textLight text-sm font-medium uppercase tracking-wider">
-              {isKo ? "만족 고객" : "Happy Clients"}
-            </span>
-          </div>
-          <div className="text-center px-8 py-6 bg-joy-bg rounded-2xl min-w-[160px]">
-            <span className="block text-4xl lg:text-5xl font-bold text-joy-pink mb-2">
-              4.9
-            </span>
-            <span className="text-joy-textLight text-sm font-medium uppercase tracking-wider">
-              {isKo ? "평균 평점" : "Rating"}
-            </span>
-          </div>
-        </div>
-
-        {/* Joy-style Testimonial Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <div
+        {/* Stats Row - Glass Style */}
+        <motion.div
+          className="flex flex-wrap justify-center gap-4 lg:gap-6 mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
+          {[
+            { value: reviews.total.toLocaleString(), label: isKo ? "총 리뷰" : "Reviews", color: "from-[#FFB5C5] to-[#FFC0CB]" },
+            { value: reviews.participantCount.toLocaleString(), label: isKo ? "만족 고객" : "Happy Clients", color: "from-[#9B8AC4] to-[#B8A5E3]" },
+            { value: "4.9", label: isKo ? "평균 평점" : "Rating", color: "from-[#5BA8A8] to-[#73C7C7]" },
+          ].map((stat, index) => (
+            <motion.div
               key={index}
-              className="card-joy hover:-translate-y-1 transition-all duration-300"
+              className="text-center px-8 py-6 bg-white rounded-2xl shadow-lg min-w-[150px]"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.1 * index }}
             >
+              <span className={`block text-4xl lg:text-5xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-2`}>
+                {stat.value}
+              </span>
+              <span className="text-gray-500 text-sm font-medium uppercase tracking-wider">
+                {stat.label}
+              </span>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Testimonial Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          {testimonials.map((testimonial, index) => (
+            <motion.div
+              key={index}
+              className="relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ y: -5 }}
+            >
+              {/* Quote Icon */}
+              <div className="absolute top-6 right-6 w-12 h-12 rounded-full bg-gradient-to-br from-[#FFB5C5]/20 to-[#9B8AC4]/20 flex items-center justify-center">
+                <span className="material-symbols-outlined text-[#9B8AC4] text-2xl">
+                  format_quote
+                </span>
+              </div>
+
               {/* Stars */}
-              <div className="flex gap-1 text-joy-yellow mb-4">
+              <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <span key={i} className="material-symbols-outlined text-base" style={{ fontVariationSettings: "'FILL' 1" }}>
+                  <span
+                    key={i}
+                    className="material-symbols-outlined text-[#FFD700] text-lg"
+                    style={{ fontVariationSettings: "'FILL' 1" }}
+                  >
                     star
                   </span>
                 ))}
               </div>
 
               {/* Quote */}
-              <p className="text-joy-text text-lg italic leading-relaxed mb-6 font-serif">
+              <p
+                className="text-gray-700 text-lg leading-relaxed mb-6"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
                 &ldquo;{isKo ? testimonial.textKo : testimonial.textEn}&rdquo;
               </p>
 
               {/* Author */}
               <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
-                <div className="w-10 h-10 rounded-full bg-joy-pink/15 flex items-center justify-center">
-                  <span className="material-symbols-outlined text-joy-pink text-lg">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#FFB5C5] to-[#9B8AC4] flex items-center justify-center shadow-md">
+                  <span className="material-symbols-outlined text-white text-xl">
                     pregnant_woman
                   </span>
                 </div>
                 <div>
-                  <p className="font-semibold text-sm text-joy-dark">
+                  <p className="font-bold text-gray-800">
                     {isKo ? testimonial.nameKo : testimonial.nameEn}
                   </p>
-                  <p className="text-xs text-joy-teal font-medium">
+                  <p className="text-sm text-[#9B8AC4] font-medium">
                     {isKo ? testimonial.weekKo : testimonial.weekEn}
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
-        {/* Review Keywords Grid */}
-        <div className="mt-16 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6">
-          {reviews.highlights.map((highlight) => (
-            <div
-              key={highlight.keyword}
-              className="group flex flex-col items-center p-6 bg-joy-bg rounded-2xl hover:-translate-y-1 transition-all duration-300"
-            >
-              <div className="w-12 h-12 rounded-full bg-joy-pink/10 mb-4 flex items-center justify-center group-hover:bg-joy-pink/20 transition-colors">
-                <span className="material-symbols-outlined text-xl text-joy-pink">
-                  {highlight.icon}
+        {/* Review Keywords - Horizontal Scroll on Mobile */}
+        <motion.div
+          className="mt-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+            {reviews.highlights.map((highlight, index) => (
+              <motion.div
+                key={highlight.keyword}
+                className="group flex flex-col items-center p-6 bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.05 * index }}
+                whileHover={{ y: -3 }}
+              >
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#FFB5C5]/20 to-[#9B8AC4]/20 mb-4 flex items-center justify-center group-hover:from-[#FFB5C5]/30 group-hover:to-[#9B8AC4]/30 transition-colors">
+                  <span className="material-symbols-outlined text-2xl text-[#9B8AC4]">
+                    {highlight.icon}
+                  </span>
+                </div>
+                <span className="font-semibold text-gray-700 text-center mb-2 text-sm">
+                  {isKo ? highlight.keyword : highlight.keywordEn}
                 </span>
-              </div>
-              <span className="font-semibold text-joy-dark text-center mb-2 text-sm">
-                {isKo ? highlight.keyword : highlight.keywordEn}
-              </span>
-              <span className="text-xl font-bold text-joy-pink">
-                {highlight.count}
-              </span>
-            </div>
-          ))}
-        </div>
+                <span className="text-xl font-bold bg-gradient-to-r from-[#FFB5C5] to-[#9B8AC4] bg-clip-text text-transparent">
+                  {highlight.count}
+                </span>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
