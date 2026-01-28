@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Nunito, Merriweather } from "next/font/google";
+import { Noto_Sans_KR, Playfair_Display } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -7,21 +7,22 @@ import { routing } from "@/i18n/routing";
 import "../globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import FloatingCTA from "@/components/layout/FloatingCTA";
 import { LocalBusinessJsonLd, FAQJsonLd } from "@/components/shared/JsonLd";
 
-// Bloom & Rest design system fonts
-const nunito = Nunito({
+// Joy design system fonts
+const notoSansKR = Noto_Sans_KR({
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
-  variable: "--font-nunito",
+  weight: ["300", "400", "500", "700"],
+  variable: "--font-noto-sans",
   display: "swap",
 });
 
-const merriweather = Merriweather({
+const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "600", "700"],
   style: ["normal", "italic"],
-  variable: "--font-merriweather",
+  variable: "--font-playfair",
   display: "swap",
 });
 
@@ -116,7 +117,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={`${nunito.variable} ${merriweather.variable}`}>
+    <html lang={locale} className={`${notoSansKR.variable} ${playfairDisplay.variable}`}>
       <head>
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
@@ -125,11 +126,12 @@ export default async function LocaleLayout({ children, params }: Props) {
         <LocalBusinessJsonLd />
         <FAQJsonLd />
       </head>
-      <body className="bg-background-light dark:bg-background-dark text-text-main dark:text-background-light overflow-x-hidden transition-colors duration-300">
+      <body className="bg-joy-bg text-joy-text antialiased overflow-x-hidden selection:bg-joy-pink selection:text-white">
         <NextIntlClientProvider messages={messages}>
           <Header />
           <main>{children}</main>
           <Footer />
+          <FloatingCTA />
         </NextIntlClientProvider>
       </body>
     </html>

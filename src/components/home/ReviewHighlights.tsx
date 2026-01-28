@@ -3,7 +3,6 @@
 import { useLocale } from "next-intl";
 import { reviews } from "@/lib/data";
 
-// Sample testimonials with Stitch border-l style
 const testimonials = [
   {
     textKo: "임신 34주에 방문했는데 선생님이 정말 세심하게 케어해주셨어요. 임산부 전용 쿠션 덕분에 너무 편했습니다.",
@@ -36,61 +35,60 @@ export default function ReviewHighlights() {
   const isKo = locale === "ko";
 
   return (
-    <section className="py-20 lg:py-28 bg-white dark:bg-[#32322a]">
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Bloom-style Header */}
+    <section className="py-20 lg:py-28 bg-white">
+      <div className="section-container">
+        {/* Joy-style Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="inline-flex items-center gap-2 text-primary font-medium tracking-widest text-sm uppercase mb-4">
-            <span className="material-symbols-outlined text-lg">favorite</span>
+          <span className="section-label">
             {isKo ? "고객 후기" : "Client Stories"}
           </span>
-          <h2 className="font-display text-3xl lg:text-4xl font-bold text-text-main dark:text-white mb-4">
+          <h2 className="section-title mb-4">
             {isKo ? "고객님들의 따뜻한 후기" : "Warm Words from Our Clients"}
           </h2>
-          <p className="text-text-muted dark:text-gray-400 text-lg">
+          <p className="text-joy-textLight text-lg">
             {isKo
               ? "임산부 고객님들의 실제 경험을 확인해 보세요"
               : "Read real experiences from expectant mothers"}
           </p>
         </div>
 
-        {/* Stats Row - Bloom Style */}
+        {/* Stats Row */}
         <div className="flex flex-wrap justify-center gap-6 lg:gap-10 mb-16">
-          <div className="text-center px-8 py-6 bg-secondary-bg/50 dark:bg-background-dark rounded-2xl border border-primary/10 min-w-[160px]">
-            <span className="block text-4xl lg:text-5xl font-bold text-primary mb-2">
+          <div className="text-center px-8 py-6 bg-joy-bg rounded-2xl min-w-[160px]">
+            <span className="block text-4xl lg:text-5xl font-bold text-joy-pink mb-2">
               {reviews.total.toLocaleString()}
             </span>
-            <span className="text-text-muted dark:text-gray-400 text-sm font-medium uppercase tracking-wider">
+            <span className="text-joy-textLight text-sm font-medium uppercase tracking-wider">
               {isKo ? "총 리뷰" : "Reviews"}
             </span>
           </div>
-          <div className="text-center px-8 py-6 bg-secondary-bg/50 dark:bg-background-dark rounded-2xl border border-primary/10 min-w-[160px]">
-            <span className="block text-4xl lg:text-5xl font-bold text-accent-green mb-2">
+          <div className="text-center px-8 py-6 bg-joy-bg rounded-2xl min-w-[160px]">
+            <span className="block text-4xl lg:text-5xl font-bold text-joy-teal mb-2">
               {reviews.participantCount.toLocaleString()}
             </span>
-            <span className="text-text-muted dark:text-gray-400 text-sm font-medium uppercase tracking-wider">
+            <span className="text-joy-textLight text-sm font-medium uppercase tracking-wider">
               {isKo ? "만족 고객" : "Happy Clients"}
             </span>
           </div>
-          <div className="text-center px-8 py-6 bg-secondary-bg/50 dark:bg-background-dark rounded-2xl border border-primary/10 min-w-[160px]">
-            <span className="block text-4xl lg:text-5xl font-bold text-primary mb-2">
+          <div className="text-center px-8 py-6 bg-joy-bg rounded-2xl min-w-[160px]">
+            <span className="block text-4xl lg:text-5xl font-bold text-joy-pink mb-2">
               4.9
             </span>
-            <span className="text-text-muted dark:text-gray-400 text-sm font-medium uppercase tracking-wider">
+            <span className="text-joy-textLight text-sm font-medium uppercase tracking-wider">
               {isKo ? "평균 평점" : "Rating"}
             </span>
           </div>
         </div>
 
-        {/* Bloom-style Testimonial Cards */}
+        {/* Joy-style Testimonial Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-gradient-to-br from-secondary-bg/50 to-white dark:from-background-dark dark:to-background-dark p-8 rounded-2xl border border-primary/10 hover:border-primary/30 transition-all duration-300"
+              className="card-joy hover:-translate-y-1 transition-all duration-300"
             >
-              {/* Stars - Bloom style */}
-              <div className="flex gap-1 text-primary mb-4">
+              {/* Stars */}
+              <div className="flex gap-1 text-joy-yellow mb-4">
                 {[...Array(5)].map((_, i) => (
                   <span key={i} className="material-symbols-outlined text-base" style={{ fontVariationSettings: "'FILL' 1" }}>
                     star
@@ -99,22 +97,22 @@ export default function ReviewHighlights() {
               </div>
 
               {/* Quote */}
-              <p className="text-text-main dark:text-gray-200 text-lg italic leading-relaxed mb-6 font-display">
+              <p className="text-joy-text text-lg italic leading-relaxed mb-6 font-serif">
                 &ldquo;{isKo ? testimonial.textKo : testimonial.textEn}&rdquo;
               </p>
 
-              {/* Author - Bloom style */}
-              <div className="flex items-center gap-3 pt-4 border-t border-primary/10 dark:border-white/10">
-                <div className="size-10 rounded-full bg-primary/15 flex items-center justify-center">
-                  <span className="material-symbols-outlined text-primary text-lg">
+              {/* Author */}
+              <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
+                <div className="w-10 h-10 rounded-full bg-joy-pink/15 flex items-center justify-center">
+                  <span className="material-symbols-outlined text-joy-pink text-lg">
                     pregnant_woman
                   </span>
                 </div>
                 <div>
-                  <p className="font-semibold text-sm text-text-main dark:text-white">
+                  <p className="font-semibold text-sm text-joy-dark">
                     {isKo ? testimonial.nameKo : testimonial.nameEn}
                   </p>
-                  <p className="text-xs text-accent-green dark:text-accent-green font-medium">
+                  <p className="text-xs text-joy-teal font-medium">
                     {isKo ? testimonial.weekKo : testimonial.weekEn}
                   </p>
                 </div>
@@ -123,22 +121,22 @@ export default function ReviewHighlights() {
           ))}
         </div>
 
-        {/* Review Keywords Grid - Bloom Style */}
+        {/* Review Keywords Grid */}
         <div className="mt-16 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6">
           {reviews.highlights.map((highlight) => (
             <div
               key={highlight.keyword}
-              className="group flex flex-col items-center p-6 bg-secondary-bg/30 dark:bg-background-dark rounded-2xl border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1"
+              className="group flex flex-col items-center p-6 bg-joy-bg rounded-2xl hover:-translate-y-1 transition-all duration-300"
             >
-              <div className="size-12 rounded-full bg-primary/10 mb-4 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                <span className="material-symbols-outlined text-xl text-primary">
+              <div className="w-12 h-12 rounded-full bg-joy-pink/10 mb-4 flex items-center justify-center group-hover:bg-joy-pink/20 transition-colors">
+                <span className="material-symbols-outlined text-xl text-joy-pink">
                   {highlight.icon}
                 </span>
               </div>
-              <span className="font-semibold text-text-main dark:text-white text-center mb-2 text-sm">
+              <span className="font-semibold text-joy-dark text-center mb-2 text-sm">
                 {isKo ? highlight.keyword : highlight.keywordEn}
               </span>
-              <span className="text-xl font-bold text-primary">
+              <span className="text-xl font-bold text-joy-pink">
                 {highlight.count}
               </span>
             </div>

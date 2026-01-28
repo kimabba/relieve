@@ -4,107 +4,98 @@
 
 @layer base {
   :root {
-    --background: #faf7f5;
-    --foreground: #282820;
-  }
-
-  .dark {
-    --background: #282820;
-    --foreground: #faf7f5;
+    --background: #FFFAF4;
+    --foreground: #4A4A4A;
   }
 
   body {
-    font-family: var(--font-nunito), "Nunito", sans-serif;
-    @apply bg-background-light text-text-main antialiased;
+    font-family: var(--font-noto-sans), "Noto Sans KR", sans-serif;
+    background-color: #FFFAF4;
   }
 
-  .dark body {
-    @apply bg-background-dark text-background-light;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-playfair), "Playfair Display", serif;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: var(--font-merriweather), "Merriweather", serif;
+  html {
+    scroll-behavior: smooth;
   }
 }
 
 @layer components {
-  /* Stitch Button Styles */
+  /* Joy Button Styles */
   .btn-primary {
-    @apply bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-8 rounded-[12px] transition-all duration-300 shadow-stitch hover:shadow-stitch-md hover:-translate-y-0.5;
+    @apply bg-joy-pink text-white font-bold py-4 px-8 rounded-full transition-all duration-300 shadow-glow hover:bg-[#FF8E8E] hover:scale-105;
   }
 
   .btn-secondary {
-    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold py-3 px-8 rounded-[12px] transition-all duration-300;
+    @apply bg-joy-teal text-white font-bold py-4 px-8 rounded-full transition-all duration-300 shadow-glow-teal hover:bg-joy-tealDark;
   }
 
-  .btn-ghost {
-    @apply bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white border-2 border-white/40 font-medium py-3 px-8 rounded-[12px] transition-all duration-300;
+  .btn-outline {
+    @apply bg-white/60 backdrop-blur-sm text-joy-dark font-bold py-4 px-8 rounded-full transition-all duration-300 hover:bg-white;
   }
 
-  .btn-lg {
-    @apply h-14 px-10 text-lg;
+  .btn-naver {
+    @apply bg-[#03C75A] text-white font-bold py-4 px-6 rounded-full shadow-xl hover:bg-[#02b150] transition-all hover:scale-105;
   }
 
-  .btn-md {
-    @apply h-12 px-8 text-base;
+  /* Joy Card Styles */
+  .card-joy {
+    @apply bg-white rounded-4xl p-8 shadow-soft;
   }
 
-  .section-padding {
-    @apply py-20 lg:py-28;
+  .card-warm {
+    @apply bg-gradient-to-br from-[#FFF5E6] to-[#FFE0B2] rounded-4xl;
   }
 
-  .container-main {
-    @apply max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8;
+  .card-mint {
+    @apply bg-[#E0F2F1] rounded-4xl;
   }
 
-  /* Stitch Card Styles */
-  .card {
-    @apply bg-white dark:bg-[#32322a] rounded-[12px] shadow-stitch border border-transparent hover:border-primary/20 transition-all duration-300;
+  .card-cream {
+    @apply bg-[#F3EED9] rounded-4xl;
   }
 
-  .card-stitch {
-    @apply bg-white dark:bg-[#32322a] rounded-[12px] p-8 shadow-stitch;
+  /* Section Styles */
+  .section-container {
+    @apply max-w-[1400px] mx-auto px-4 md:px-8;
   }
 
-  .card-hover {
-    @apply hover:shadow-stitch-md hover:-translate-y-1;
-  }
-
-  /* Stitch Testimonial Style */
-  .testimonial-card {
-    @apply border-l-4 border-primary pl-6;
-  }
-
-  .icon-circle {
-    @apply size-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0;
-  }
-
-  .icon-circle-lg {
-    @apply size-16 rounded-full bg-primary/10 flex items-center justify-center shrink-0;
-  }
-
-  /* Stitch Section Headers */
   .section-label {
-    @apply text-primary font-medium tracking-widest text-sm uppercase mb-3 block;
+    @apply text-joy-pink font-bold tracking-widest uppercase text-xs mb-2 block;
   }
 
-  .text-section-header {
-    @apply text-primary font-medium tracking-widest text-sm uppercase mb-3 block;
+  .section-title {
+    @apply text-3xl md:text-5xl font-serif font-bold text-joy-dark;
   }
 
-  /* Stitch Process/Step Card */
-  .step-card {
-    @apply bg-white dark:bg-[#32322a] rounded-[12px] p-6 shadow-stitch border border-gray-100 dark:border-white/5;
+  /* Navigation pill style */
+  .nav-pill {
+    @apply bg-white/90 backdrop-blur-md rounded-full shadow-soft px-6 py-3;
+  }
+
+  /* Tag styles */
+  .tag {
+    @apply text-[10px] font-bold bg-white/20 backdrop-blur-md px-2 py-1 rounded-full border border-white/20;
+  }
+
+  .tag-yellow {
+    @apply bg-joy-yellow text-joy-dark px-5 py-2 rounded-full text-sm font-medium;
   }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Hide scrollbar */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }

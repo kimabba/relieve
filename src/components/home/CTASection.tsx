@@ -8,23 +8,23 @@ export default function CTASection() {
   const isKo = locale === "ko";
 
   return (
-    <section className="relative py-20 lg:py-28 bg-gradient-to-br from-primary via-primary to-primary-dark overflow-hidden">
-      {/* Decorative Background Elements - Bloom Style */}
+    <section className="relative py-20 lg:py-28 bg-gradient-to-br from-joy-pink via-joy-pink to-[#FF8E8E] overflow-hidden">
+      {/* Decorative Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-32 -right-32 w-80 h-80 rounded-full bg-white/10 blur-3xl"></div>
-        <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-accent-green/20 blur-3xl"></div>
-        <div className="absolute top-1/3 left-1/4 w-48 h-48 rounded-full bg-secondary-bg/10 blur-2xl"></div>
+        <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-joy-teal/20 blur-3xl"></div>
+        <div className="absolute top-1/3 left-1/4 w-48 h-48 rounded-full bg-joy-yellow/10 blur-2xl"></div>
       </div>
 
-      <div className="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Bloom-style Badge */}
+      <div className="section-container relative text-center">
+        {/* Badge */}
         <span className="inline-flex items-center gap-2 py-2.5 px-5 rounded-full bg-white/15 backdrop-blur-sm text-white text-xs font-semibold uppercase tracking-wider mb-8 border border-white/20">
-          <span className="material-symbols-outlined text-base">local_florist</span>
+          <span className="material-symbols-outlined text-base">spa</span>
           {isKo ? "예약 안내" : "Book Your Visit"}
         </span>
 
-        {/* Title - Bloom Typography */}
-        <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+        {/* Title */}
+        <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
           {isKo ? (
             <>
               소중한 당신을 위한
@@ -47,14 +47,14 @@ export default function CTASection() {
             : "Experience gentle, expert care in our warm and cozy space. Special benefits await expectant mothers."}
         </p>
 
-        {/* Bloom-style Dual CTA Buttons */}
+        {/* Dual CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          {/* Primary CTA - White on Primary */}
+          {/* Primary CTA - White on Pink */}
           <a
             href={placeInfo.bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-3 bg-white text-primary text-lg font-bold h-14 px-10 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 hover:bg-white/95"
+            className="inline-flex items-center justify-center gap-3 bg-white text-joy-pink text-lg font-bold h-14 px-10 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 hover:bg-white/95"
           >
             <span className="material-symbols-outlined">calendar_month</span>
             {isKo ? "네이버 예약하기" : "Book on Naver"}
@@ -70,7 +70,7 @@ export default function CTASection() {
           </a>
         </div>
 
-        {/* Trust Badges - Bloom Style */}
+        {/* Trust Badges */}
         <div className="flex flex-wrap justify-center items-center gap-4 mt-14 pt-10 border-t border-white/20">
           <div className="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-white/90">
             <span className="material-symbols-outlined text-lg">eco</span>

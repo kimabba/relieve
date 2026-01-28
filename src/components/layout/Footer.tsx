@@ -11,38 +11,40 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-text-main pt-20 pb-8 text-white">
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="relative bg-joy-dark pt-20 pb-8 text-white overflow-hidden">
+      {/* Decorative Circles */}
+      <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-joy-pink/5 blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+      <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-joy-teal/5 blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+
+      <div className="section-container relative">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
-          {/* Brand - Bloom Style */}
+          {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-6">
-              <div className="size-11 rounded-full bg-primary/20 flex items-center justify-center">
-                <span className="material-symbols-outlined text-primary text-2xl">
-                  local_florist
-                </span>
+              <div className="w-11 h-11 bg-joy-teal rounded-full flex items-center justify-center text-white font-serif font-bold italic text-xl">
+                R
               </div>
               <div>
-                <span className="font-display text-xl font-bold block">
+                <span className="font-serif text-xl font-bold block">
                   {isKo ? "릴리브" : "Relieve"}
                 </span>
                 <span className="text-[10px] text-gray-400 uppercase tracking-wider">
-                  {isKo ? "임산부 슈가링 케어" : "Maternity Sugaring"}
+                  {isKo ? "프리미엄 슈가링" : "Premium Sugaring"}
                 </span>
               </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               {isKo
-                ? "임산부를 위한 따뜻하고 안전한 슈가링 케어. 천연 성분으로 소중한 순간을 함께합니다."
-                : "Warm and safe sugaring care for expectant mothers. Natural ingredients for your precious moments."}
+                ? "임산부를 위한 따뜻하고 안전한 슈가링 케어. 100% 천연 성분으로 소중한 순간을 함께합니다."
+                : "Warm and safe sugaring care for expectant mothers. 100% natural ingredients for your precious moments."}
             </p>
-            {/* Social Icons - Stitch Style */}
+            {/* Social Icons */}
             <div className="flex gap-3">
               <a
                 href="https://www.instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="size-10 rounded-[10px] bg-white/10 hover:bg-primary flex items-center justify-center transition-all duration-300 hover:-translate-y-0.5"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-joy-pink flex items-center justify-center transition-all duration-300"
               >
                 <span className="text-sm font-bold">IG</span>
               </a>
@@ -50,13 +52,13 @@ export default function Footer() {
                 href={placeInfo.naverMapUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="size-10 rounded-[10px] bg-white/10 hover:bg-primary flex items-center justify-center transition-all duration-300 hover:-translate-y-0.5"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#03C75A] flex items-center justify-center transition-all duration-300"
               >
                 <span className="text-sm font-bold">N</span>
               </a>
               <a
                 href={`tel:${contact.phone}`}
-                className="size-10 rounded-[10px] bg-white/10 hover:bg-primary flex items-center justify-center transition-all duration-300 hover:-translate-y-0.5"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-joy-teal flex items-center justify-center transition-all duration-300"
               >
                 <span className="material-symbols-outlined text-lg">call</span>
               </a>
@@ -65,7 +67,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="font-semibold mb-6 text-xs uppercase tracking-widest text-primary">
+            <h4 className="font-semibold mb-6 text-xs uppercase tracking-widest text-joy-pink">
               {isKo ? "서비스" : "Services"}
             </h4>
             <ul className="space-y-3.5 text-sm text-gray-400">
@@ -73,7 +75,7 @@ export default function Footer() {
                 <li key={item.name}>
                   <Link
                     href="/services"
-                    className="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block"
+                    className="hover:text-white transition-colors duration-300"
                   >
                     {isKo ? item.name : item.nameEn}
                   </Link>
@@ -84,53 +86,45 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="font-semibold mb-6 text-xs uppercase tracking-widest text-primary">
+            <h4 className="font-semibold mb-6 text-xs uppercase tracking-widest text-joy-pink">
               {isKo ? "회사 정보" : "Company"}
             </h4>
             <ul className="space-y-3.5 text-sm text-gray-400">
               <li>
                 <Link
                   href="/about"
-                  className="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block"
+                  className="hover:text-white transition-colors duration-300"
                 >
-                  {isKo ? "전문가 소개" : "About Us"}
+                  {isKo ? "임산부 케어" : "Maternity Care"}
                 </Link>
               </li>
               <li>
                 <Link
                   href="/location"
-                  className="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block"
+                  className="hover:text-white transition-colors duration-300"
                 >
                   {isKo ? "오시는 길" : "Location"}
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/reservation"
-                  className="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block"
+                  href="/services"
+                  className="hover:text-white transition-colors duration-300"
                 >
-                  {isKo ? "예약" : "Reservation"}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/blog"
-                  className="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block"
-                >
-                  {isKo ? "블로그" : "Blog"}
+                  {isKo ? "서비스 메뉴" : "Services"}
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Visit Us - Stitch Style */}
+          {/* Visit Us */}
           <div>
-            <h4 className="font-semibold mb-6 text-xs uppercase tracking-widest text-primary">
+            <h4 className="font-semibold mb-6 text-xs uppercase tracking-widest text-joy-pink">
               {isKo ? "방문 안내" : "Visit Us"}
             </h4>
             <ul className="space-y-4 text-sm text-gray-400">
               <li className="flex items-start gap-3">
-                <span className="material-symbols-outlined text-lg text-primary mt-0.5 shrink-0">
+                <span className="material-symbols-outlined text-lg text-joy-teal mt-0.5 shrink-0">
                   location_on
                 </span>
                 <span className="leading-relaxed">
@@ -138,7 +132,7 @@ export default function Footer() {
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <span className="material-symbols-outlined text-lg text-primary shrink-0">
+                <span className="material-symbols-outlined text-lg text-joy-teal shrink-0">
                   call
                 </span>
                 <a
@@ -149,19 +143,19 @@ export default function Footer() {
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <span className="material-symbols-outlined text-lg text-primary shrink-0">
+                <span className="material-symbols-outlined text-lg text-joy-teal shrink-0">
                   schedule
                 </span>
-                <span>{isKo ? "영업시간: 10:00 - 20:00" : "Hours: 10:00 AM - 8:00 PM"}</span>
+                <span>{isKo ? "10:00 - 20:00" : "10:00 AM - 8:00 PM"}</span>
               </li>
             </ul>
 
-            {/* CTA Button - Stitch Style */}
+            {/* CTA Button */}
             <a
               href={placeInfo.bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 mt-6 bg-primary hover:bg-primary-dark text-white text-sm font-semibold py-3 px-5 rounded-[10px] transition-all duration-300"
+              className="inline-flex items-center gap-2 mt-6 bg-joy-pink hover:bg-[#FF8E8E] text-white text-sm font-semibold py-3 px-5 rounded-full transition-all duration-300"
             >
               <span className="material-symbols-outlined text-lg">calendar_month</span>
               {isKo ? "네이버 예약" : "Book Now"}
@@ -169,7 +163,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar - Stitch Style */}
+        {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-gray-500">
             © {year} {isKo ? placeInfo.name : placeInfo.nameEn}.{" "}
