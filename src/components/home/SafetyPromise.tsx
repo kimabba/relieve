@@ -30,7 +30,7 @@ export default function SafetyPromise() {
           {safetyPromises.map((promise) => (
             <div
               key={promise.icon}
-              className="group flex flex-col items-center text-center p-8 bg-white rounded-4xl shadow-soft hover:-translate-y-1 transition-all duration-300"
+              className="group flex flex-col items-center text-center p-8 bg-white rounded-3xl shadow-soft hover:-translate-y-1 transition-all duration-300"
             >
               {/* Joy Icon Circle with teal accent */}
               <div className="w-16 h-16 rounded-full bg-joy-teal/15 flex items-center justify-center mb-6 group-hover:bg-joy-teal/25 transition-colors duration-300">
@@ -51,7 +51,7 @@ export default function SafetyPromise() {
         </div>
 
         {/* Hospital-Grade Hygiene Banner */}
-        <div className="mt-14 bg-white rounded-4xl shadow-soft p-8 lg:p-10 flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+        <div className="mt-14 bg-white rounded-3xl shadow-soft p-8 lg:p-10 flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
           {/* Icon */}
           <div className="w-20 h-20 rounded-full bg-gradient-to-br from-joy-teal/20 to-joy-teal/10 flex items-center justify-center shrink-0">
             <span className="material-symbols-outlined text-4xl text-joy-teal">

@@ -23,39 +23,54 @@
 }
 
 @layer components {
-  /* Joy Button Styles */
+  /* P1: Joy Button Styles - 포커스 상태 & 일관성 개선 */
   .btn-primary {
-    @apply bg-joy-pink text-white font-bold py-4 px-8 rounded-full transition-all duration-300 shadow-glow hover:bg-[#FF8E8E] hover:scale-105;
+    @apply bg-joy-pink text-white font-bold py-4 px-8 rounded-full transition-all duration-300 shadow-glow hover:bg-joy-pinkDark hover:scale-105;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-joy-pink focus-visible:ring-offset-2;
+    min-height: 48px; /* P1: 터치 영역 최소 48px */
   }
 
   .btn-secondary {
     @apply bg-joy-teal text-white font-bold py-4 px-8 rounded-full transition-all duration-300 shadow-glow-teal hover:bg-joy-tealDark;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-joy-teal focus-visible:ring-offset-2;
+    min-height: 48px;
   }
 
   .btn-outline {
     @apply bg-white/60 backdrop-blur-sm text-joy-dark font-bold py-4 px-8 rounded-full transition-all duration-300 hover:bg-white;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-joy-dark focus-visible:ring-offset-2;
+    min-height: 48px;
   }
 
   .btn-naver {
-    @apply bg-[#03C75A] text-white font-bold py-4 px-6 rounded-full shadow-xl hover:bg-[#02b150] transition-all hover:scale-105;
+    @apply bg-[#03C75A] text-white font-bold py-4 px-6 rounded-full shadow-lg hover:bg-[#02b150] transition-all hover:scale-105;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#03C75A] focus-visible:ring-offset-2;
+    min-height: 48px;
   }
 
-  /* Joy Card Styles */
+  /* P1: Joy Card Styles - 일관된 라운드니스 (3xl = 32px) */
   .card-joy {
-    @apply bg-white rounded-4xl p-8 shadow-soft;
+    @apply bg-white rounded-3xl p-8 shadow-soft;
   }
 
   .card-warm {
-    @apply bg-gradient-to-br from-[#FFF5E6] to-[#FFE0B2] rounded-4xl;
+    @apply bg-gradient-to-br from-[#FFF5E6] to-[#FFE0B2] rounded-3xl;
   }
 
   .card-mint {
-    @apply bg-[#E0F2F1] rounded-4xl;
+    @apply bg-joy-tealLight rounded-3xl;
   }
 
   .card-cream {
-    @apply bg-[#F3EED9] rounded-4xl;
+    @apply bg-[#F3EED9] rounded-3xl;
   }
+
+  /* P2: 아이콘 사이즈 스케일 */
+  .icon-xs { font-size: 16px; }
+  .icon-sm { font-size: 20px; }
+  .icon-md { font-size: 24px; }
+  .icon-lg { font-size: 28px; }
+  .icon-xl { font-size: 32px; }
 
   /* Section Styles */
   .section-container {
@@ -97,5 +112,26 @@
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+
+  /* P1: 포커스 가시성 유틸리티 */
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-joy-pink focus-visible:ring-offset-2;
+  }
+
+  .focus-ring-teal {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-joy-teal focus-visible:ring-offset-2;
+  }
+
+  /* P3: 모바일 터치 영역 보장 */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* P2: 인터랙티브 카드 상태 */
+  .card-interactive {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-md;
+    @apply focus-within:ring-2 focus-within:ring-joy-pink focus-within:ring-offset-2;
   }
 }

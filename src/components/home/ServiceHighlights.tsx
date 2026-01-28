@@ -46,7 +46,7 @@ export default function ServiceHighlights() {
           {featuredServices.map((service, index) => (
             <div
               key={service.name}
-              className="group bg-white rounded-4xl overflow-hidden shadow-soft hover:shadow-lg transition-all duration-500 hover:-translate-y-2"
+              className="group bg-white rounded-3xl overflow-hidden shadow-soft hover:shadow-lg transition-all duration-500 hover:-translate-y-2"
             >
               {/* Card Image */}
               <div className="relative h-52 overflow-hidden">

@@ -21,8 +21,8 @@ export default function Hero() {
         {/* Bento Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
 
-          {/* Main Hero Card - HSO Pattern */}
-          <div className="lg:col-span-7 bg-gradient-to-br from-[#FFF5E6] to-[#FFE0B2] rounded-4xl p-8 lg:p-12 relative overflow-hidden">
+          {/* Main Hero Card - HSO Pattern (P1: 일관된 라운드니스) */}
+          <div className="lg:col-span-7 card-warm p-8 lg:p-12 relative overflow-hidden">
             {/* Badge */}
             <span className="inline-flex items-center gap-2 py-2 px-4 rounded-full bg-white/80 backdrop-blur-sm text-joy-pink text-xs font-bold uppercase tracking-wider mb-6 shadow-soft">
               <span className="w-2 h-2 rounded-full bg-joy-pink animate-pulse"></span>
@@ -93,8 +93,8 @@ export default function Hero() {
               </p>
             </div>
 
-            {/* Review Stats */}
-            <div className="bg-white rounded-4xl p-8 shadow-soft">
+            {/* Review Stats (P1: 일관된 라운드니스) */}
+            <div className="bg-white rounded-3xl p-8 shadow-soft">
               <div className="flex items-center justify-between">
                 <div className="text-center">
                   <span className="block text-3xl font-bold text-joy-pink">724+</span>

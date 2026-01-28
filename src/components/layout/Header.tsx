@@ -39,8 +39,8 @@ export default function Header() {
           isScrolled ? "shadow-lg" : ""
         }`}
       >
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
+        {/* Logo - P1: 포커스 상태 추가 */}
+        <Link href="/" className="flex items-center gap-2 focus-ring rounded-full">
           <div className="w-9 h-9 bg-joy-teal rounded-full flex items-center justify-center text-white font-serif font-bold italic text-lg">
             R
           </div>
@@ -49,18 +49,18 @@ export default function Header() {
           </span>
         </Link>
 
-        {/* Desktop Menu */}
+        {/* Desktop Menu - P1: 포커스 상태 추가 */}
         <div className="hidden md:flex items-center gap-1">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
+              className={`px-5 py-2 rounded-full text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
                 item.highlight
-                  ? "bg-joy-yellow text-joy-dark hover:bg-[#FDD835]"
+                  ? "bg-joy-yellow text-joy-dark hover:bg-[#E5A500] focus-visible:ring-joy-yellow"
                   : isActive(item.href)
-                  ? "bg-joy-bg text-joy-pink"
-                  : "text-joy-text hover:bg-joy-bg"
+                  ? "bg-joy-bg text-joy-pink focus-visible:ring-joy-pink"
+                  : "text-joy-text hover:bg-joy-bg focus-visible:ring-joy-teal"
               }`}
             >
               {item.label}
@@ -69,37 +69,38 @@ export default function Header() {
           <LanguageSwitcher />
         </div>
 
-        {/* CTA Button */}
+        {/* CTA Button - P1: 포커스 상태 추가 */}
         <div className="hidden md:block">
           <a
             href={placeInfo.bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-2.5 bg-joy-teal text-white rounded-full text-sm font-bold hover:bg-joy-tealDark transition-colors shadow-md"
+            className="px-6 py-2.5 bg-joy-teal text-white rounded-full text-sm font-bold hover:bg-joy-tealDark transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-joy-teal focus-visible:ring-offset-2"
           >
             Book Now
           </a>
         </div>
 
-        {/* Mobile Menu Toggle */}
+        {/* Mobile Menu Toggle - P1: 포커스 상태 & 터치 영역 */}
         <button
-          className="md:hidden text-joy-dark"
+          className="md:hidden text-joy-dark p-2 rounded-full touch-target focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-joy-teal focus-visible:ring-offset-2"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
+          aria-expanded={isMobileMenuOpen}
         >
-          <span className="material-symbols-outlined text-2xl">
+          <span className="material-symbols-outlined icon-md">
             {isMobileMenuOpen ? "close" : "menu"}
           </span>
         </button>
 
-        {/* Mobile Menu Overlay */}
+        {/* Mobile Menu Overlay - P1: 일관된 라운드니스 & 포커스 */}
         {isMobileMenuOpen && (
-          <div className="absolute top-full left-0 w-full mt-4 bg-white rounded-3xl shadow-xl p-6 flex flex-col gap-4 animate-fade-in-up">
+          <div className="absolute top-full left-0 w-full mt-4 bg-white rounded-3xl shadow-lg p-6 flex flex-col gap-4 animate-fade-in-up">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-lg font-bold text-joy-text text-center py-2 hover:text-joy-pink transition-colors"
+                className="text-lg font-bold text-joy-text text-center py-3 hover:text-joy-pink transition-colors rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-joy-pink"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.label}
@@ -112,7 +113,7 @@ export default function Header() {
               href={placeInfo.bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full text-center py-4 bg-joy-pink text-white rounded-xl font-bold shadow-glow"
+              className="w-full text-center py-4 bg-joy-pink text-white rounded-2xl font-bold shadow-glow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-joy-pink focus-visible:ring-offset-2"
             >
               {isKo ? "예약하기" : "Book Now"}
             </a>
