@@ -10,7 +10,18 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Joy Theme (Main) - WCAG AA Compliant
+        // Beauty Theme (New Main) - Pink/Lavender Diagonal Style
+        beauty: {
+          pink: "#FFB5C5",        // Primary pink
+          pinkLight: "#FFC0CB",
+          pinkDark: "#FF9EB0",
+          lavender: "#9B8AC4",    // Secondary lavender
+          lavenderLight: "#B8A5E3",
+          lavenderDark: "#8577B0",
+          cream: "#FFFAF4",       // Background
+          gold: "#FFD700",        // Award badges
+        },
+        // Joy Theme (Legacy) - WCAG AA Compliant
         joy: {
           bg: "#FFFAF4",
           card: "#FFFFFF",
