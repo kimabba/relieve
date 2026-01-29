@@ -22,9 +22,11 @@ export default function Header() {
   }, []);
 
   const navItems = [
-    { href: "/services", label: isKo ? "Services" : "Services" },
-    { href: "/about", label: isKo ? "Maternity" : "Maternity", highlight: true },
-    { href: "/location", label: isKo ? "Location" : "Location" },
+    { href: "/services", label: isKo ? "시술 안내" : "Services" },
+    { href: "/education", label: isKo ? "왁싱 교육" : "Education" },
+    { href: "/yzone", label: isKo ? "Y존 테라피" : "Y-Zone Therapy", highlight: true },
+    { href: "/about", label: isKo ? "임산부 케어" : "Maternity" },
+    { href: "/location", label: isKo ? "오시는 길" : "Location" },
   ];
 
   const isActive = (href: string) => {
@@ -77,7 +79,7 @@ export default function Header() {
             rel="noopener noreferrer"
             className="px-6 py-2.5 bg-joy-teal text-white rounded-full text-sm font-bold hover:bg-joy-tealDark transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-joy-teal focus-visible:ring-offset-2"
           >
-            Book Now
+            {isKo ? "예약하기" : "Book Now"}
           </a>
         </div>
 

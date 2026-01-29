@@ -2,20 +2,25 @@
 
 import { useLocale } from "next-intl";
 import { location, placeInfo } from "@/lib/data";
+import { motion } from "framer-motion";
 
 export default function MapSection() {
   const locale = useLocale();
   const isKo = locale === "ko";
 
-  // Naver Map Static Image URL (fallback)
   const naverMapUrl = `https://map.naver.com/p/entry/place/${placeInfo.id}`;
 
   return (
-    <section className="py-12 bg-secondary-bg dark:bg-[#32322a]">
-      <div className="container-main">
-        <div className="rounded-2xl overflow-hidden shadow-lg">
-          {/* Map Container - Using iframe for Naver Map embed */}
-          <div className="relative w-full h-[400px] bg-gray-200 dark:bg-gray-700">
+    <section className="py-20 lg:py-28 bg-white">
+      <div className="section-container">
+        <motion.div
+          className="rounded-3xl overflow-hidden shadow-xl"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          {/* Map Container */}
+          <div className="relative w-full h-[400px] lg:h-[500px] bg-gray-100">
             <iframe
               src={`https://map.naver.com/p/entry/place/${placeInfo.id}?c=15,0,0,0,dh`}
               width="100%"
@@ -29,12 +34,12 @@ export default function MapSection() {
           </div>
 
           {/* Map Footer */}
-          <div className="bg-white dark:bg-background-dark p-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <div className="bg-[#FFFAF4] p-6 flex flex-col sm:flex-row justify-between items-center gap-4">
             <div className="text-center sm:text-left">
-              <h3 className="font-bold text-text-main dark:text-white">
+              <h3 className="font-bold text-gray-800 text-lg mb-1">
                 {isKo ? placeInfo.name : placeInfo.nameEn}
               </h3>
-              <p className="text-sm text-text-muted dark:text-gray-400">
+              <p className="text-gray-600">
                 {isKo ? location.address.road : location.address.roadEn}
               </p>
             </div>
@@ -42,13 +47,13 @@ export default function MapSection() {
               href={naverMapUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary inline-flex items-center gap-2"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#9B8AC4] hover:bg-[#8577B0] text-white rounded-full font-bold transition-all shadow-md hover:shadow-lg hover:scale-105"
             >
               <span className="material-symbols-outlined text-lg">open_in_new</span>
               {isKo ? "네이버 지도에서 보기" : "View on Naver Map"}
             </a>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
