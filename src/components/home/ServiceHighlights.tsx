@@ -34,18 +34,8 @@ export default function ServiceHighlights() {
 
   return (
     <section id="services" className="relative py-24 lg:py-32 overflow-hidden">
-      {/* Background */}
+      {/* Clean White Background - Visual Rest Area */}
       <div className="absolute inset-0 bg-white" />
-      <div
-        className="absolute inset-0 bg-gradient-to-br from-[#9B8AC4]/5 via-transparent to-[#FFB5C5]/5"
-        style={{
-          clipPath: "polygon(0 5%, 100% 0, 100% 95%, 0 100%)",
-        }}
-      />
-
-      {/* Decorative Elements */}
-      <div className="absolute top-20 right-10 w-72 h-72 bg-[#FFB5C5]/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-10 w-60 h-60 bg-[#9B8AC4]/10 rounded-full blur-3xl" />
 
       <div className="section-container relative">
         {/* Section Header */}

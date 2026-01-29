@@ -11,7 +11,7 @@ const features = [
     titleEn: "100% Natural",
     descKo: "설탕, 레몬, 물만으로 만든 순수 페이스트",
     descEn: "Pure paste made from sugar, lemon, and water",
-    color: "from-[#FFB5C5] to-[#FFC0CB]",
+    color: "bg-[#FFB5C5]",
   },
   {
     icon: "water_drop",
@@ -19,7 +19,7 @@ const features = [
     titleEn: "Water Soluble",
     descKo: "따뜻한 물로 쉽게 세척, 끈적임 없음",
     descEn: "Easy cleanup with warm water",
-    color: "from-[#9B8AC4] to-[#B8A5E3]",
+    color: "bg-[#9B8AC4]",
   },
   {
     icon: "favorite",
@@ -27,7 +27,7 @@ const features = [
     titleEn: "Hypoallergenic",
     descKo: "민감한 피부에도 안전한 시술",
     descEn: "Safe for sensitive skin",
-    color: "from-[#5BA8A8] to-[#73C7C7]",
+    color: "bg-[#B8A5E3]",
   },
 ];
 
@@ -43,10 +43,12 @@ export default function WhySugaring() {
   const isKo = locale === "ko";
 
   return (
-    <section className="relative py-24 lg:py-32 bg-[#FFFAF4] overflow-hidden">
-      {/* Subtle Background Decoration */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#9B8AC4]/8 to-transparent rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-[#FFB5C5]/8 to-transparent rounded-full blur-3xl" />
+    <section className="relative py-24 lg:py-32 overflow-hidden">
+      {/* Smooth Transition from Hero - Gradient Top */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#E8D4F0] via-[#FFFAF4] to-[#FFFAF4]" />
+
+      {/* Single Subtle Decoration - Reduced from 2 */}
+      <div className="absolute bottom-20 right-0 w-[300px] h-[300px] bg-gradient-to-bl from-[#9B8AC4]/5 to-transparent rounded-full blur-3xl" />
 
       <div className="section-container relative">
         {/* Section Header */}
@@ -124,7 +126,7 @@ export default function WhySugaring() {
                 transition={{ delay: 0.5 }}
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#5BA8A8] to-[#73C7C7] flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full bg-[#9B8AC4] flex items-center justify-center">
                     <span className="material-symbols-outlined text-white text-xl">verified</span>
                   </div>
                   <div>
@@ -171,11 +173,11 @@ export default function WhySugaring() {
                 whileHover={{ x: 5 }}
               >
                 {/* Left Accent */}
-                <div className={`absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b ${feature.color}`} />
+                <div className={`absolute left-0 top-0 bottom-0 w-1 ${feature.color}`} />
 
                 <div className="flex items-start gap-5">
                   {/* Icon */}
-                  <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${feature.color} flex items-center justify-center shadow-lg flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`w-14 h-14 rounded-2xl ${feature.color} flex items-center justify-center shadow-lg flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
                     <span className="material-symbols-outlined text-2xl text-white">
                       {feature.icon}
                     </span>
@@ -201,18 +203,16 @@ export default function WhySugaring() {
           </motion.div>
         </div>
 
-        {/* Benefits Section - Premium Card */}
+        {/* Benefits Section - Simplified Premium Card */}
         <motion.div
-          className="relative bg-gradient-to-br from-[#9B8AC4] via-[#A890D3] to-[#B8A5E3] rounded-[2rem] p-8 lg:p-12 overflow-hidden"
+          className="relative bg-[#9B8AC4] rounded-[2rem] p-8 lg:p-12 overflow-hidden"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          {/* Background Decorations */}
-          <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-60 h-60 bg-[#FFB5C5]/20 rounded-full blur-2xl" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/5 rounded-full blur-3xl" />
+          {/* Single Background Decoration - Reduced from 3 */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
 
           <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Left - Title & Image */}
@@ -272,7 +272,7 @@ export default function WhySugaring() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.4 }}
                 >
-                  <span className="block text-3xl lg:text-4xl font-bold bg-gradient-to-r from-[#FFB5C5] to-[#9B8AC4] bg-clip-text text-transparent mb-1">
+                  <span className="block text-3xl lg:text-4xl font-bold text-[#FFB5C5] mb-1">
                     100%
                   </span>
                   <span className="text-sm text-gray-600">{isKo ? "천연 성분" : "Natural"}</span>
@@ -284,7 +284,7 @@ export default function WhySugaring() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.5 }}
                 >
-                  <span className="block text-3xl lg:text-4xl font-bold bg-gradient-to-r from-[#9B8AC4] to-[#5BA8A8] bg-clip-text text-transparent mb-1">
+                  <span className="block text-3xl lg:text-4xl font-bold text-[#9B8AC4] mb-1">
                     ZERO
                   </span>
                   <span className="text-sm text-gray-600">{isKo ? "화학 첨가물" : "Chemicals"}</span>
@@ -296,7 +296,7 @@ export default function WhySugaring() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.6 }}
                 >
-                  <span className="block text-3xl lg:text-4xl font-bold bg-gradient-to-r from-[#5BA8A8] to-[#FFB5C5] bg-clip-text text-transparent mb-1">
+                  <span className="block text-3xl lg:text-4xl font-bold text-[#9B8AC4] mb-1">
                     37°C
                   </span>
                   <span className="text-sm text-gray-600">{isKo ? "체온 온도" : "Body Temp"}</span>

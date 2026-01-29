@@ -10,12 +10,8 @@ export default function SafetyPromise() {
 
   return (
     <section className="relative py-24 lg:py-32 overflow-hidden">
-      {/* Background with subtle gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#F8F6FF] via-white to-[#FFF5F7]" />
-
-      {/* Decorative Elements */}
-      <div className="absolute top-20 left-10 w-32 h-32 bg-[#9B8AC4]/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-40 h-40 bg-[#FFB5C5]/10 rounded-full blur-3xl" />
+      {/* Clean White Background */}
+      <div className="absolute inset-0 bg-white" />
 
       <div className="section-container relative">
         {/* Section Header */}
@@ -26,7 +22,7 @@ export default function SafetyPromise() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <span className="inline-flex items-center gap-2 py-2 px-5 rounded-full bg-[#5BA8A8]/10 text-[#5BA8A8] text-sm font-bold mb-6">
+          <span className="inline-flex items-center gap-2 py-2 px-5 rounded-full bg-[#9B8AC4]/10 text-[#9B8AC4] text-sm font-bold mb-6">
             <span className="material-symbols-outlined text-base">verified_user</span>
             {isKo ? "안전 약속" : "Safety Promise"}
           </span>
@@ -55,12 +51,12 @@ export default function SafetyPromise() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -5 }}
             >
-              {/* Top Gradient Line */}
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#5BA8A8] via-[#9B8AC4] to-[#FFB5C5]" />
+              {/* Top Accent Line - Simplified */}
+              <div className="absolute top-0 left-0 right-0 h-1 bg-[#9B8AC4]" />
 
               {/* Icon */}
-              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#5BA8A8]/20 to-[#9B8AC4]/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <span className="material-symbols-outlined text-4xl text-[#5BA8A8]">
+              <div className="w-20 h-20 rounded-2xl bg-[#9B8AC4]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <span className="material-symbols-outlined text-4xl text-[#9B8AC4]">
                   {promise.icon}
                 </span>
               </div>
@@ -79,17 +75,16 @@ export default function SafetyPromise() {
           ))}
         </div>
 
-        {/* Hospital-Grade Hygiene Banner - Premium Glass Style */}
+        {/* Hospital-Grade Hygiene Banner - Simplified */}
         <motion.div
-          className="relative bg-gradient-to-r from-[#5BA8A8] to-[#9B8AC4] rounded-3xl p-8 lg:p-12 overflow-hidden"
+          className="relative bg-[#9B8AC4] rounded-3xl p-8 lg:p-12 overflow-hidden"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          {/* Background Decorations */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-1/3 w-48 h-48 bg-[#FFB5C5]/20 rounded-full blur-2xl" />
+          {/* Single Background Decoration */}
+          <div className="absolute top-0 right-0 w-48 h-48 bg-white/10 rounded-full blur-3xl" />
 
           <div className="relative flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
             {/* Shield Icon */}
@@ -129,7 +124,7 @@ export default function SafetyPromise() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.4 }}
               >
-                <span className="block text-3xl font-bold bg-gradient-to-r from-[#5BA8A8] to-[#9B8AC4] bg-clip-text text-transparent">
+                <span className="block text-3xl font-bold text-[#9B8AC4]">
                   99.9%
                 </span>
                 <span className="text-xs text-gray-600 uppercase tracking-wider font-medium">
@@ -143,7 +138,7 @@ export default function SafetyPromise() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.5 }}
               >
-                <span className="block text-3xl font-bold bg-gradient-to-r from-[#9B8AC4] to-[#FFB5C5] bg-clip-text text-transparent">
+                <span className="block text-3xl font-bold text-[#9B8AC4]">
                   5
                 </span>
                 <span className="text-xs text-gray-600 uppercase tracking-wider font-medium">

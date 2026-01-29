@@ -41,9 +41,8 @@ export default function ReviewHighlights() {
 
   return (
     <section className="relative py-24 lg:py-32 bg-[#FFFAF4] overflow-hidden">
-      {/* Background Decorations */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-[#FFB5C5]/10 to-transparent rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-gradient-to-tl from-[#9B8AC4]/10 to-transparent rounded-full blur-3xl" />
+      {/* Single Subtle Background Decoration */}
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-gradient-to-tl from-[#9B8AC4]/6 to-transparent rounded-full blur-3xl" />
 
       <div className="section-container relative">
         {/* Section Header */}
@@ -71,16 +70,14 @@ export default function ReviewHighlights() {
           </p>
         </motion.div>
 
-        {/* Stats Row - Glassmorphism */}
+        {/* Stats Row - Simplified Solid Color */}
         <motion.div
-          className="relative bg-gradient-to-r from-[#FFB5C5] via-[#9B8AC4] to-[#B8A5E3] rounded-3xl p-8 mb-16 overflow-hidden"
+          className="relative bg-[#9B8AC4] rounded-3xl p-8 mb-16 overflow-hidden"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          {/* Background decoration */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
 
           <div className="relative flex flex-wrap justify-center gap-6 lg:gap-16">
             {[
@@ -123,8 +120,8 @@ export default function ReviewHighlights() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -5 }}
             >
-              {/* Top Gradient Line */}
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#FFB5C5] via-[#9B8AC4] to-[#B8A5E3]" />
+              {/* Top Accent Line - Simplified */}
+              <div className="absolute top-0 left-0 right-0 h-1 bg-[#9B8AC4]" />
 
               {/* Quote Icon */}
               <div className="absolute top-6 right-6 w-12 h-12 rounded-full bg-gradient-to-br from-[#FFB5C5]/10 to-[#9B8AC4]/10 flex items-center justify-center">
@@ -201,7 +198,7 @@ export default function ReviewHighlights() {
                 transition={{ duration: 0.4, delay: 0.05 * index }}
                 whileHover={{ y: -3 }}
               >
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#FFB5C5]/15 to-[#9B8AC4]/15 mb-4 flex items-center justify-center group-hover:from-[#FFB5C5]/25 group-hover:to-[#9B8AC4]/25 transition-colors">
+                <div className="w-14 h-14 rounded-2xl bg-[#9B8AC4]/10 mb-4 flex items-center justify-center group-hover:bg-[#9B8AC4]/20 transition-colors">
                   <span className="material-symbols-outlined text-2xl text-[#9B8AC4]">
                     {highlight.icon}
                   </span>
@@ -209,7 +206,7 @@ export default function ReviewHighlights() {
                 <span className="font-bold text-gray-700 text-center mb-1 text-sm">
                   {isKo ? highlight.keyword : highlight.keywordEn}
                 </span>
-                <span className="text-2xl font-bold bg-gradient-to-r from-[#FFB5C5] to-[#9B8AC4] bg-clip-text text-transparent">
+                <span className="text-2xl font-bold text-[#9B8AC4]">
                   {highlight.count}
                 </span>
               </motion.div>
