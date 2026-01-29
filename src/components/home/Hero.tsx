@@ -18,13 +18,13 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen overflow-hidden">
-      {/* Diagonal Split Background */}
+      {/* Diagonal Split Background - Muted Luxury Tones */}
       <div className="absolute inset-0">
-        {/* Pink Side */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#FFB5C5] via-[#FFC0CB] to-[#FFD1DC]" />
-        {/* Purple Side - Diagonal */}
+        {/* Rose Side */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#C8B0B2] via-[#D4C4C6] to-[#E5DADA]" />
+        {/* Mauve Side - Diagonal */}
         <div
-          className="absolute inset-0 bg-gradient-to-br from-[#9B8AC4] via-[#A890D3] to-[#B8A5E3]"
+          className="absolute inset-0 bg-gradient-to-br from-[#6D5D6D] via-[#7D6B7D] to-[#8D7D8D]"
           style={{
             clipPath: "polygon(50% 0, 100% 0, 100% 100%, 30% 100%)",
           }}
@@ -33,7 +33,6 @@ export default function Hero() {
 
       {/* Decorative Floating Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Floating Circles */}
         <motion.div
           className="absolute top-20 left-[10%] w-32 h-32 rounded-full bg-white/10 blur-2xl"
           animate={{ y: [0, 20, 0], scale: [1, 1.1, 1] }}
@@ -45,21 +44,9 @@ export default function Hero() {
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
         />
         <motion.div
-          className="absolute bottom-32 left-[20%] w-20 h-20 rounded-full bg-[#FFD700]/20 blur-xl"
+          className="absolute bottom-32 left-[20%] w-20 h-20 rounded-full bg-[#C9A962]/20 blur-xl"
           animate={{ y: [0, 15, 0] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-        />
-
-        {/* Decorative Petals/Shapes */}
-        <motion.div
-          className="absolute top-1/4 left-[5%] w-4 h-4 rounded-full bg-white/40"
-          animate={{ y: [0, 100], opacity: [0.4, 0], rotate: 360 }}
-          transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-        />
-        <motion.div
-          className="absolute top-1/3 right-[8%] w-3 h-3 rounded-full bg-white/30"
-          animate={{ y: [0, 120], opacity: [0.3, 0], rotate: -360 }}
-          transition={{ duration: 10, repeat: Infinity, ease: "linear", delay: 2 }}
         />
       </div>
 
@@ -77,7 +64,7 @@ export default function Hero() {
                 className="mb-6"
               >
                 <span className="inline-flex items-center gap-2 py-2.5 px-6 rounded-full bg-white/30 backdrop-blur-sm text-white text-sm font-bold shadow-lg border border-white/20">
-                  <span className="w-2 h-2 rounded-full bg-[#FFD700] animate-pulse" />
+<span className="w-2 h-2 rounded-full bg-[#C9A962] animate-pulse" />
                   {isKo ? "광주 프리미엄 슈가링" : "Gwangju Premium Sugaring"}
                 </span>
               </motion.div>
@@ -141,7 +128,7 @@ export default function Hero() {
                   href={placeInfo.bookingUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-[#9B8AC4] rounded-full font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                  className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-[#6D5D6D] rounded-full font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
                 >
                   <span className="material-symbols-outlined">calendar_month</span>
                   {isKo ? "지금 예약하기" : "Book Now"}
@@ -163,9 +150,9 @@ export default function Hero() {
                 transition={{ delay: 0.5 }}
               >
                 {[
-                  { value: "724+", label: isKo ? "리뷰" : "Reviews", icon: "star" },
-                  { value: "4.9", label: isKo ? "평점" : "Rating", icon: "workspace_premium" },
-                  { value: "8년+", label: isKo ? "경력" : "Experience", icon: "verified" },
+                  { value: "724+", label: isKo ? "리뷰" : "Reviews" },
+                  { value: "4.9", label: isKo ? "평점" : "Rating" },
+                  { value: "8년+", label: isKo ? "경력" : "Experience" },
                 ].map((stat, i) => (
                   <div key={i} className="text-center bg-white/10 backdrop-blur-sm rounded-2xl px-4 py-3 border border-white/20">
                     <span className="block text-2xl lg:text-3xl font-bold text-white drop-shadow">
@@ -194,7 +181,7 @@ export default function Hero() {
                     className="object-cover"
                     priority
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#9B8AC4]/30 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#6D5D6D]/30 via-transparent to-transparent" />
                 </div>
 
                 {/* Floating Small Image */}
@@ -212,9 +199,9 @@ export default function Hero() {
                   />
                 </motion.div>
 
-                {/* Floating Badge */}
+                {/* Floating Badge - Antique Gold */}
                 <motion.div
-                  className="absolute -top-4 -right-4 w-28 h-28 rounded-full bg-gradient-to-br from-[#FFD700] to-[#FFA500] flex flex-col items-center justify-center shadow-xl transform rotate-12 border-4 border-white/50"
+                  className="absolute -top-4 -right-4 w-28 h-28 rounded-full bg-gradient-to-br from-[#C9A962] to-[#A68B4B] flex flex-col items-center justify-center shadow-xl transform rotate-12 border-4 border-white/50"
                   initial={{ scale: 0, rotate: 0 }}
                   animate={{ scale: 1, rotate: 12 }}
                   transition={{ delay: 0.9, type: "spring" }}
@@ -239,7 +226,7 @@ export default function Hero() {
               {/* Feature List Card */}
               <div className="bg-white/15 backdrop-blur-md rounded-3xl p-6 lg:p-8 border border-white/25 shadow-2xl">
                 <h3 className="text-white font-bold text-lg mb-5 flex items-center gap-2">
-                  <span className="w-8 h-8 rounded-full bg-[#FFB5C5] flex items-center justify-center">
+                  <span className="w-8 h-8 rounded-full bg-[#B8989B] flex items-center justify-center">
                     <span className="material-symbols-outlined text-white text-base">spa</span>
                   </span>
                   {isKo ? "슈가링의 장점" : "Why Sugaring?"}
@@ -253,7 +240,7 @@ export default function Hero() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.6 + index * 0.1 }}
                     >
-                      <span className="w-6 h-6 rounded-full bg-gradient-to-br from-[#FFB5C5] to-[#9B8AC4] flex items-center justify-center flex-shrink-0">
+                      <span className="w-6 h-6 rounded-full bg-gradient-to-br from-[#B8989B] to-[#7D6B7D] flex items-center justify-center flex-shrink-0">
                         <span className="material-symbols-outlined text-white text-sm">
                           check
                         </span>
@@ -302,11 +289,11 @@ export default function Hero() {
                 transition={{ delay: 1.1 }}
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#FFB5C5] to-[#9B8AC4] flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#B8989B] to-[#7D6B7D] flex items-center justify-center">
                     <span className="material-symbols-outlined text-white text-lg">location_on</span>
                   </div>
                   <div>
-                    <p className="text-gray-800 font-bold text-sm">
+<p className="text-[#4A4545] font-bold text-sm">
                       {isKo ? "광주 북구 운암동" : "Unam-dong, Buk-gu, Gwangju"}
                     </p>
                     <p className="text-gray-500 text-xs">

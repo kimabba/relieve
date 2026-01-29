@@ -46,7 +46,7 @@ export default function ServiceHighlights() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <span className="inline-flex items-center gap-2 py-2.5 px-6 rounded-full bg-[#FFB5C5]/10 text-[#E07070] text-sm font-bold mb-6">
+          <span className="inline-flex items-center gap-2 py-2.5 px-6 rounded-full bg-[#B8989B]/10 text-[#9A7B7E] text-sm font-bold mb-6">
             <span className="material-symbols-outlined text-base">content_cut</span>
             {isKo ? "케어 메뉴" : "Care Menu"}
           </span>
@@ -80,8 +80,8 @@ export default function ServiceHighlights() {
               viewport={{ once: true }}
               transition={{ delay: 0.1 * index }}
             >
-              <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-2xl bg-gradient-to-br from-[#FFB5C5]/20 to-[#9B8AC4]/20 flex items-center justify-center hover:from-[#FFB5C5]/30 hover:to-[#9B8AC4]/30 transition-colors cursor-pointer group">
-                <span className="material-symbols-outlined text-2xl lg:text-3xl text-[#9B8AC4] group-hover:scale-110 transition-transform">
+              <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-2xl bg-gradient-to-br from-[#B8989B]/20 to-[#7D6B7D]/20 flex items-center justify-center hover:from-[#B8989B]/30 hover:to-[#7D6B7D]/30 transition-colors cursor-pointer group">
+                <span className="material-symbols-outlined text-2xl lg:text-3xl text-[#7D6B7D] group-hover:scale-110 transition-transform">
                   {item.icon}
                 </span>
               </div>
@@ -118,7 +118,7 @@ export default function ServiceHighlights() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent md:hidden" />
 
                   {/* Badge */}
-                  <div className="absolute top-4 left-4 bg-gradient-to-r from-[#FFD700] to-[#FFA500] text-white text-xs font-bold uppercase tracking-wider py-2 px-4 rounded-full flex items-center gap-1.5 shadow-lg">
+                  <div className="absolute top-4 left-4 bg-gradient-to-r from-[#C9A962] to-[#A68B4B] text-white text-xs font-bold uppercase tracking-wider py-2 px-4 rounded-full flex items-center gap-1.5 shadow-lg">
                     <span className="material-symbols-outlined text-sm">star</span>
                     {isKo ? "BEST" : "BEST"}
                   </div>
@@ -126,7 +126,7 @@ export default function ServiceHighlights() {
 
                 {/* Content */}
                 <div className="p-8 flex flex-col justify-center">
-                  <span className="text-[#9B8AC4] text-sm font-bold uppercase tracking-wider mb-2">
+                  <span className="text-[#7D6B7D] text-sm font-bold uppercase tracking-wider mb-2">
                     {isKo ? "첫 방문 특가" : "First Visit Special"}
                   </span>
                   <h3
@@ -144,13 +144,13 @@ export default function ServiceHighlights() {
                       <span className="text-sm text-gray-400 line-through">
                         ₩{formatPrice(featuredServices[0].price * 1.3)}
                       </span>
-                      <span className="block text-3xl font-bold bg-gradient-to-r from-[#FFB5C5] to-[#9B8AC4] bg-clip-text text-transparent">
+                      <span className="block text-3xl font-bold bg-gradient-to-r from-[#B8989B] to-[#7D6B7D] bg-clip-text text-transparent">
                         ₩{formatPrice(featuredServices[0].price)}
                       </span>
                     </div>
                     <Link
                       href="/services"
-                      className="inline-flex items-center gap-2 bg-gradient-to-r from-[#FFB5C5] to-[#9B8AC4] text-white font-bold py-3 px-6 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300"
+                      className="inline-flex items-center gap-2 bg-gradient-to-r from-[#B8989B] to-[#7D6B7D] text-white font-bold py-3 px-6 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300"
                     >
                       {isKo ? "자세히" : "Details"}
                       <span className="material-symbols-outlined text-lg">arrow_forward</span>
@@ -188,7 +188,7 @@ export default function ServiceHighlights() {
                   {/* Content */}
                   <div className="flex-1 p-5 flex flex-col justify-center">
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="px-2 py-0.5 bg-[#FFD700]/20 text-[#B8860B] text-xs font-bold rounded-full">
+                      <span className="px-2 py-0.5 bg-[#C9A962]/20 text-[#B8860B] text-xs font-bold rounded-full">
                         {isKo ? "첫 방문" : "1st Visit"}
                       </span>
                     </div>
@@ -199,10 +199,10 @@ export default function ServiceHighlights() {
                       {isKo ? service.description : service.descriptionEn}
                     </p>
                     <div className="flex items-center justify-between">
-                      <span className="text-xl font-bold text-[#9B8AC4]">
+                      <span className="text-xl font-bold text-[#7D6B7D]">
                         ₩{formatPrice(service.price)}
                       </span>
-                      <span className="material-symbols-outlined text-gray-300 group-hover:text-[#9B8AC4] group-hover:translate-x-1 transition-all">
+                      <span className="material-symbols-outlined text-gray-300 group-hover:text-[#7D6B7D] group-hover:translate-x-1 transition-all">
                         arrow_forward
                       </span>
                     </div>
@@ -227,8 +227,8 @@ export default function ServiceHighlights() {
                 whileHover={{ y: -5 }}
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#FFB5C5]/20 to-[#9B8AC4]/20 flex items-center justify-center flex-shrink-0 group-hover:from-[#FFB5C5]/30 group-hover:to-[#9B8AC4]/30 transition-colors">
-                    <span className="material-symbols-outlined text-2xl text-[#9B8AC4]">spa</span>
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#B8989B]/20 to-[#7D6B7D]/20 flex items-center justify-center flex-shrink-0 group-hover:from-[#B8989B]/30 group-hover:to-[#7D6B7D]/30 transition-colors">
+                    <span className="material-symbols-outlined text-2xl text-[#7D6B7D]">spa</span>
                   </div>
                   <div className="flex-1">
                     <h3 className="text-lg font-bold text-gray-800 mb-1">
@@ -237,7 +237,7 @@ export default function ServiceHighlights() {
                     <p className="text-sm text-gray-500 line-clamp-2 mb-3">
                       {isKo ? service.description : service.descriptionEn}
                     </p>
-                    <span className="text-xl font-bold bg-gradient-to-r from-[#FFB5C5] to-[#9B8AC4] bg-clip-text text-transparent">
+                    <span className="text-xl font-bold bg-gradient-to-r from-[#B8989B] to-[#7D6B7D] bg-clip-text text-transparent">
                       ₩{formatPrice(service.price)}
                     </span>
                   </div>
@@ -257,7 +257,7 @@ export default function ServiceHighlights() {
         >
           <Link
             href="/services"
-            className="inline-flex items-center justify-center gap-3 h-16 px-12 bg-gradient-to-r from-[#9B8AC4] to-[#B8A5E3] text-white text-lg font-bold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+            className="inline-flex items-center justify-center gap-3 h-16 px-12 bg-gradient-to-r from-[#7D6B7D] to-[#9D8D9D] text-white text-lg font-bold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
           >
             {isKo ? "전체 메뉴 보기" : "View All Services"}
             <span className="material-symbols-outlined text-xl">arrow_forward</span>
@@ -271,7 +271,7 @@ export default function ServiceHighlights() {
               { icon: "payments", label: isKo ? "합리적인 가격" : "Fair Pricing" },
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-2 text-gray-500">
-                <span className="material-symbols-outlined text-[#9B8AC4] text-lg">{item.icon}</span>
+                <span className="material-symbols-outlined text-[#7D6B7D] text-lg">{item.icon}</span>
                 <span className="text-sm font-medium">{item.label}</span>
               </div>
             ))}

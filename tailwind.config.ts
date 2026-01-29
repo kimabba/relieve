@@ -10,16 +10,18 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Beauty Theme (New Main) - Pink/Lavender Diagonal Style
+        // Luxury Spa Theme - Muted & Sophisticated
         beauty: {
-          pink: "#FFB5C5",        // Primary pink
-          pinkLight: "#FFC0CB",
-          pinkDark: "#FF9EB0",
-          lavender: "#9B8AC4",    // Secondary lavender
-          lavenderLight: "#B8A5E3",
-          lavenderDark: "#8577B0",
-          cream: "#FFFAF4",       // Background
-          gold: "#FFD700",        // Award badges
+          rose: "#B8989B",        // Primary muted rose
+          roseLight: "#D4C4C6",
+          roseDark: "#9A7B7E",
+          mauve: "#7D6B7D",       // Secondary deep mauve
+          mauveLight: "#9D8D9D",
+          mauveDark: "#5D4D5D",
+          sage: "#8A9A8A",        // Accent sage green
+          cream: "#F8F6F3",       // Warm off-white background
+          gold: "#C9A962",        // Antique gold
+          charcoal: "#4A4545",    // Rich text color
         },
         // Joy Theme (Legacy) - WCAG AA Compliant
         joy: {

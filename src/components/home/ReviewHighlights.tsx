@@ -40,9 +40,9 @@ export default function ReviewHighlights() {
   const isKo = locale === "ko";
 
   return (
-    <section className="relative py-24 lg:py-32 bg-[#FFFAF4] overflow-hidden">
+<section className="relative py-24 lg:py-32 bg-[#F8F6F3] overflow-hidden">
       {/* Single Subtle Background Decoration */}
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-gradient-to-tl from-[#9B8AC4]/6 to-transparent rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-gradient-to-tl from-[#7D6B7D]/6 to-transparent rounded-full blur-3xl" />
 
       <div className="section-container relative">
         {/* Section Header */}
@@ -53,7 +53,7 @@ export default function ReviewHighlights() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <span className="inline-flex items-center gap-2 py-2.5 px-6 rounded-full bg-[#FFB5C5]/10 text-[#E07070] text-sm font-bold mb-6">
+          <span className="inline-flex items-center gap-2 py-2.5 px-6 rounded-full bg-[#B8989B]/10 text-[#9A7B7E] text-sm font-bold mb-6">
             <span className="material-symbols-outlined text-base">favorite</span>
             {isKo ? "고객 후기" : "Client Stories"}
           </span>
@@ -72,7 +72,7 @@ export default function ReviewHighlights() {
 
         {/* Stats Row - Simplified Solid Color */}
         <motion.div
-          className="relative bg-[#9B8AC4] rounded-3xl p-8 mb-16 overflow-hidden"
+className="relative bg-[#7D6B7D] rounded-3xl p-8 mb-16 overflow-hidden"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -120,12 +120,12 @@ export default function ReviewHighlights() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -5 }}
             >
-              {/* Top Accent Line - Simplified */}
-              <div className="absolute top-0 left-0 right-0 h-1 bg-[#9B8AC4]" />
+{/* Top Accent Line - Simplified */}
+              <div className="absolute top-0 left-0 right-0 h-1 bg-[#7D6B7D]" />
 
               {/* Quote Icon */}
-              <div className="absolute top-6 right-6 w-12 h-12 rounded-full bg-gradient-to-br from-[#FFB5C5]/10 to-[#9B8AC4]/10 flex items-center justify-center">
-                <span className="material-symbols-outlined text-[#9B8AC4] text-2xl">
+              <div className="absolute top-6 right-6 w-12 h-12 rounded-full bg-gradient-to-br from-[#B8989B]/10 to-[#7D6B7D]/10 flex items-center justify-center">
+                <span className="material-symbols-outlined text-[#7D6B7D] text-2xl">
                   format_quote
                 </span>
               </div>
@@ -135,7 +135,7 @@ export default function ReviewHighlights() {
                 {[...Array(5)].map((_, i) => (
                   <span
                     key={i}
-                    className="material-symbols-outlined text-[#FFD700] text-xl"
+                    className="material-symbols-outlined text-[#C9A962] text-xl"
                     style={{ fontVariationSettings: "'FILL' 1" }}
                   >
                     star
@@ -165,7 +165,7 @@ export default function ReviewHighlights() {
                   <p className="font-bold text-gray-800 text-lg">
                     {isKo ? testimonial.nameKo : testimonial.nameEn}
                   </p>
-                  <p className="text-sm text-[#9B8AC4] font-medium flex items-center gap-1">
+                  <p className="text-sm text-[#7D6B7D] font-medium flex items-center gap-1">
                     <span className="material-symbols-outlined text-sm">pregnant_woman</span>
                     {isKo ? testimonial.weekKo : testimonial.weekEn}
                   </p>
@@ -191,22 +191,22 @@ export default function ReviewHighlights() {
             {reviews.highlights.map((highlight, index) => (
               <motion.div
                 key={highlight.keyword}
-                className="group flex flex-col items-center p-5 bg-gradient-to-br from-[#FFFAF4] to-white rounded-2xl hover:shadow-md transition-all duration-300"
+                className="group flex flex-col items-center p-5 bg-gradient-to-br from-[#F8F6F3] to-white rounded-2xl hover:shadow-md transition-all duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.05 * index }}
                 whileHover={{ y: -3 }}
               >
-                <div className="w-14 h-14 rounded-2xl bg-[#9B8AC4]/10 mb-4 flex items-center justify-center group-hover:bg-[#9B8AC4]/20 transition-colors">
-                  <span className="material-symbols-outlined text-2xl text-[#9B8AC4]">
+<div className="w-14 h-14 rounded-2xl bg-[#7D6B7D]/10 mb-4 flex items-center justify-center group-hover:bg-[#7D6B7D]/20 transition-colors">
+                  <span className="material-symbols-outlined text-2xl text-[#7D6B7D]">
                     {highlight.icon}
                   </span>
                 </div>
                 <span className="font-bold text-gray-700 text-center mb-1 text-sm">
                   {isKo ? highlight.keyword : highlight.keywordEn}
                 </span>
-                <span className="text-2xl font-bold text-[#9B8AC4]">
+<span className="text-2xl font-bold text-[#7D6B7D]">
                   {highlight.count}
                 </span>
               </motion.div>
@@ -226,7 +226,7 @@ export default function ReviewHighlights() {
             href="https://m.place.naver.com/beauty/1306755661/review/visitor"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 text-[#9B8AC4] hover:text-[#8577B0] font-bold transition-colors"
+            className="inline-flex items-center gap-3 text-[#7D6B7D] hover:text-[#8577B0] font-bold transition-colors"
           >
             <span>{isKo ? "네이버에서 더 많은 리뷰 보기" : "See More Reviews on Naver"}</span>
             <span className="material-symbols-outlined">open_in_new</span>

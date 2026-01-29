@@ -13,10 +13,10 @@ export default function CTASection() {
       {/* Diagonal Split Background - Mirroring Hero */}
       <div className="absolute inset-0">
         {/* Lavender Side */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#9B8AC4] via-[#A890D3] to-[#B8A5E3]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#7D6B7D] via-[#8D7D8D] to-[#9D8D9D]" />
         {/* Pink Side - Diagonal */}
         <div
-          className="absolute inset-0 bg-gradient-to-br from-[#FFB5C5] via-[#FFC0CB] to-[#FFD1DC]"
+          className="absolute inset-0 bg-gradient-to-br from-[#B8989B] via-[#C8B0B2] to-[#D4C4C6]"
           style={{
             clipPath: "polygon(0 0, 65% 0, 45% 100%, 0 100%)",
           }}
@@ -94,7 +94,7 @@ export default function CTASection() {
               href={placeInfo.bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-3 bg-white text-[#9B8AC4] text-lg font-bold h-16 px-12 rounded-full transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105"
+              className="inline-flex items-center justify-center gap-3 bg-white text-[#7D6B7D] text-lg font-bold h-16 px-12 rounded-full transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105"
             >
               <span className="material-symbols-outlined text-2xl">calendar_month</span>
               {isKo ? "네이버 예약하기" : "Book on Naver"}
