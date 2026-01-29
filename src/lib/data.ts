@@ -8,7 +8,16 @@ export const placeInfo = {
   bookingUrl: "https://booking.naver.com/booking/13/bizes/84...",
   category: {
     main: "왁싱,제모",
-    keywords: ["왁싱", "슈가링왁싱", "브라질리언왁싱", "남자왁싱", "임산부왁싱"],
+    keywords: [
+      "광주 임산부 왁싱",
+      "광주 여자 왁싱",
+      "광주 남자 왁싱",
+      "광주 슈가링 왁싱",
+      "광주왁싱",
+      "광주슈가링",
+      "운암동왁싱",
+      "광주 브라질리언왁싱",
+    ],
   },
 };
 

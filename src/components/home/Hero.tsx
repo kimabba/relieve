@@ -78,7 +78,7 @@ export default function Hero() {
               >
                 <span className="inline-flex items-center gap-2 py-2.5 px-6 rounded-full bg-white/30 backdrop-blur-sm text-white text-sm font-bold shadow-lg border border-white/20">
                   <span className="w-2 h-2 rounded-full bg-[#FFD700] animate-pulse" />
-                  {isKo ? "강남 프리미엄 슈가링" : "Premium Sugaring"}
+                  {isKo ? "광주 프리미엄 슈가링" : "Gwangju Premium Sugaring"}
                 </span>
               </motion.div>
 
@@ -307,10 +307,10 @@ export default function Hero() {
                   </div>
                   <div>
                     <p className="text-gray-800 font-bold text-sm">
-                      {isKo ? "강남역 3번 출구" : "Gangnam Station Exit 3"}
+                      {isKo ? "광주 북구 운암동" : "Unam-dong, Buk-gu, Gwangju"}
                     </p>
                     <p className="text-gray-500 text-xs">
-                      {isKo ? "도보 5분 거리" : "5 min walk"}
+                      {isKo ? "북문대로 154 3층" : "154 Bukmun-daero, 3F"}
                     </p>
                   </div>
                 </div>
