@@ -11,7 +11,7 @@ const features = [
     titleEn: "100% Natural",
     descKo: "설탕, 레몬, 물만으로 만든 순수 페이스트",
     descEn: "Pure paste made from sugar, lemon, and water",
-    color: "bg-[#FFB5C5]",
+color: "bg-[#B8989B]",
   },
   {
     icon: "water_drop",
@@ -19,7 +19,7 @@ const features = [
     titleEn: "Water Soluble",
     descKo: "따뜻한 물로 쉽게 세척, 끈적임 없음",
     descEn: "Easy cleanup with warm water",
-    color: "bg-[#9B8AC4]",
+color: "bg-[#7D6B7D]",
   },
   {
     icon: "favorite",
@@ -27,7 +27,7 @@ const features = [
     titleEn: "Hypoallergenic",
     descKo: "민감한 피부에도 안전한 시술",
     descEn: "Safe for sensitive skin",
-    color: "bg-[#B8A5E3]",
+color: "bg-[#8A9A8A]",
   },
 ];
 
@@ -43,12 +43,12 @@ export default function WhySugaring() {
   const isKo = locale === "ko";
 
   return (
-    <section className="relative py-24 lg:py-32 overflow-hidden">
+<section className="relative py-24 lg:py-32 overflow-hidden">
       {/* Smooth Transition from Hero - Gradient Top */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#E8D4F0] via-[#FFFAF4] to-[#FFFAF4]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#D4C4C6] via-[#F8F6F3] to-[#F8F6F3]" />
 
       {/* Single Subtle Decoration - Reduced from 2 */}
-      <div className="absolute bottom-20 right-0 w-[300px] h-[300px] bg-gradient-to-bl from-[#9B8AC4]/5 to-transparent rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-0 w-[300px] h-[300px] bg-gradient-to-bl from-[#7D6B7D]/5 to-transparent rounded-full blur-3xl" />
 
       <div className="section-container relative">
         {/* Section Header */}
@@ -59,7 +59,7 @@ export default function WhySugaring() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <span className="inline-flex items-center gap-2 py-2.5 px-6 rounded-full bg-[#9B8AC4]/10 text-[#9B8AC4] text-sm font-bold mb-6">
+          <span className="inline-flex items-center gap-2 py-2.5 px-6 rounded-full bg-[#7D6B7D]/10 text-[#7D6B7D] text-sm font-bold mb-6">
             <span className="material-symbols-outlined text-base">spa</span>
             {isKo ? "왜 슈가링인가요?" : "Why Sugaring?"}
           </span>
@@ -95,7 +95,7 @@ export default function WhySugaring() {
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#9B8AC4]/20 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#7D6B7D]/20 via-transparent to-transparent" />
               </div>
 
               {/* Floating Card 1 */}
@@ -107,7 +107,7 @@ export default function WhySugaring() {
                 transition={{ delay: 0.3 }}
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#FFB5C5] to-[#9B8AC4] flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#B8989B] to-[#7D6B7D] flex items-center justify-center">
                     <span className="material-symbols-outlined text-white text-xl">eco</span>
                   </div>
                   <div>
@@ -126,7 +126,7 @@ export default function WhySugaring() {
                 transition={{ delay: 0.5 }}
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-[#9B8AC4] flex items-center justify-center">
+<div className="w-12 h-12 rounded-full bg-[#8A9A8A] flex items-center justify-center">
                     <span className="material-symbols-outlined text-white text-xl">verified</span>
                   </div>
                   <div>
@@ -194,7 +194,7 @@ export default function WhySugaring() {
                   </div>
 
                   {/* Arrow */}
-                  <span className="material-symbols-outlined text-gray-300 group-hover:text-[#9B8AC4] transition-colors">
+                  <span className="material-symbols-outlined text-gray-300 group-hover:text-[#7D6B7D] transition-colors">
                     arrow_forward
                   </span>
                 </div>
@@ -205,13 +205,13 @@ export default function WhySugaring() {
 
         {/* Benefits Section - Simplified Premium Card */}
         <motion.div
-          className="relative bg-[#9B8AC4] rounded-[2rem] p-8 lg:p-12 overflow-hidden"
+className="relative bg-[#7D6B7D] rounded-[2rem] p-8 lg:p-12 overflow-hidden"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          {/* Single Background Decoration - Reduced from 3 */}
+{/* Single Background Decoration - Reduced from 3 */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
 
           <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
@@ -237,7 +237,7 @@ export default function WhySugaring() {
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#9B8AC4]/40 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#7D6B7D]/40 via-transparent to-transparent" />
               </div>
             </div>
 
@@ -272,7 +272,7 @@ export default function WhySugaring() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.4 }}
                 >
-                  <span className="block text-3xl lg:text-4xl font-bold text-[#FFB5C5] mb-1">
+<span className="block text-3xl lg:text-4xl font-bold text-[#B8989B] mb-1">
                     100%
                   </span>
                   <span className="text-sm text-gray-600">{isKo ? "천연 성분" : "Natural"}</span>
@@ -284,7 +284,7 @@ export default function WhySugaring() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.5 }}
                 >
-                  <span className="block text-3xl lg:text-4xl font-bold text-[#9B8AC4] mb-1">
+<span className="block text-3xl lg:text-4xl font-bold text-[#7D6B7D] mb-1">
                     ZERO
                   </span>
                   <span className="text-sm text-gray-600">{isKo ? "화학 첨가물" : "Chemicals"}</span>
@@ -296,7 +296,7 @@ export default function WhySugaring() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.6 }}
                 >
-                  <span className="block text-3xl lg:text-4xl font-bold text-[#9B8AC4] mb-1">
+<span className="block text-3xl lg:text-4xl font-bold text-[#8A9A8A] mb-1">
                     37°C
                   </span>
                   <span className="text-sm text-gray-600">{isKo ? "체온 온도" : "Body Temp"}</span>
