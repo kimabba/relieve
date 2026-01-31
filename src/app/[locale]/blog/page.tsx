@@ -54,14 +54,17 @@ export default function BlogPage() {
   const isKo = locale === "ko";
 
   return (
-    <section className="section-padding bg-background-light dark:bg-background-dark">
-      <div className="container-main">
+    <section className="py-20 bg-waxly-cream">
+      <div className="section-container">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h1 className="font-display text-4xl lg:text-5xl font-bold text-text-main dark:text-white mb-4">
+          <h1
+            className="text-4xl lg:text-5xl text-waxly-brown mb-4"
+            style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
+          >
             {t("blog")}
           </h1>
-          <p className="text-text-muted dark:text-gray-400 text-lg">
+          <p className="text-waxly-brownLight text-lg">
             {isKo
               ? "시술 팁, 프로모션, 공지사항을 확인하세요"
               : "Check out our tips, promotions, and announcements"}
@@ -71,34 +74,43 @@ export default function BlogPage() {
         {/* Blog Posts Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogPosts.map((post) => (
-            <article key={post.id} className="card card-hover overflow-hidden">
+            <article
+              key={post.id}
+              className="bg-white border border-waxly-brown/20 overflow-hidden transition-all duration-300 hover:border-waxly-brown/40 hover:shadow-sm"
+            >
               {/* Placeholder Image */}
-              <div className="h-48 bg-gradient-to-br from-primary/20 to-primary/5 dark:from-primary/30 dark:to-primary/10 flex items-center justify-center">
-                <span className="material-symbols-outlined text-5xl text-primary/50">
+              <div className="h-48 bg-waxly-cream flex items-center justify-center border-b border-waxly-brown/10">
+                <span
+                  className="material-symbols-outlined text-5xl text-waxly-brown/30"
+                  style={{ fontVariationSettings: "'wght' 200" }}
+                >
                   article
                 </span>
               </div>
 
               <div className="p-6">
                 {/* Category Badge */}
-                <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wide mb-3">
+                <span className="inline-block px-3 py-1 border border-waxly-brown/30 text-waxly-brown text-xs uppercase tracking-wide mb-3">
                   {isKo
                     ? categoryLabels[post.category].ko
                     : categoryLabels[post.category].en}
                 </span>
 
                 {/* Title */}
-                <h2 className="font-display text-xl font-bold text-text-main dark:text-white mb-2">
+                <h2
+                  className="text-xl text-waxly-brown mb-2"
+                  style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
+                >
                   {isKo ? post.titleKo : post.titleEn}
                 </h2>
 
                 {/* Excerpt */}
-                <p className="text-text-muted dark:text-gray-400 text-sm mb-4 line-clamp-2">
+                <p className="text-waxly-brownLight text-sm mb-4 line-clamp-2">
                   {isKo ? post.excerptKo : post.excerptEn}
                 </p>
 
                 {/* Date */}
-                <time className="text-xs text-text-muted dark:text-gray-500">
+                <time className="text-xs text-waxly-brownLight/70">
                   {new Date(post.date).toLocaleDateString(
                     isKo ? "ko-KR" : "en-US",
                     {
@@ -114,11 +126,14 @@ export default function BlogPage() {
         </div>
 
         {/* Coming Soon Message */}
-        <div className="mt-12 text-center p-8 bg-secondary-bg dark:bg-[#32322a] rounded-xl">
-          <span className="material-symbols-outlined text-4xl text-primary mb-4">
+        <div className="mt-12 text-center p-8 bg-white border border-waxly-brown/20">
+          <span
+            className="material-symbols-outlined text-4xl text-waxly-gold mb-4 block"
+            style={{ fontVariationSettings: "'wght' 200" }}
+          >
             auto_awesome
           </span>
-          <p className="text-text-muted dark:text-gray-400">
+          <p className="text-waxly-brownLight">
             {isKo
               ? "더 많은 콘텐츠가 곧 업데이트됩니다!"
               : "More content coming soon!"}

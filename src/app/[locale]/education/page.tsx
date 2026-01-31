@@ -125,13 +125,12 @@ export default function EducationPage() {
     <>
       {/* Hero Section */}
       <section className="relative min-h-[70vh] overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#FFB5C5] via-[#FFC0CB] to-[#FFD1DC]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" />
+        {/* Background - Waxly cream */}
+        <div className="absolute inset-0 bg-waxly-cream" />
 
         {/* Decorative Elements */}
-        <div className="absolute top-20 left-[10%] w-32 h-32 rounded-full bg-white/10 blur-2xl" />
-        <div className="absolute bottom-32 right-[15%] w-24 h-24 rounded-full bg-[#9B8AC4]/20 blur-xl" />
+        <div className="absolute top-20 left-[10%] w-32 h-32 bg-waxly-brown/5" />
+        <div className="absolute bottom-32 right-[15%] w-24 h-24 bg-waxly-gold/10" />
 
         <div className="relative min-h-[70vh] flex items-center pt-32 pb-20">
           <div className="section-container">
@@ -143,16 +142,21 @@ export default function EducationPage() {
                 transition={{ duration: 0.5 }}
                 className="mb-6"
               >
-                <span className="inline-flex items-center gap-2 py-2.5 px-6 rounded-full bg-white/30 backdrop-blur-sm text-white text-sm font-bold shadow-lg border border-white/20">
-                  <span className="material-symbols-outlined text-base">school</span>
+                <span className="inline-flex items-center gap-2 py-2.5 px-6 bg-white border border-waxly-brown/20 text-waxly-brown text-sm font-medium">
+                  <span
+                    className="material-symbols-outlined text-base"
+                    style={{ fontVariationSettings: "'wght' 200" }}
+                  >
+                    school
+                  </span>
                   {isKo ? "한국왁싱뷰티협회 교육이사" : "KWBA Education Director"}
                 </span>
               </motion.div>
 
               {/* Title */}
               <motion.h1
-                className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+                className="text-4xl sm:text-5xl lg:text-6xl text-waxly-brown mb-6"
+                style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
@@ -162,7 +166,7 @@ export default function EducationPage() {
 
               {/* Subtitle */}
               <motion.p
-                className="text-lg lg:text-xl text-white/90 mb-8 leading-relaxed"
+                className="text-lg lg:text-xl text-waxly-brownLight mb-8 leading-relaxed"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3 }}
@@ -181,9 +185,14 @@ export default function EducationPage() {
               >
                 <a
                   href={`tel:${contact.phone}`}
-                  className="inline-flex items-center justify-center gap-3 px-10 py-4 bg-white text-[#E07070] rounded-full font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                  className="inline-flex items-center justify-center gap-3 px-10 py-4 bg-waxly-brown text-white font-medium text-lg hover:bg-waxly-brownLight transition-colors"
                 >
-                  <span className="material-symbols-outlined">call</span>
+                  <span
+                    className="material-symbols-outlined"
+                    style={{ fontVariationSettings: "'wght' 200" }}
+                  >
+                    call
+                  </span>
                   {isKo ? "교육 문의하기" : "Inquire Now"}
                 </a>
               </motion.div>
@@ -201,13 +210,18 @@ export default function EducationPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="inline-flex items-center gap-2 py-2 px-5 rounded-full bg-[#FFD700]/10 text-[#B8860B] text-sm font-bold mb-6">
-              <span className="material-symbols-outlined text-base">verified</span>
+            <span className="inline-flex items-center gap-2 py-2 px-5 bg-waxly-gold/10 border border-waxly-gold/30 text-waxly-brown text-sm font-medium mb-6">
+              <span
+                className="material-symbols-outlined text-base"
+                style={{ fontVariationSettings: "'wght' 200" }}
+              >
+                verified
+              </span>
               {isKo ? "강사 자격" : "Instructor Credentials"}
             </span>
             <h2
-              className="text-3xl lg:text-4xl font-bold text-gray-800"
-              style={{ fontFamily: "'Playfair Display', serif" }}
+              className="text-3xl lg:text-4xl text-waxly-brown"
+              style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
             >
               {isKo ? "검증된 전문 강사" : "Certified Expert Instructor"}
             </h2>
@@ -217,8 +231,8 @@ export default function EducationPage() {
             {credentials.map((cred, index) => (
               <motion.div
                 key={index}
-                className={`flex items-center gap-4 p-4 rounded-2xl mb-3 ${
-                  cred.highlight ? "bg-[#FFD700]/10" : "bg-gray-50"
+                className={`flex items-center gap-4 p-4 mb-3 border ${
+                  cred.highlight ? "bg-waxly-gold/5 border-waxly-gold/30" : "bg-waxly-cream/50 border-waxly-brown/10"
                 }`}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -226,18 +240,24 @@ export default function EducationPage() {
                 transition={{ delay: index * 0.1 }}
               >
                 {cred.highlight && (
-                  <span className="material-symbols-outlined text-[#FFD700] text-2xl">
+                  <span
+                    className="material-symbols-outlined text-waxly-gold text-2xl"
+                    style={{ fontVariationSettings: "'wght' 200" }}
+                  >
                     emoji_events
                   </span>
                 )}
                 {!cred.highlight && (
-                  <span className="material-symbols-outlined text-[#9B8AC4] text-2xl">
+                  <span
+                    className="material-symbols-outlined text-waxly-brownLight text-2xl"
+                    style={{ fontVariationSettings: "'wght' 200" }}
+                  >
                     check_circle
                   </span>
                 )}
                 <div className="flex-1">
-                  <span className="font-bold text-gray-800">
-                    {cred.year && <span className="text-[#9B8AC4] mr-2">{cred.year}</span>}
+                  <span className="text-waxly-brown">
+                    {cred.year && <span className="text-waxly-brownLight mr-2">{cred.year}</span>}
                     {isKo ? cred.titleKo : cred.titleEn}
                   </span>
                 </div>
@@ -248,7 +268,7 @@ export default function EducationPage() {
       </section>
 
       {/* Courses Section */}
-      <section className="py-24 lg:py-32 bg-[#FFFAF4]">
+      <section className="py-24 lg:py-32 bg-waxly-cream">
         <div className="section-container">
           <motion.div
             className="text-center max-w-2xl mx-auto mb-16"
@@ -256,13 +276,18 @@ export default function EducationPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="inline-flex items-center gap-2 py-2 px-5 rounded-full bg-[#9B8AC4]/10 text-[#9B8AC4] text-sm font-bold mb-6">
-              <span className="material-symbols-outlined text-base">menu_book</span>
+            <span className="inline-flex items-center gap-2 py-2 px-5 bg-waxly-brown/10 border border-waxly-brown/20 text-waxly-brown text-sm font-medium mb-6">
+              <span
+                className="material-symbols-outlined text-base"
+                style={{ fontVariationSettings: "'wght' 200" }}
+              >
+                menu_book
+              </span>
               {isKo ? "교육 과정" : "Curriculum"}
             </span>
             <h2
-              className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4"
-              style={{ fontFamily: "'Playfair Display', serif" }}
+              className="text-3xl lg:text-4xl text-waxly-brown mb-4"
+              style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
             >
               {isKo ? "단계별 맞춤 교육" : "Step-by-Step Custom Training"}
             </h2>
@@ -272,7 +297,7 @@ export default function EducationPage() {
             {courses.map((course, index) => (
               <motion.div
                 key={course.icon}
-                className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col"
+                className="bg-white p-8 border border-waxly-brown/10 hover:border-waxly-brown/30 transition-all duration-300 flex flex-col"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -280,21 +305,27 @@ export default function EducationPage() {
               >
                 {/* Header */}
                 <div className="text-center mb-6">
-                  <div className="w-16 h-16 rounded-2xl bg-[#9B8AC4]/10 flex items-center justify-center mx-auto mb-4">
-                    <span className="material-symbols-outlined text-3xl text-[#9B8AC4]">
+                  <div className="w-16 h-16 bg-waxly-cream border border-waxly-brown/10 flex items-center justify-center mx-auto mb-4">
+                    <span
+                      className="material-symbols-outlined text-3xl text-waxly-brown"
+                      style={{ fontVariationSettings: "'wght' 200" }}
+                    >
                       {course.icon}
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-1">
+                  <h3
+                    className="text-xl text-waxly-brown mb-1"
+                    style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
+                  >
                     {isKo ? course.titleKo : course.titleEn}
                   </h3>
-                  <span className="text-sm text-[#9B8AC4] font-medium">
+                  <span className="text-sm text-waxly-brownLight">
                     {isKo ? course.durationKo : course.durationEn}
                   </span>
                 </div>
 
                 {/* Description */}
-                <p className="text-gray-600 text-center mb-6 leading-relaxed">
+                <p className="text-waxly-brownLight text-center mb-6 leading-relaxed">
                   {isKo ? course.descKo : course.descEn}
                 </p>
 
@@ -302,8 +333,8 @@ export default function EducationPage() {
                 <div className="flex-1">
                   <ul className="space-y-2">
                     {(isKo ? course.contentsKo : course.contentsEn).map((content, i) => (
-                      <li key={i} className="flex items-center gap-2 text-sm text-gray-700">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#FFB5C5]" />
+                      <li key={i} className="flex items-center gap-2 text-sm text-waxly-brown">
+                        <span className="w-1.5 h-1.5 bg-waxly-gold" />
                         {content}
                       </li>
                     ))}
@@ -311,8 +342,8 @@ export default function EducationPage() {
                 </div>
 
                 {/* Price & CTA */}
-                <div className="mt-6 pt-6 border-t border-gray-100 text-center">
-                  <span className="text-lg font-bold text-[#9B8AC4]">
+                <div className="mt-6 pt-6 border-t border-waxly-brown/10 text-center">
+                  <span className="text-lg text-waxly-brown">
                     {isKo ? course.priceKo : course.priceEn}
                   </span>
                 </div>
@@ -323,7 +354,7 @@ export default function EducationPage() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-24 lg:py-32 bg-[#FFB5C5]">
+      <section className="py-24 lg:py-32 bg-waxly-brown">
         <div className="section-container">
           <motion.div
             className="text-center max-w-2xl mx-auto mb-16"
@@ -332,8 +363,8 @@ export default function EducationPage() {
             viewport={{ once: true }}
           >
             <h2
-              className="text-3xl lg:text-4xl font-bold text-white"
-              style={{ fontFamily: "'Playfair Display', serif" }}
+              className="text-3xl lg:text-4xl text-white"
+              style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
             >
               {isKo ? "릴리브 교육만의 특별함" : "What Makes Us Special"}
             </h2>
@@ -343,21 +374,27 @@ export default function EducationPage() {
             {benefits.map((benefit, index) => (
               <motion.div
                 key={benefit.icon}
-                className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/30"
+                className="bg-white/10 p-6 text-center border border-white/20"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <div className="w-14 h-14 rounded-2xl bg-white/30 flex items-center justify-center mx-auto mb-4">
-                  <span className="material-symbols-outlined text-2xl text-white">
+                <div className="w-14 h-14 bg-white/10 border border-white/20 flex items-center justify-center mx-auto mb-4">
+                  <span
+                    className="material-symbols-outlined text-2xl text-white"
+                    style={{ fontVariationSettings: "'wght' 200" }}
+                  >
                     {benefit.icon}
                   </span>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">
+                <h3
+                  className="text-lg text-white mb-2"
+                  style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
+                >
                   {isKo ? benefit.titleKo : benefit.titleEn}
                 </h3>
-                <p className="text-white/80 text-sm">
+                <p className="text-white/70 text-sm">
                   {isKo ? benefit.descKo : benefit.descEn}
                 </p>
               </motion.div>
@@ -376,12 +413,12 @@ export default function EducationPage() {
               viewport={{ once: true }}
             >
               <h2
-                className="text-3xl lg:text-4xl font-bold text-gray-800 mb-6"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+                className="text-3xl lg:text-4xl text-waxly-brown mb-6"
+                style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
               >
                 {isKo ? "교육 상담 신청" : "Education Consultation"}
               </h2>
-              <p className="text-gray-600 mb-8 leading-relaxed">
+              <p className="text-waxly-brownLight mb-8 leading-relaxed">
                 {isKo
                   ? "교육 과정에 대해 궁금하신 점이 있으시면 언제든 문의해주세요.\n상담을 통해 맞춤 교육 계획을 세워드립니다."
                   : "If you have any questions about our courses, please feel free to contact us.\nWe'll create a customized training plan through consultation."}
@@ -390,18 +427,28 @@ export default function EducationPage() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href={`tel:${contact.phone}`}
-                  className="inline-flex items-center justify-center gap-3 px-10 py-4 bg-[#FFB5C5] text-white rounded-full font-bold text-lg hover:bg-[#FF9EB0] transition-colors"
+                  className="inline-flex items-center justify-center gap-3 px-10 py-4 bg-waxly-brown text-white font-medium text-lg hover:bg-waxly-brownLight transition-colors"
                 >
-                  <span className="material-symbols-outlined">call</span>
+                  <span
+                    className="material-symbols-outlined"
+                    style={{ fontVariationSettings: "'wght' 200" }}
+                  >
+                    call
+                  </span>
                   {contact.phone}
                 </a>
                 <a
                   href={placeInfo.naverMapUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-3 px-10 py-4 bg-gray-100 text-gray-700 rounded-full font-bold text-lg hover:bg-gray-200 transition-colors"
+                  className="inline-flex items-center justify-center gap-3 px-10 py-4 bg-waxly-cream border border-waxly-brown/20 text-waxly-brown font-medium text-lg hover:bg-waxly-cream/80 transition-colors"
                 >
-                  <span className="material-symbols-outlined">location_on</span>
+                  <span
+                    className="material-symbols-outlined"
+                    style={{ fontVariationSettings: "'wght' 200" }}
+                  >
+                    location_on
+                  </span>
                   {isKo ? "오시는 길" : "Location"}
                 </a>
               </div>

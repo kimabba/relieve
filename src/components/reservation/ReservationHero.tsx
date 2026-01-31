@@ -47,23 +47,29 @@ export default function ReservationHero() {
           sizes="100vw"
           priority
         />
-        {/* Stitch-style Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
+        {/* Waxly Overlay */}
+        <div className="absolute inset-0 bg-waxly-brown/70" />
       </div>
 
-      {/* Stitch-style Content - Left Aligned */}
+      {/* Waxly Content - Left Aligned */}
       <div className="relative z-10 max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 w-full py-16">
         <div className="max-w-xl">
           {/* Badge */}
-          <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <span className="material-symbols-outlined text-primary text-base">
+          <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white px-4 py-2 text-sm font-medium mb-6">
+            <span
+              className="material-symbols-outlined text-waxly-gold text-base"
+              style={{ fontVariationSettings: "'wght' 200" }}
+            >
               calendar_month
             </span>
             {content.badge}
           </span>
 
           {/* Title */}
-          <h1 className="text-white text-3xl sm:text-4xl lg:text-5xl font-display font-bold leading-tight tracking-tight mb-4">
+          <h1
+            className="text-white text-3xl sm:text-4xl lg:text-5xl leading-tight tracking-tight mb-4"
+            style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
+          >
             {content.title}
           </h1>
 
@@ -72,14 +78,17 @@ export default function ReservationHero() {
             {content.description}
           </p>
 
-          {/* Stitch-style Feature Pills */}
+          {/* Waxly Feature Pills */}
           <div className="flex flex-wrap gap-3">
             {content.features.map((feature, index) => (
               <div
                 key={index}
-                className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-[12px] border border-white/10"
+                className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 border border-white/20"
               >
-                <span className="material-symbols-outlined text-primary text-lg">
+                <span
+                  className="material-symbols-outlined text-waxly-gold text-lg"
+                  style={{ fontVariationSettings: "'wght' 200" }}
+                >
                   {feature.icon}
                 </span>
                 <span className="text-white text-sm font-medium">
@@ -91,8 +100,8 @@ export default function ReservationHero() {
         </div>
       </div>
 
-      {/* Decorative Element */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background-light dark:from-background-dark to-transparent" />
+      {/* Bottom fade to cream */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-waxly-cream to-transparent" />
     </section>
   );
 }

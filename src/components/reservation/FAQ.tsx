@@ -80,36 +80,44 @@ export default function FAQ() {
   };
 
   return (
-    <section className="py-20 lg:py-28 bg-secondary-bg dark:bg-[#32322a]">
+    <section className="py-20 lg:py-28 bg-waxly-cream">
       <div className="max-w-[900px] mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Stitch-style Header */}
+        {/* Waxly Header */}
         <div className="text-center mb-12">
-          <span className="section-label">FAQ</span>
-          <h2 className="font-display text-3xl lg:text-4xl font-bold text-text-main dark:text-white mb-4">
+          <span className="inline-block text-waxly-brownLight text-sm tracking-widest uppercase mb-4">
+            FAQ
+          </span>
+          <h2
+            className="text-3xl lg:text-4xl text-waxly-brown mb-4"
+            style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
+          >
             {t("faq")}
           </h2>
         </div>
 
-        {/* Stitch-style Accordion FAQ */}
+        {/* Waxly Accordion FAQ */}
         <div className="space-y-4">
           {faqItems.map((item, index) => (
             <div
               key={index}
-              className="bg-white dark:bg-background-dark rounded-[12px] overflow-hidden shadow-stitch"
+              className="bg-white overflow-hidden border border-waxly-brown/10"
             >
               <button
                 onClick={() => toggleItem(index)}
-                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-primary/5 transition-colors"
+                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-waxly-cream/50 transition-colors"
               >
-                <span className="font-semibold text-text-main dark:text-white pr-4">
+                <span className="font-medium text-waxly-brown pr-4">
                   {isKo ? item.questionKo : item.questionEn}
                 </span>
                 <div
-                  className={`size-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0 transition-transform duration-300 ${
+                  className={`size-8 flex items-center justify-center shrink-0 border border-waxly-brown/20 transition-transform duration-300 ${
                     openIndex === index ? "rotate-180" : ""
                   }`}
                 >
-                  <span className="material-symbols-outlined text-primary text-lg">
+                  <span
+                    className="material-symbols-outlined text-waxly-brown text-lg"
+                    style={{ fontVariationSettings: "'wght' 200" }}
+                  >
                     expand_more
                   </span>
                 </div>
@@ -120,8 +128,8 @@ export default function FAQ() {
                 }`}
               >
                 <div className="px-6 pb-5 pt-0">
-                  <div className="border-t border-gray-100 dark:border-white/10 pt-4">
-                    <p className="text-text-muted dark:text-gray-400 leading-relaxed">
+                  <div className="border-t border-waxly-brown/10 pt-4">
+                    <p className="text-waxly-brownLight leading-relaxed">
                       {isKo ? item.answerKo : item.answerEn}
                     </p>
                   </div>

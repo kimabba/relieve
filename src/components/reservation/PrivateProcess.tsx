@@ -68,50 +68,59 @@ export default function PrivateProcess() {
   const content = locale === "ko" ? processData.ko : processData.en;
 
   return (
-    <section className="py-20 lg:py-28 bg-background-light dark:bg-background-dark">
+    <section className="py-20 lg:py-28 bg-waxly-cream">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Stitch-style Header */}
+        {/* Waxly Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="section-label">
+          <span className="inline-block text-waxly-brownLight text-sm tracking-widest uppercase mb-4">
             {content.sectionLabel}
           </span>
-          <h2 className="font-display text-3xl lg:text-4xl font-bold text-text-main dark:text-white mb-4">
+          <h2
+            className="text-3xl lg:text-4xl text-waxly-brown mb-4"
+            style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
+          >
             {content.sectionTitle}
           </h2>
-          <p className="text-text-muted dark:text-gray-400 text-lg">
+          <p className="text-waxly-brownLight text-lg">
             {content.sectionDescription}
           </p>
         </div>
 
-        {/* Stitch-style 3-Column Process Cards */}
+        {/* Waxly 3-Column Process Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {content.steps.map((step, index) => (
             <div
               key={index}
-              className="group bg-white dark:bg-[#32322a] rounded-[12px] p-8 shadow-stitch hover:shadow-stitch-md transition-all duration-300 hover:-translate-y-1 relative overflow-hidden"
+              className="group bg-white p-8 border border-waxly-brown/10 hover:border-waxly-brown/30 transition-all duration-300 relative overflow-hidden"
             >
               {/* Step Number Badge */}
-              <span className="absolute top-6 right-6 text-5xl font-bold text-primary/10 group-hover:text-primary/20 transition-colors">
+              <span className="absolute top-6 right-6 text-5xl font-light text-waxly-brown/10 group-hover:text-waxly-brown/20 transition-colors">
                 {step.step}
               </span>
 
               {/* Icon */}
-              <div className="icon-circle-lg mb-6 group-hover:bg-accent-teal/20 transition-colors bg-accent-teal/10">
-                <span className="material-symbols-outlined text-2xl text-accent-teal">
+              <div className="w-14 h-14 flex items-center justify-center border border-waxly-brown/20 mb-6 group-hover:border-waxly-gold group-hover:bg-waxly-gold/5 transition-colors">
+                <span
+                  className="material-symbols-outlined text-2xl text-waxly-brown"
+                  style={{ fontVariationSettings: "'wght' 200" }}
+                >
                   {step.icon}
                 </span>
               </div>
 
               {/* Content */}
-              <h3 className="font-display text-xl font-bold text-text-main dark:text-white mb-3">
+              <h3
+                className="text-xl text-waxly-brown mb-3"
+                style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
+              >
                 {step.title}
               </h3>
-              <p className="text-text-muted dark:text-gray-400 leading-relaxed text-sm">
+              <p className="text-waxly-brownLight leading-relaxed text-sm">
                 {step.description}
               </p>
 
               {/* Bottom Accent */}
-              <div className="w-12 h-1 bg-accent-teal/20 rounded-full mt-6 group-hover:bg-accent-teal/40 group-hover:w-16 transition-all duration-300"></div>
+              <div className="w-12 h-px bg-waxly-brown/20 mt-6 group-hover:bg-waxly-gold group-hover:w-16 transition-all duration-300"></div>
             </div>
           ))}
         </div>
