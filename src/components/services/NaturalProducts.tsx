@@ -1,6 +1,7 @@
 "use client";
 
 import { useLocale } from "next-intl";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 const productsData = {
@@ -67,30 +68,39 @@ export default function NaturalProducts() {
   const content = locale === "ko" ? productsData.ko : productsData.en;
 
   return (
-    <div className="bg-white dark:bg-[#32322a] p-6 lg:p-8 rounded-[12px] shadow-stitch">
-      {/* Stitch-style Header */}
+    <div className="bg-white p-6 lg:p-8 border border-waxly-border">
+      {/* Header */}
       <div className="flex items-start justify-between mb-6">
         <div>
-          <span className="section-label">{content.sectionLabel}</span>
-          <h4 className="font-display font-bold text-xl text-text-main dark:text-white mt-1">
+          <span className="text-waxly-brownLight text-sm tracking-widest uppercase mb-2 block">
+            {content.sectionLabel}
+          </span>
+          <h4
+            className="text-xl text-waxly-brown mt-1"
+            style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
+          >
             {content.title}
           </h4>
         </div>
-        <span className="text-[10px] font-bold uppercase tracking-widest bg-accent-teal/10 text-accent-teal px-3 py-1.5 rounded-full flex items-center gap-1">
-          <span className="material-symbols-outlined text-xs">verified</span>
+        <span className="text-[10px] uppercase tracking-widest bg-waxly-cream text-waxly-brown px-3 py-1.5 flex items-center gap-1 border border-waxly-border">
+          <span className="material-symbols-outlined text-xs" style={{ fontVariationSettings: "'wght' 200" }}>verified</span>
           {content.badge}
         </span>
       </div>
 
-      {/* Stitch-style Products Grid */}
+      {/* Products Grid */}
       <div className="grid grid-cols-1 gap-4">
         {content.products.map((product, index) => (
-          <div
+          <motion.div
             key={index}
-            className="group flex items-center gap-4 p-4 bg-secondary-bg dark:bg-background-dark rounded-[12px] border border-primary/10 transition-all duration-300 hover:shadow-stitch hover:-translate-y-0.5"
+            className="group flex items-center gap-4 p-4 bg-waxly-cream border border-waxly-border transition-all duration-300 hover:border-waxly-brown"
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.1 }}
           >
             {/* Product Image */}
-            <div className="size-16 rounded-[10px] bg-white dark:bg-white/10 shrink-0 overflow-hidden relative shadow-stitch-sm">
+            <div className="w-16 h-16 bg-white shrink-0 overflow-hidden relative border border-waxly-border">
               <Image
                 src={product.image}
                 alt={product.name}
@@ -102,25 +112,28 @@ export default function NaturalProducts() {
 
             {/* Product Info */}
             <div className="flex-1 min-w-0">
-              <h5 className="font-display font-bold text-text-main dark:text-white text-sm mb-0.5">
+              <h5
+                className="text-waxly-brown text-sm mb-0.5"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
                 {product.name}
               </h5>
-              <p className="text-xs text-text-muted dark:text-gray-400">
+              <p className="text-xs text-waxly-brownLight font-light">
                 {product.description}
               </p>
             </div>
 
             {/* Benefit Badge */}
-            <span className="text-[10px] font-bold uppercase tracking-wider text-primary bg-primary/10 px-2 py-1 rounded-full shrink-0">
+            <span className="text-[10px] uppercase tracking-wider text-waxly-brown bg-white px-2 py-1 shrink-0 border border-waxly-border">
               {product.benefit}
             </span>
-          </div>
+          </motion.div>
         ))}
       </div>
 
-      {/* Stitch-style Footer Note */}
-      <div className="mt-6 pt-4 border-t border-primary/10 flex items-center gap-2 text-xs text-text-muted dark:text-gray-400">
-        <span className="material-symbols-outlined text-primary text-sm">
+      {/* Footer Note */}
+      <div className="mt-6 pt-4 border-t border-waxly-border flex items-center gap-2 text-xs text-waxly-brownLight font-light">
+        <span className="material-symbols-outlined text-waxly-brown text-sm" style={{ fontVariationSettings: "'wght' 200" }}>
           eco
         </span>
         {locale === "ko"

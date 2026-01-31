@@ -1,0 +1,55 @@
+{
+  "colors": {
+    "brown": "#562E21",
+    "brownLight": "#6D4035",
+    "brownDark": "#3D1F17",
+    "cream": "#FFF7EF",
+    "peach": "#FFEBD7",
+    "creamDark": "#F5EBE0"
+  },
+  "typography": {
+    "heading": "Playfair Display",
+    "body": "Noto Sans KR"
+  },
+  "spacing": {
+    "section": "7rem",
+    "component": "2rem",
+    "element": "1rem"
+  },
+  "borderRadius": {
+    "sm": "0.5rem",
+    "md": "0.75rem",
+    "lg": "1rem",
+    "xl": "1.5rem",
+    "2xl": "2rem",
+    "full": "9999px"
+  },
+  "shadows": {
+    "sm": "0 2px 8px rgba(86, 46, 33, 0.06)",
+    "md": "0 4px 16px rgba(86, 46, 33, 0.08)",
+    "lg": "0 8px 32px rgba(86, 46, 33, 0.12)"
+  },
+  "sections": {
+    "hero": {
+      "layout": "2-column",
+      "background": "cream",
+      "stats": ["724+ 리뷰", "4.9 평점"]
+    },
+    "services": {
+      "layout": "4-column grid",
+      "cards": ["여성 슈가링", "남성 슈가링", "임산부 케어", "속눈썹"]
+    },
+    "features": {
+      "layout": "4-column",
+      "items": ["전문 팀", "청결한 시설", "천연 성분", "저자극 케어"]
+    },
+    "reviews": {
+      "layout": "testimonial cards",
+      "keywords": 5
+    },
+    "cta": {
+      "background": "brown",
+      "textColor": "cream"
+    }
+  }
+}

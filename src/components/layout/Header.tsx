@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useLocale } from "next-intl";
 import { Link, usePathname } from "@/i18n/routing";
 import LanguageSwitcher from "./LanguageSwitcher";
-import { placeInfo } from "@/lib/data";
+import { placeInfo, contact, location } from "@/lib/data";
 
 export default function Header() {
   const locale = useLocale();
@@ -21,12 +21,16 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navItems = [
-    { href: "/services", label: isKo ? "시술 안내" : "Services" },
-    { href: "/education", label: isKo ? "왁싱 교육" : "Education" },
-    { href: "/yzone", label: isKo ? "Y존 테라피" : "Y-Zone Therapy", highlight: true },
-    { href: "/about", label: isKo ? "임산부 케어" : "Maternity" },
-    { href: "/location", label: isKo ? "오시는 길" : "Location" },
+  const leftNavItems = [
+    { href: "/", label: isKo ? "홈" : "HOME" },
+    { href: "/about", label: isKo ? "소개" : "ABOUT" },
+    { href: "/services", label: isKo ? "서비스" : "SERVICES" },
+  ];
+
+  const rightNavItems = [
+    { href: "/education", label: isKo ? "교육" : "EDUCATION" },
+    { href: "/yzone", label: isKo ? "Y존" : "Y-ZONE" },
+    { href: "/location", label: isKo ? "오시는 길" : "CONTACT" },
   ];
 
   const isActive = (href: string) => {
@@ -35,93 +39,128 @@ export default function Header() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-6 px-4">
-      <div
-        className={`relative transition-all duration-300 w-full max-w-5xl bg-white/90 backdrop-blur-md rounded-full shadow-soft px-6 py-3 flex justify-between items-center ${
-          isScrolled ? "shadow-lg" : ""
+    <header className="fixed top-0 left-0 right-0 z-50">
+      {/* Top Bar */}
+      <div className="bg-waxly-brown text-waxly-cream text-xs py-2">
+        <div className="section-container flex justify-between items-center">
+          <div className="hidden md:flex items-center gap-6">
+            <span className="flex items-center gap-1">
+              <span className="material-symbols-outlined text-sm">location_on</span>
+              {isKo ? location.address.formatted : "Gwangju, Korea"}
+            </span>
+            <span className="flex items-center gap-1">
+              <span className="material-symbols-outlined text-sm">mail</span>
+              relieve@email.com
+            </span>
+            <span className="flex items-center gap-1">
+              <span className="material-symbols-outlined text-sm">call</span>
+              {contact.phone}
+            </span>
+          </div>
+          <div className="flex items-center gap-4 ml-auto">
+            <a href="https://instagram.com" className="hover:text-white transition-colors">
+              <span className="text-xs font-bold">IG</span>
+            </a>
+            <a href={placeInfo.naverMapUrl} className="hover:text-white transition-colors">
+              <span className="text-xs font-bold">N</span>
+            </a>
+            <LanguageSwitcher />
+          </div>
+        </div>
+      </div>
+
+      {/* Main Navigation */}
+      <nav
+        className={`transition-all duration-300 ${
+          isScrolled ? "bg-white shadow-md" : "bg-waxly-cream"
         }`}
       >
-        {/* Logo - P1: 포커스 상태 추가 */}
-        <Link href="/" className="flex items-center gap-2 focus-ring rounded-full">
-          <div className="w-9 h-9 bg-joy-teal rounded-full flex items-center justify-center text-white font-serif font-bold italic text-lg">
-            R
-          </div>
-          <span className="font-serif text-xl font-bold text-joy-dark tracking-tight">
-            Relieve
-          </span>
-        </Link>
-
-        {/* Desktop Menu - P1: 포커스 상태 추가 */}
-        <div className="hidden md:flex items-center gap-1">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
-                item.highlight
-                  ? "bg-joy-yellow text-joy-dark hover:bg-[#E5A500] focus-visible:ring-joy-yellow"
-                  : isActive(item.href)
-                  ? "bg-joy-bg text-joy-pink focus-visible:ring-joy-pink"
-                  : "text-joy-text hover:bg-joy-bg focus-visible:ring-joy-teal"
-              }`}
-            >
-              {item.label}
-            </Link>
-          ))}
-          <LanguageSwitcher />
-        </div>
-
-        {/* CTA Button - P1: 포커스 상태 추가 */}
-        <div className="hidden md:block">
-          <a
-            href={placeInfo.bookingUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 py-2.5 bg-joy-teal text-white rounded-full text-sm font-bold hover:bg-joy-tealDark transition-colors shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-joy-teal focus-visible:ring-offset-2"
-          >
-            {isKo ? "예약하기" : "Book Now"}
-          </a>
-        </div>
-
-        {/* Mobile Menu Toggle - P1: 포커스 상태 & 터치 영역 */}
-        <button
-          className="md:hidden text-joy-dark p-2 rounded-full touch-target focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-joy-teal focus-visible:ring-offset-2"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle menu"
-          aria-expanded={isMobileMenuOpen}
-        >
-          <span className="material-symbols-outlined icon-md">
-            {isMobileMenuOpen ? "close" : "menu"}
-          </span>
-        </button>
-
-        {/* Mobile Menu Overlay - P1: 일관된 라운드니스 & 포커스 */}
-        {isMobileMenuOpen && (
-          <div className="absolute top-full left-0 w-full mt-4 bg-white rounded-3xl shadow-lg p-6 flex flex-col gap-4 animate-fade-in-up">
-            {navItems.map((item) => (
+        <div className="section-container flex justify-between items-center py-4">
+          {/* Left Menu */}
+          <div className="hidden lg:flex items-center gap-8">
+            {leftNavItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-lg font-bold text-joy-text text-center py-3 hover:text-joy-pink transition-colors rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-joy-pink"
-                onClick={() => setIsMobileMenuOpen(false)}
+                className={`text-sm font-light tracking-wider transition-colors ${
+                  isActive(item.href)
+                    ? "text-waxly-brown"
+                    : "text-waxly-brownLight hover:text-waxly-brown"
+                }`}
               >
                 {item.label}
               </Link>
             ))}
-            <div className="flex justify-center py-2">
-              <LanguageSwitcher />
-            </div>
-            <a
-              href={placeInfo.bookingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full text-center py-4 bg-joy-pink text-white rounded-2xl font-bold shadow-glow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-joy-pink focus-visible:ring-offset-2"
+          </div>
+
+          {/* Center Logo */}
+          <Link href="/" className="flex flex-col items-center">
+            <span
+              className="text-2xl lg:text-3xl text-waxly-brown tracking-wide"
+              style={{ fontFamily: "'Playfair Display', serif" }}
             >
-              {isKo ? "예약하기" : "Book Now"}
-            </a>
+              Relieve
+            </span>
+            <span className="text-[10px] text-waxly-brownLight tracking-[0.3em] uppercase">
+              {isKo ? "슈가링 살롱" : "SUGARING SALON"}
+            </span>
+          </Link>
+
+          {/* Right Menu */}
+          <div className="hidden lg:flex items-center gap-8">
+            {rightNavItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`text-sm font-light tracking-wider transition-colors ${
+                  isActive(item.href)
+                    ? "text-waxly-brown"
+                    : "text-waxly-brownLight hover:text-waxly-brown"
+                }`}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+
+          {/* Mobile Menu Toggle */}
+          <button
+            className="lg:hidden text-waxly-brown p-2"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span className="material-symbols-outlined text-2xl">
+              {isMobileMenuOpen ? "close" : "menu"}
+            </span>
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="lg:hidden bg-white border-t border-waxly-border py-4">
+            <div className="section-container flex flex-col gap-4">
+              {[...leftNavItems, ...rightNavItems].map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-waxly-brown font-light text-center py-2 hover:text-waxly-brownLight transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
+              <a
+                href={placeInfo.bookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 py-4 border border-waxly-brown text-waxly-brown text-center font-light hover:bg-waxly-brown hover:text-white transition-all"
+              >
+                {isKo ? "예약하기" : "BOOK NOW"}
+              </a>
+            </div>
           </div>
         )}
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 }

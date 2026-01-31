@@ -1,6 +1,7 @@
 "use client";
 
 import { useLocale } from "next-intl";
+import { motion } from "framer-motion";
 
 const hygieneData = {
   ko: {
@@ -88,86 +89,125 @@ export default function HygieneSteps() {
   const content = locale === "ko" ? hygieneData.ko : hygieneData.en;
 
   return (
-    <section className="py-20 lg:py-28 bg-secondary-bg dark:bg-[#32322a]">
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Stitch-style Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="section-label">{content.sectionLabel}</span>
-          <h2 className="font-display text-3xl lg:text-4xl font-bold text-text-main dark:text-white mb-4">
+    <section className="py-20 lg:py-28 bg-waxly-cream overflow-hidden relative">
+      {/* Decorative Curved Line */}
+      <svg
+        className="absolute top-0 left-0 w-[300px] h-[200px] opacity-20 pointer-events-none"
+        viewBox="0 0 300 200"
+        fill="none"
+      >
+        <path
+          d="M0 100C50 50 100 0 150 50C200 100 250 150 300 100"
+          stroke="#6A483C"
+          strokeWidth="1"
+          fill="none"
+        />
+      </svg>
+
+      <div className="section-container relative">
+        {/* Header */}
+        <motion.div
+          className="text-center max-w-2xl mx-auto mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <span className="text-waxly-brownLight text-sm tracking-widest uppercase mb-4 block">
+            {content.sectionLabel}
+          </span>
+          <h2
+            className="text-3xl lg:text-4xl text-waxly-brown mb-4"
+            style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
+          >
             {content.title}
           </h2>
-          <p className="text-text-muted dark:text-gray-400 text-lg">
+          <p className="text-waxly-brownLight font-light text-lg">
             {content.description}
           </p>
-        </div>
+        </motion.div>
 
-        {/* Stitch-style Steps Grid */}
+        {/* Steps Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {content.steps.map((step, index) => (
-            <div
+            <motion.div
               key={index}
-              className={`group bg-white dark:bg-background-dark p-6 rounded-[12px] flex flex-col items-center text-center transition-all duration-300 hover:-translate-y-1 relative ${
+              className={`group bg-white p-6 flex flex-col items-center text-center transition-all duration-300 relative border ${
                 step.highlight
-                  ? "shadow-stitch-lg ring-2 ring-primary/20 scale-[1.02]"
-                  : "shadow-stitch hover:shadow-stitch-md"
+                  ? "border-waxly-gold"
+                  : "border-waxly-border hover:border-waxly-brown"
               }`}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
             >
-              {/* Step Number - Absolute positioned */}
-              <span className="absolute top-4 right-4 text-3xl font-bold text-primary/10 group-hover:text-primary/20 transition-colors">
+              {/* Step Number */}
+              <span className="absolute top-4 right-4 text-3xl text-waxly-border" style={{ fontFamily: "'Playfair Display', serif" }}>
                 {step.step}
               </span>
 
               {/* Icon */}
               <div
-                className={`size-14 rounded-full flex items-center justify-center mb-4 transition-colors ${
+                className={`w-14 h-14 flex items-center justify-center mb-4 ${
                   step.highlight
-                    ? "bg-primary text-white shadow-stitch"
-                    : "bg-primary/10 text-primary group-hover:bg-primary/20"
+                    ? "bg-waxly-gold text-white"
+                    : "bg-waxly-cream text-waxly-brown"
                 }`}
               >
-                <span className="material-symbols-outlined text-2xl">
+                <span className="material-symbols-outlined text-2xl" style={{ fontVariationSettings: "'wght' 200" }}>
                   {step.icon}
                 </span>
               </div>
 
               {/* Content */}
-              <h4 className="font-display font-bold text-text-main dark:text-white mb-2">
+              <h4
+                className="text-waxly-brown mb-2"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
                 {step.title}
               </h4>
-              <p className="text-xs text-text-muted dark:text-gray-400 leading-relaxed">
+              <p className="text-xs text-waxly-brownLight font-light leading-relaxed">
                 {step.description}
               </p>
 
               {/* Highlight Badge */}
               {step.highlight && (
-                <span className="mt-4 text-[10px] font-bold uppercase tracking-wider bg-primary/10 text-primary px-3 py-1 rounded-full">
+                <span className="mt-4 text-[10px] uppercase tracking-wider bg-waxly-gold/10 text-waxly-gold px-3 py-1">
                   99.9%
                 </span>
               )}
-            </div>
+            </motion.div>
           ))}
         </div>
 
-        {/* Stitch-style Trust Banner */}
-        <div className="mt-12 bg-white dark:bg-background-dark rounded-[12px] p-6 shadow-stitch flex flex-col sm:flex-row items-center justify-center gap-4 text-center sm:text-left">
-          <div className="size-12 rounded-full bg-accent-teal/10 flex items-center justify-center">
-            <span className="material-symbols-outlined text-accent-teal text-2xl">
+        {/* Trust Banner */}
+        <motion.div
+          className="mt-12 bg-white p-6 flex flex-col sm:flex-row items-center justify-center gap-4 text-center sm:text-left border border-waxly-border"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <div className="w-12 h-12 bg-waxly-cream flex items-center justify-center">
+            <span className="material-symbols-outlined text-waxly-brown text-2xl" style={{ fontVariationSettings: "'wght' 200" }}>
               verified_user
             </span>
           </div>
           <div>
-            <p className="font-display font-bold text-text-main dark:text-white">
+            <p
+              className="text-waxly-brown"
+              style={{ fontFamily: "'Playfair Display', serif" }}
+            >
               {locale === "ko"
                 ? "의료급 멸균 인증"
                 : "Medical-Grade Sterilization Certified"}
             </p>
-            <p className="text-sm text-text-muted dark:text-gray-400">
+            <p className="text-sm text-waxly-brownLight font-light">
               {locale === "ko"
                 ? "모든 위생 프로세스는 의료 기준을 충족합니다"
                 : "All hygiene processes meet medical standards"}
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

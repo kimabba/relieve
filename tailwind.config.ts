@@ -10,6 +10,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Waxly Theme - Warm Brown & Cream
+        waxly: {
+          brown: "#6A483C",
+          brownLight: "#885D4D",
+          brownDark: "#5A3D33",
+          cream: "#FFF7EF",
+          peach: "#FFEBD7",
+          creamDark: "#F5EBE0",
+          gold: "#FFC402",
+          border: "#EAEAEB",
+        },
         // Luxury Spa Theme - Muted & Sophisticated
         beauty: {
           rose: "#B8989B",        // Primary muted rose

@@ -1,6 +1,7 @@
 "use client";
 
 import { useLocale } from "next-intl";
+import { motion } from "framer-motion";
 
 const aftercareData = {
   ko: {
@@ -68,51 +69,64 @@ export default function AftercareTips() {
   const content = locale === "ko" ? aftercareData.ko : aftercareData.en;
 
   return (
-    <div className="bg-white dark:bg-[#32322a] p-6 lg:p-8 rounded-[12px] shadow-stitch">
-      {/* Stitch-style Section Header */}
+    <div className="bg-waxly-cream p-6 lg:p-8 border border-waxly-border">
+      {/* Header */}
       <div className="mb-8">
-        <span className="section-label">{content.sectionLabel}</span>
-        <h4 className="font-display text-xl font-bold text-text-main dark:text-white mt-1">
+        <span className="text-waxly-brownLight text-sm tracking-widest uppercase mb-2 block">
+          {content.sectionLabel}
+        </span>
+        <h4
+          className="text-xl text-waxly-brown mt-1"
+          style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
+        >
           {content.title}
         </h4>
-        <p className="mt-2 text-text-muted dark:text-gray-400 text-sm leading-relaxed">
+        <p className="mt-2 text-waxly-brownLight font-light text-sm leading-relaxed">
           {content.description}
         </p>
       </div>
 
-      {/* Stitch-style Timeline */}
+      {/* Timeline */}
       <div className="relative">
         {/* Timeline Line */}
-        <div className="absolute left-5 top-6 bottom-6 w-[2px] bg-primary/20" />
+        <div className="absolute left-5 top-6 bottom-6 w-[1px] bg-waxly-border" />
 
         <div className="flex flex-col gap-0">
           {content.steps.map((step, index) => (
-            <div key={index} className="flex gap-4 group relative">
+            <motion.div
+              key={index}
+              className="flex gap-4 group relative"
+              initial={{ opacity: 0, x: -10 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+            >
               {/* Icon Column */}
               <div className="flex flex-col items-center z-10">
-                <div className="size-10 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-colors duration-300 shadow-stitch-sm">
-                  <span className="material-symbols-outlined text-lg">
+                <div className="w-10 h-10 bg-white text-waxly-brown flex items-center justify-center shrink-0 group-hover:bg-waxly-brown group-hover:text-white transition-colors duration-300 border border-waxly-border">
+                  <span className="material-symbols-outlined text-lg" style={{ fontVariationSettings: "'wght' 200" }}>
                     {step.icon}
                   </span>
                 </div>
               </div>
 
               {/* Content */}
-              <div
-                className={`flex-1 ${index < content.steps.length - 1 ? "pb-8" : ""}`}
-              >
+              <div className={`flex-1 ${index < content.steps.length - 1 ? "pb-8" : ""}`}>
                 {/* Time Badge */}
-                <span className="inline-block text-xs font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full mb-2">
+                <span className="inline-block text-xs text-waxly-brown bg-white px-2 py-0.5 mb-2 border border-waxly-border">
                   {step.time}
                 </span>
-                <h5 className="text-base font-bold text-text-main dark:text-white font-display">
+                <h5
+                  className="text-base text-waxly-brown"
+                  style={{ fontFamily: "'Playfair Display', serif" }}
+                >
                   {step.title}
                 </h5>
-                <p className="text-text-muted dark:text-gray-400 text-sm mt-1 leading-relaxed">
+                <p className="text-waxly-brownLight font-light text-sm mt-1 leading-relaxed">
                   {step.description}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

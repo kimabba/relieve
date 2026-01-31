@@ -1,6 +1,7 @@
 "use client";
 
 import { useLocale } from "next-intl";
+import { motion } from "framer-motion";
 
 const philosophyData = {
   ko: {
@@ -61,68 +62,110 @@ export default function Philosophy() {
   const content = locale === "ko" ? philosophyData.ko : philosophyData.en;
 
   return (
-    <section className="py-20 lg:py-28 bg-secondary-bg dark:bg-[#32322a]">
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Stitch-style Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <span className="section-label">{content.sectionLabel}</span>
-          <h2 className="font-display text-3xl lg:text-4xl font-bold text-text-main dark:text-white mb-6">
+    <section className="py-20 lg:py-28 bg-waxly-cream overflow-hidden relative">
+      {/* Decorative Curved Line */}
+      <svg
+        className="absolute top-0 left-0 w-[300px] h-[200px] opacity-20 pointer-events-none"
+        viewBox="0 0 300 200"
+        fill="none"
+      >
+        <path
+          d="M0 0C50 50 100 80 150 100C200 120 250 150 300 200"
+          stroke="#6A483C"
+          strokeWidth="1"
+          fill="none"
+        />
+      </svg>
+
+      <div className="section-container relative">
+        {/* Header */}
+        <motion.div
+          className="max-w-3xl mx-auto text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <span className="text-waxly-brownLight text-sm tracking-widest uppercase mb-4 block">
+            {content.sectionLabel}
+          </span>
+          <h2
+            className="text-3xl lg:text-4xl text-waxly-brown mb-6"
+            style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
+          >
             {content.title}
           </h2>
-          <p className="text-text-muted dark:text-gray-300 text-lg leading-relaxed">
+          <p className="text-waxly-brownLight font-light text-lg leading-relaxed">
             {content.description}
           </p>
-        </div>
+        </motion.div>
 
-        {/* Stitch-style 3-Column Feature Grid */}
+        {/* Features Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-16">
           {content.features.map((feature, index) => (
-            <div
+            <motion.div
               key={index}
-              className="group bg-white dark:bg-background-dark rounded-[12px] p-8 shadow-stitch hover:shadow-stitch-md transition-all duration-300 hover:-translate-y-1 text-center"
+              className="group bg-white p-8 text-center border border-waxly-border hover:border-waxly-brown transition-all duration-300"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
             >
               {/* Icon */}
-              <div className="icon-circle-lg mx-auto mb-6 group-hover:bg-primary/20 transition-colors">
-                <span className="material-symbols-outlined text-2xl text-primary">
+              <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center text-waxly-brown">
+                <span className="material-symbols-outlined text-4xl" style={{ fontVariationSettings: "'wght' 200" }}>
                   {feature.icon}
                 </span>
               </div>
 
               {/* Content */}
-              <h3 className="font-display font-bold text-lg text-text-main dark:text-white mb-3">
+              <h3
+                className="text-lg text-waxly-brown mb-3"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
                 {feature.title}
               </h3>
-              <p className="text-sm text-text-muted dark:text-gray-400 leading-relaxed">
+              <p className="text-sm text-waxly-brownLight font-light leading-relaxed">
                 {feature.description}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
 
-        {/* Stitch-style Quote Block */}
-        <div className="max-w-2xl mx-auto">
-          <div className="bg-white dark:bg-background-dark rounded-[12px] p-8 shadow-stitch text-center relative">
+        {/* Quote Block */}
+        <motion.div
+          className="max-w-2xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <div className="bg-white p-8 text-center relative border border-waxly-border">
             {/* Decorative Quote Mark */}
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2 size-8 rounded-full bg-primary flex items-center justify-center shadow-stitch">
-              <span className="material-symbols-outlined text-white text-lg">
-                format_quote
+            <div className="text-waxly-brown/20 mb-4">
+              <span
+                className="text-6xl leading-none"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
+                &ldquo;&ldquo;
               </span>
             </div>
 
-            <blockquote className="pt-4">
-              <p className="font-display text-xl lg:text-2xl text-text-main dark:text-white italic leading-relaxed mb-4">
-                &ldquo;{content.quote}&rdquo;
+            <blockquote>
+              <p
+                className="text-xl lg:text-2xl text-waxly-brown italic leading-relaxed mb-4"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
+                {content.quote}
               </p>
               <footer className="flex items-center justify-center gap-2">
-                <div className="w-8 h-[1px] bg-primary/30" />
-                <cite className="text-sm font-medium text-primary not-italic">
+                <div className="w-8 h-[1px] bg-waxly-brown/30" />
+                <cite className="text-sm text-waxly-brownLight font-light not-italic">
                   {content.quoteAuthor}
                 </cite>
-                <div className="w-8 h-[1px] bg-primary/30" />
+                <div className="w-8 h-[1px] bg-waxly-brown/30" />
               </footer>
             </blockquote>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

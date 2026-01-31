@@ -12,8 +12,8 @@ export default function ServicesPage() {
       <HygieneSteps />
       <SpaGallery />
       {/* Aftercare & Products Section */}
-      <section className="py-20 lg:py-28 bg-background-light dark:bg-background-dark">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 lg:py-28 bg-waxly-cream">
+        <div className="section-container">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
             {/* Aftercare Timeline - Takes 3 columns */}
             <div className="lg:col-span-3">

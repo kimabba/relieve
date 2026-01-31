@@ -5,34 +5,20 @@ import { reviews } from "@/lib/data";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const testimonials = [
-  {
-    textKo: "임신 34주에 방문했는데 선생님이 정말 세심하게 케어해주셨어요. 임산부 전용 쿠션 덕분에 너무 편했습니다.",
-    textEn: "Visited at 34 weeks pregnant and the care was incredibly attentive. The pregnancy pillows made it so comfortable.",
-    nameKo: "김지연",
-    nameEn: "Sarah J.",
-    weekKo: "34주 임산부",
-    weekEn: "34 Weeks Pregnant",
-    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&q=80",
-  },
-  {
-    textKo: "피부가 예민한데 슈가링 후 트러블이 전혀 없었어요. 천연 성분이라 안심되고 효과도 좋아요.",
-    textEn: "My skin is very sensitive but had no trouble after sugaring. Natural ingredients give peace of mind and great results.",
-    nameKo: "이수현",
-    nameEn: "Emily R.",
-    weekKo: "22주 임산부",
-    weekEn: "22 Weeks Pregnant",
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&q=80",
-  },
-  {
-    textKo: "왁싱보다 훨씬 부드럽고 아프지 않아요. 분위기도 편안하고 다음에도 꼭 다시 올게요!",
-    textEn: "Much gentler and less painful than waxing. The atmosphere is so relaxing. Will definitely come back!",
-    nameKo: "박민아",
-    nameEn: "Michelle T.",
-    weekKo: "산후 케어",
-    weekEn: "Post-Partum",
-    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&q=80",
-  },
+const testimonial = {
+  textKo: "임신 34주에 방문했는데 선생님이 정말 세심하게 케어해주셨어요. 임산부 전용 쿠션 덕분에 너무 편했습니다. 피부가 예민한데 슈가링 후 트러블이 전혀 없었어요. 천연 성분이라 안심되고 효과도 좋아요.",
+  textEn: "Visited at 34 weeks pregnant and the care was incredibly attentive. The pregnancy pillows made it so comfortable. My skin is very sensitive but had no trouble after sugaring. Natural ingredients give peace of mind and great results.",
+  nameKo: "김지연",
+  nameEn: "Judy Morris",
+  titleKo: "임산부 고객",
+  titleEn: "Maternity Client",
+  avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&q=80",
+};
+
+const galleryImages = [
+  "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=300&h=400&fit=crop&q=80",
+  "https://images.unsplash.com/photo-1519824145371-296894a0daa9?w=300&h=200&fit=crop&q=80",
+  "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=200&h=300&fit=crop&q=80",
 ];
 
 export default function ReviewHighlights() {
@@ -40,178 +26,158 @@ export default function ReviewHighlights() {
   const isKo = locale === "ko";
 
   return (
-<section className="relative py-24 lg:py-32 bg-[#F8F6F3] overflow-hidden">
-      {/* Single Subtle Background Decoration */}
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-gradient-to-tl from-[#7D6B7D]/6 to-transparent rounded-full blur-3xl" />
+    <section className="relative py-24 lg:py-32 bg-white overflow-hidden">
+      {/* Decorative Curved Line */}
+      <svg
+        className="absolute top-0 right-0 w-[300px] h-[200px] opacity-20 pointer-events-none"
+        viewBox="0 0 300 200"
+        fill="none"
+      >
+        <path
+          d="M300 0C250 50 200 80 150 100C100 120 50 150 0 200"
+          stroke="#6A483C"
+          strokeWidth="1"
+          fill="none"
+        />
+      </svg>
 
       <div className="section-container relative">
-        {/* Section Header */}
-        <motion.div
-          className="text-center max-w-3xl mx-auto mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <span className="inline-flex items-center gap-2 py-2.5 px-6 rounded-full bg-[#B8989B]/10 text-[#9A7B7E] text-sm font-bold mb-6">
-            <span className="material-symbols-outlined text-base">favorite</span>
-            {isKo ? "고객 후기" : "Client Stories"}
-          </span>
-          <h2
-            className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-800 mb-6"
-            style={{ fontFamily: "'Playfair Display', serif" }}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left - Image Gallery */}
+          <motion.div
+            className="relative hidden lg:block"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
           >
-            {isKo ? "고객님들의 따뜻한 후기" : "Warm Words from Our Clients"}
-          </h2>
-          <p className="text-gray-600 text-lg lg:text-xl">
-            {isKo
-              ? "임산부 고객님들의 실제 경험을 확인해 보세요"
-              : "Read real experiences from expectant mothers"}
-          </p>
-        </motion.div>
-
-        {/* Stats Row - Simplified Solid Color */}
-        <motion.div
-className="relative bg-[#7D6B7D] rounded-3xl p-8 mb-16 overflow-hidden"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-        >
-
-          <div className="relative flex flex-wrap justify-center gap-6 lg:gap-16">
-            {[
-              { value: reviews.total.toLocaleString(), label: isKo ? "총 리뷰" : "Reviews", icon: "rate_review" },
-              { value: reviews.participantCount.toLocaleString(), label: isKo ? "만족 고객" : "Happy Clients", icon: "sentiment_satisfied" },
-              { value: "4.9", label: isKo ? "평균 평점" : "Rating", icon: "star" },
-              { value: "99%", label: isKo ? "재방문율" : "Return Rate", icon: "refresh" },
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                className="text-center"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.1 * index }}
-              >
-                <div className="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center mx-auto mb-3">
-                  <span className="material-symbols-outlined text-white text-2xl">{stat.icon}</span>
-                </div>
-                <span className="block text-4xl lg:text-5xl font-bold text-white mb-1">
-                  {stat.value}
-                </span>
-                <span className="text-white/80 text-sm font-medium uppercase tracking-wider">
-                  {stat.label}
-                </span>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Testimonial Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 mb-16">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              className="relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
-            >
-{/* Top Accent Line - Simplified */}
-              <div className="absolute top-0 left-0 right-0 h-1 bg-[#7D6B7D]" />
-
-              {/* Quote Icon */}
-              <div className="absolute top-6 right-6 w-12 h-12 rounded-full bg-gradient-to-br from-[#B8989B]/10 to-[#7D6B7D]/10 flex items-center justify-center">
-                <span className="material-symbols-outlined text-[#7D6B7D] text-2xl">
-                  format_quote
-                </span>
+            <div className="grid grid-cols-2 gap-4">
+              {/* Large Image */}
+              <div className="relative aspect-[3/4] rounded-br-[60px] overflow-hidden">
+                <Image
+                  src={galleryImages[0]}
+                  alt="Client experience"
+                  fill
+                  className="object-cover"
+                />
               </div>
 
-              {/* Stars */}
-              <div className="flex gap-1 mb-6">
-                {[...Array(5)].map((_, i) => (
-                  <span
-                    key={i}
-                    className="material-symbols-outlined text-[#C9A962] text-xl"
-                    style={{ fontVariationSettings: "'FILL' 1" }}
-                  >
-                    star
-                  </span>
-                ))}
-              </div>
-
-              {/* Quote */}
-              <p
-                className="text-gray-700 text-lg leading-relaxed mb-8 min-h-[120px]"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
-                &ldquo;{isKo ? testimonial.textKo : testimonial.textEn}&rdquo;
-              </p>
-
-              {/* Author */}
-              <div className="flex items-center gap-4 pt-6 border-t border-gray-100">
-                <div className="relative w-14 h-14 rounded-full overflow-hidden shadow-md">
+              {/* Stacked Images */}
+              <div className="space-y-4 pt-12">
+                <div className="relative aspect-[3/2] rounded-bl-[40px] overflow-hidden">
                   <Image
-                    src={testimonial.avatar}
-                    alt={isKo ? testimonial.nameKo : testimonial.nameEn}
+                    src={galleryImages[1]}
+                    alt="Treatment"
                     fill
                     className="object-cover"
                   />
                 </div>
-                <div>
-                  <p className="font-bold text-gray-800 text-lg">
-                    {isKo ? testimonial.nameKo : testimonial.nameEn}
-                  </p>
-                  <p className="text-sm text-[#7D6B7D] font-medium flex items-center gap-1">
-                    <span className="material-symbols-outlined text-sm">pregnant_woman</span>
-                    {isKo ? testimonial.weekKo : testimonial.weekEn}
-                  </p>
+                <div className="relative aspect-[2/3] rounded-tl-[40px] overflow-hidden">
+                  <Image
+                    src={galleryImages[2]}
+                    alt="Relaxation"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
               </div>
-            </motion.div>
-          ))}
+            </div>
+          </motion.div>
+
+          {/* Right - Testimonial */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            {/* Title */}
+            <h2
+              className="text-4xl lg:text-5xl text-waxly-brown mb-10"
+              style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
+            >
+              {isKo ? "What Clients Say" : "What Clients Say"}
+            </h2>
+
+            {/* Quote Icon */}
+            <div className="text-waxly-brown/20 mb-6">
+              <span
+                className="text-7xl leading-none"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
+                &ldquo;&ldquo;
+              </span>
+            </div>
+
+            {/* Testimonial Text */}
+            <p className="text-waxly-brownLight font-light text-lg leading-relaxed mb-8">
+              {isKo ? testimonial.textKo : testimonial.textEn}
+            </p>
+
+            {/* Stars */}
+            <div className="flex gap-1 mb-8">
+              {[...Array(5)].map((_, i) => (
+                <span
+                  key={i}
+                  className="material-symbols-outlined text-waxly-gold text-xl"
+                  style={{ fontVariationSettings: "'FILL' 1" }}
+                >
+                  star
+                </span>
+              ))}
+            </div>
+
+            {/* Author */}
+            <div className="flex items-center gap-4">
+              <div className="relative w-14 h-14 rounded-full overflow-hidden">
+                <Image
+                  src={testimonial.avatar}
+                  alt={isKo ? testimonial.nameKo : testimonial.nameEn}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div>
+                <p
+                  className="text-waxly-brown text-lg"
+                  style={{ fontFamily: "'Playfair Display', serif" }}
+                >
+                  {isKo ? testimonial.nameKo : testimonial.nameEn}
+                </p>
+                <p className="text-waxly-brownLight font-light text-sm">
+                  {isKo ? testimonial.titleKo : testimonial.titleEn}
+                </p>
+              </div>
+            </div>
+          </motion.div>
         </div>
 
-        {/* Review Keywords */}
+        {/* Review Stats - Bottom */}
         <motion.div
-          className="bg-white rounded-3xl p-8 shadow-lg"
+          className="mt-20 grid grid-cols-2 md:grid-cols-5 gap-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <h3 className="text-center text-xl font-bold text-gray-800 mb-8">
-            {isKo ? "고객님들이 자주 언급하는 키워드" : "Frequently Mentioned Keywords"}
-          </h3>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-            {reviews.highlights.map((highlight, index) => (
-              <motion.div
-                key={highlight.keyword}
-                className="group flex flex-col items-center p-5 bg-gradient-to-br from-[#F8F6F3] to-white rounded-2xl hover:shadow-md transition-all duration-300"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.05 * index }}
-                whileHover={{ y: -3 }}
+          {reviews.highlights.map((highlight) => (
+            <div key={highlight.keyword} className="text-center">
+              <div className="w-12 h-12 mx-auto mb-3 text-waxly-brown">
+                <span className="material-symbols-outlined text-3xl" style={{ fontVariationSettings: "'wght' 200" }}>
+                  {highlight.icon}
+                </span>
+              </div>
+              <p
+                className="text-2xl text-waxly-brown mb-1"
+                style={{ fontFamily: "'Playfair Display', serif" }}
               >
-<div className="w-14 h-14 rounded-2xl bg-[#7D6B7D]/10 mb-4 flex items-center justify-center group-hover:bg-[#7D6B7D]/20 transition-colors">
-                  <span className="material-symbols-outlined text-2xl text-[#7D6B7D]">
-                    {highlight.icon}
-                  </span>
-                </div>
-                <span className="font-bold text-gray-700 text-center mb-1 text-sm">
-                  {isKo ? highlight.keyword : highlight.keywordEn}
-                </span>
-<span className="text-2xl font-bold text-[#7D6B7D]">
-                  {highlight.count}
-                </span>
-              </motion.div>
-            ))}
-          </div>
+                {highlight.count}
+              </p>
+              <p className="text-waxly-brownLight font-light text-xs">
+                {isKo ? highlight.keyword : highlight.keywordEn}
+              </p>
+            </div>
+          ))}
         </motion.div>
 
         {/* Naver Review Link */}
@@ -226,10 +192,10 @@ className="relative bg-[#7D6B7D] rounded-3xl p-8 mb-16 overflow-hidden"
             href="https://m.place.naver.com/beauty/1306755661/review/visitor"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 text-[#7D6B7D] hover:text-[#8577B0] font-bold transition-colors"
+            className="inline-flex items-center gap-2 text-waxly-brown font-light tracking-wider hover:gap-3 transition-all"
           >
-            <span>{isKo ? "네이버에서 더 많은 리뷰 보기" : "See More Reviews on Naver"}</span>
-            <span className="material-symbols-outlined">open_in_new</span>
+            {isKo ? "네이버에서 더 많은 리뷰 보기" : "See More Reviews on Naver"}
+            <span className="material-symbols-outlined text-base">arrow_forward</span>
           </a>
         </motion.div>
       </div>

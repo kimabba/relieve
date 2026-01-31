@@ -1,6 +1,7 @@
 "use client";
 
 import { useLocale } from "next-intl";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 const sanctuaryData = {
@@ -75,16 +76,33 @@ export default function TheSanctuary() {
   const content = locale === "ko" ? sanctuaryData.ko : sanctuaryData.en;
 
   return (
-    <section className="py-20 lg:py-28 bg-white dark:bg-[#2c2c24] overflow-hidden relative">
-      {/* Background Decoration - Stitch Style */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 -skew-x-12 translate-x-1/2" />
+    <section className="py-20 lg:py-28 bg-waxly-cream overflow-hidden relative">
+      {/* Decorative Curved Line */}
+      <svg
+        className="absolute top-0 right-0 w-[400px] h-[300px] opacity-20 pointer-events-none"
+        viewBox="0 0 400 300"
+        fill="none"
+      >
+        <path
+          d="M400 0C300 80 200 120 100 160C50 200 0 250 0 300"
+          stroke="#6A483C"
+          strokeWidth="1"
+          fill="none"
+        />
+      </svg>
 
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="section-container relative">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
-          {/* Stitch-style Image Grid */}
-          <div className="w-full lg:w-1/2 grid grid-cols-2 gap-4">
+          {/* Image Grid */}
+          <motion.div
+            className="w-full lg:w-1/2 grid grid-cols-2 gap-4"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <div className="space-y-4 mt-8">
-              <div className="relative h-64 rounded-[12px] overflow-hidden shadow-stitch-lg hover:shadow-stitch-xl transition-shadow">
+              <div className="relative h-64 overflow-hidden">
                 <Image
                   src={images.main}
                   alt={locale === "ko" ? "편안한 스파 인테리어" : "Calm spa interior"}
@@ -93,23 +111,28 @@ export default function TheSanctuary() {
                   sizes="(max-width: 768px) 50vw, 25vw"
                 />
               </div>
-              <div className="p-6 bg-background-light dark:bg-background-dark rounded-[12px] border border-primary/20 text-center shadow-stitch">
-                <span className="text-primary font-bold text-3xl">24°C</span>
-                <p className="text-xs uppercase tracking-wider mt-2 text-text-muted font-medium">
+              <div className="p-6 bg-white text-center border border-waxly-border">
+                <span
+                  className="text-waxly-brown text-3xl"
+                  style={{ fontFamily: "'Playfair Display', serif" }}
+                >
+                  24°C
+                </span>
+                <p className="text-xs uppercase tracking-wider mt-2 text-waxly-brownLight font-light">
                   {content.tempLabel}
                 </p>
               </div>
             </div>
             <div className="space-y-4">
-              <div className="p-6 bg-primary/10 rounded-[12px] text-center flex flex-col items-center justify-center h-32">
-                <span className="material-symbols-outlined text-4xl text-primary mb-2">
+              <div className="p-6 bg-white text-center flex flex-col items-center justify-center h-32 border border-waxly-border">
+                <span className="material-symbols-outlined text-4xl text-waxly-brown mb-2" style={{ fontVariationSettings: "'wght' 200" }}>
                   chair
                 </span>
-                <p className="text-xs uppercase tracking-wider font-bold text-primary">
+                <p className="text-xs uppercase tracking-wider text-waxly-brownLight font-light">
                   {content.adjustableLabel}
                 </p>
               </div>
-              <div className="relative h-64 rounded-[12px] overflow-hidden shadow-stitch-lg hover:shadow-stitch-xl transition-shadow">
+              <div className="relative h-64 overflow-hidden">
                 <Image
                   src={images.secondary}
                   alt={locale === "ko" ? "편안한 수건과 쿠션" : "Comfortable pillows and towels"}
@@ -119,45 +142,57 @@ export default function TheSanctuary() {
                 />
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Text Content - Stitch Style */}
-          <div className="w-full lg:w-1/2 flex flex-col gap-6">
+          {/* Text Content */}
+          <motion.div
+            className="w-full lg:w-1/2 flex flex-col gap-6"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <div>
-              <span className="section-label">
+              <span className="text-waxly-brownLight text-sm tracking-widest uppercase mb-4 block">
                 {content.sectionLabel}
               </span>
-              <h2 className="font-display text-3xl lg:text-4xl font-bold mt-2 mb-4 text-text-main dark:text-white">
+              <h2
+                className="text-3xl lg:text-4xl text-waxly-brown mt-2 mb-4"
+                style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
+              >
                 {content.title}
                 <br />
-                <span className="text-primary italic">{content.titleHighlight}</span>
+                <span className="italic">{content.titleHighlight}</span>
               </h2>
-              <p className="text-text-muted dark:text-gray-300 text-lg leading-relaxed">
+              <p className="text-waxly-brownLight font-light text-lg leading-relaxed">
                 {content.description}
               </p>
             </div>
 
-            {/* Stitch-style Features List */}
+            {/* Features List */}
             <div className="flex flex-col gap-5 mt-4">
               {content.features.map((feature, index) => (
                 <div key={index} className="flex gap-4 items-start group">
-                  <div className="size-12 rounded-[10px] bg-secondary-bg dark:bg-white/10 flex items-center justify-center text-text-main dark:text-white shrink-0 group-hover:bg-primary/10 transition-colors">
-                    <span className="material-symbols-outlined text-xl">
+                  <div className="w-12 h-12 bg-white flex items-center justify-center shrink-0 text-waxly-brown border border-waxly-border group-hover:border-waxly-brown transition-colors">
+                    <span className="material-symbols-outlined text-xl" style={{ fontVariationSettings: "'wght' 200" }}>
                       {feature.icon}
                     </span>
                   </div>
                   <div>
-                    <h4 className="font-bold text-lg text-text-main dark:text-white mb-1">
+                    <h4
+                      className="text-lg text-waxly-brown mb-1"
+                      style={{ fontFamily: "'Playfair Display', serif" }}
+                    >
                       {feature.title}
                     </h4>
-                    <p className="text-sm text-text-muted dark:text-gray-400 leading-relaxed">
+                    <p className="text-sm text-waxly-brownLight font-light leading-relaxed">
                       {feature.description}
                     </p>
                   </div>
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

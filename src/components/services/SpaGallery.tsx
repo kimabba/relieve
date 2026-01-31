@@ -1,6 +1,7 @@
 "use client";
 
 import { useLocale } from "next-intl";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 const galleryData = {
@@ -45,31 +46,58 @@ export default function SpaGallery() {
   const content = locale === "ko" ? galleryData.ko : galleryData.en;
 
   return (
-    <section className="py-20 lg:py-28 bg-background-light dark:bg-background-dark">
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 lg:py-28 bg-white overflow-hidden relative">
+      {/* Decorative Curved Line */}
+      <svg
+        className="absolute bottom-0 right-0 w-[400px] h-[300px] opacity-20 pointer-events-none"
+        viewBox="0 0 400 300"
+        fill="none"
+      >
+        <path
+          d="M400 0C300 50 200 100 150 150C100 200 50 250 0 300"
+          stroke="#6A483C"
+          strokeWidth="1"
+          fill="none"
+        />
+      </svg>
+
+      <div className="section-container relative">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <motion.div
+          className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
           <div className="max-w-xl">
-            <span className="text-accent-gold font-bold tracking-widest uppercase text-xs mb-3 block">
+            <span className="text-waxly-brownLight text-sm tracking-widest uppercase mb-4 block">
               {content.sectionLabel}
             </span>
-            <h3 className="font-display text-3xl lg:text-4xl font-bold text-text-main dark:text-white mb-4">
+            <h3
+              className="text-3xl lg:text-4xl text-waxly-brown mb-4"
+              style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
+            >
               {content.title}
             </h3>
-            <p className="text-text-muted dark:text-gray-400">
+            <p className="text-waxly-brownLight font-light">
               {content.description}
             </p>
           </div>
-          <button className="flex items-center gap-2 text-accent-gold font-bold text-sm hover:text-accent-gold/80 transition-colors">
+          <button className="inline-flex items-center gap-2 text-waxly-brown font-light text-sm tracking-wider hover:gap-3 transition-all">
             {content.exploreButton}
             <span className="material-symbols-outlined text-lg">arrow_forward</span>
           </button>
-        </div>
+        </motion.div>
 
         {/* Gallery Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 h-auto md:h-[500px]">
           {/* Main Large Image */}
-          <div className="lg:col-span-8 md:col-span-2 relative group overflow-hidden rounded-2xl h-[300px] md:h-full">
+          <motion.div
+            className="lg:col-span-8 md:col-span-2 relative group overflow-hidden h-[300px] md:h-full"
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
             <Image
               src={images.main}
               alt={content.rooms[0].title}
@@ -80,18 +108,27 @@ export default function SpaGallery() {
             />
             {/* Overlay */}
             <div className="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-black/60 to-transparent w-full">
-              <h4 className="text-white font-display font-bold text-xl">
+              <h4
+                className="text-white text-xl"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
                 {content.rooms[0].title}
               </h4>
-              <p className="text-white/80 text-sm">
+              <p className="text-white/80 text-sm font-light">
                 {content.rooms[0].description}
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Side Column Images */}
           <div className="lg:col-span-4 md:col-span-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 h-full">
-            <div className="relative group overflow-hidden rounded-2xl h-[240px] lg:h-full">
+            <motion.div
+              className="relative group overflow-hidden h-[240px] lg:h-full"
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
               <Image
                 src={images.secondary1}
                 alt={locale === "ko" ? "대기실" : "Waiting area"}
@@ -99,8 +136,14 @@ export default function SpaGallery() {
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 33vw"
               />
-            </div>
-            <div className="relative group overflow-hidden rounded-2xl h-[240px] lg:h-full">
+            </motion.div>
+            <motion.div
+              className="relative group overflow-hidden h-[240px] lg:h-full"
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
               <Image
                 src={images.secondary2}
                 alt={locale === "ko" ? "제품 선반" : "Product shelf"}
@@ -108,7 +151,7 @@ export default function SpaGallery() {
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 33vw"
               />
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

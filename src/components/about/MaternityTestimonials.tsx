@@ -1,6 +1,7 @@
 "use client";
 
 import { useLocale } from "next-intl";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 const testimonialsData = {
@@ -68,45 +69,71 @@ export default function MaternityTestimonials() {
     locale === "ko" ? testimonialsData.ko : testimonialsData.en;
 
   return (
-    <section className="py-20 lg:py-28 bg-secondary-bg dark:bg-[#32322a]">
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Stitch-style Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="section-label">
+    <section className="py-20 lg:py-28 bg-white overflow-hidden relative">
+      {/* Decorative Curved Line */}
+      <svg
+        className="absolute top-0 left-0 w-[300px] h-[200px] opacity-20 pointer-events-none"
+        viewBox="0 0 300 200"
+        fill="none"
+      >
+        <path
+          d="M0 100C50 50 100 0 150 50C200 100 250 150 300 100"
+          stroke="#6A483C"
+          strokeWidth="1"
+          fill="none"
+        />
+      </svg>
+
+      <div className="section-container relative">
+        {/* Header */}
+        <motion.div
+          className="text-center max-w-2xl mx-auto mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <span className="text-waxly-brownLight text-sm tracking-widest uppercase mb-4 block">
             {content.sectionLabel}
           </span>
-          <h2 className="font-display text-3xl lg:text-4xl font-bold text-text-main dark:text-white mb-4">
+          <h2
+            className="text-3xl lg:text-4xl text-waxly-brown mb-4"
+            style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
+          >
             {content.title}
           </h2>
-          <p className="text-text-muted dark:text-gray-400 text-lg">
+          <p className="text-waxly-brownLight font-light text-lg">
             {content.description}
           </p>
-        </div>
+        </motion.div>
 
-        {/* Stitch-style Testimonials Grid with border-l */}
+        {/* Testimonials Grid */}
         <div className="grid md:grid-cols-3 gap-8">
           {content.testimonials.map((testimonial, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-white dark:bg-background-dark p-8 rounded-[12px] shadow-stitch border-l-4 border-primary hover:shadow-stitch-md transition-all duration-300"
+              className="bg-waxly-cream p-8 border-l-2 border-waxly-brown"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
             >
               {/* Stars */}
-              <div className="flex gap-1 text-primary mb-4">
+              <div className="flex gap-1 text-waxly-gold mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <span key={i} className="material-symbols-outlined text-base">
+                  <span key={i} className="material-symbols-outlined text-base" style={{ fontVariationSettings: "'FILL' 1" }}>
                     star
                   </span>
                 ))}
               </div>
 
               {/* Quote */}
-              <p className="text-text-main dark:text-gray-200 text-lg italic leading-relaxed mb-6">
+              <p className="text-waxly-brownLight font-light text-lg italic leading-relaxed mb-6">
                 &ldquo;{testimonial.text}&rdquo;
               </p>
 
-              {/* Author - Stitch Style */}
-              <div className="flex items-center gap-3 pt-4 border-t border-gray-100 dark:border-white/10">
-                <div className="size-12 rounded-full bg-gray-200 overflow-hidden relative">
+              {/* Author */}
+              <div className="flex items-center gap-3 pt-4 border-t border-waxly-border">
+                <div className="w-12 h-12 rounded-full overflow-hidden relative">
                   <Image
                     src={testimonial.image}
                     alt={testimonial.name}
@@ -116,18 +143,21 @@ export default function MaternityTestimonials() {
                   />
                 </div>
                 <div>
-                  <p className="font-semibold text-sm text-text-main dark:text-white">
+                  <p
+                    className="text-sm text-waxly-brown"
+                    style={{ fontFamily: "'Playfair Display', serif" }}
+                  >
                     {testimonial.name}
                   </p>
-                  <p className="text-xs text-text-muted dark:text-gray-400 flex items-center gap-1">
-                    <span className="material-symbols-outlined text-primary text-sm">
+                  <p className="text-xs text-waxly-brownLight font-light flex items-center gap-1">
+                    <span className="material-symbols-outlined text-waxly-brown text-sm" style={{ fontVariationSettings: "'wght' 200" }}>
                       pregnant_woman
                     </span>
                     {testimonial.week}
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

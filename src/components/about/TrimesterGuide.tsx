@@ -1,6 +1,7 @@
 "use client";
 
 import { useLocale } from "next-intl";
+import { motion } from "framer-motion";
 
 const trimesterData = {
   ko: {
@@ -78,55 +79,84 @@ export default function TrimesterGuide() {
   const content = locale === "ko" ? trimesterData.ko : trimesterData.en;
 
   return (
-    <section className="py-20 lg:py-28 bg-background-light dark:bg-background-dark">
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Stitch-style Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="section-label">
+    <section className="py-20 lg:py-28 bg-white overflow-hidden relative">
+      {/* Decorative Curved Line */}
+      <svg
+        className="absolute bottom-0 right-0 w-[400px] h-[300px] opacity-20 pointer-events-none"
+        viewBox="0 0 400 300"
+        fill="none"
+      >
+        <path
+          d="M400 0C300 50 200 100 150 150C100 200 50 250 0 300"
+          stroke="#6A483C"
+          strokeWidth="1"
+          fill="none"
+        />
+      </svg>
+
+      <div className="section-container relative">
+        {/* Section Header */}
+        <motion.div
+          className="text-center max-w-2xl mx-auto mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <span className="text-waxly-brownLight text-sm tracking-widest uppercase mb-4 block">
             {content.sectionLabel}
           </span>
-          <h2 className="font-display text-3xl lg:text-4xl font-bold text-text-main dark:text-white mb-4">
+          <h2
+            className="text-3xl lg:text-4xl text-waxly-brown mb-4"
+            style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
+          >
             {content.title}
           </h2>
-          <p className="text-text-muted dark:text-gray-400 text-lg">
+          <p className="text-waxly-brownLight font-light text-lg">
             {content.description}
           </p>
-        </div>
+        </motion.div>
 
-        {/* Stitch-style 3-Column Trimester Cards */}
+        {/* Trimester Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {content.trimesters.map((trimester, index) => (
-            <div
+            <motion.div
               key={index}
-              className="group bg-white dark:bg-[#32322a] rounded-[12px] p-8 shadow-stitch hover:shadow-stitch-md transition-all duration-300 hover:-translate-y-1 relative overflow-hidden"
+              className="group bg-waxly-cream p-8 border border-waxly-border hover:border-waxly-brown transition-all duration-300"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
             >
-              {/* Background Accent */}
-              <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-bl-full -mr-6 -mt-6 group-hover:bg-primary/10 transition-colors"></div>
-
               {/* Icon */}
-              <div className="icon-circle-lg mb-6 group-hover:bg-primary/20 transition-colors relative z-10">
-                <span className="material-symbols-outlined text-2xl text-primary">
+              <div className="w-14 h-14 mb-6 flex items-center justify-center text-waxly-brown">
+                <span className="material-symbols-outlined text-3xl" style={{ fontVariationSettings: "'wght' 200" }}>
                   {trimester.icon}
                 </span>
               </div>
 
               {/* Label & Period */}
               <div className="flex items-center gap-2 mb-3">
-                <span className="text-primary font-bold text-sm uppercase tracking-wider">
+                <span
+                  className="text-waxly-brown text-sm"
+                  style={{ fontFamily: "'Playfair Display', serif" }}
+                >
                   {trimester.label}
                 </span>
-                <span className="text-xs text-text-muted dark:text-gray-500 bg-primary/10 px-2 py-0.5 rounded-full">
+                <span className="text-xs text-waxly-brownLight bg-white px-2 py-0.5">
                   {trimester.period}
                 </span>
               </div>
 
               {/* Title */}
-              <h3 className="font-display text-xl font-bold text-text-main dark:text-white mb-3">
+              <h3
+                className="text-xl text-waxly-brown mb-3"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
                 {trimester.title}
               </h3>
 
               {/* Description */}
-              <p className="text-text-muted dark:text-gray-400 leading-relaxed mb-6 text-sm">
+              <p className="text-waxly-brownLight font-light text-sm leading-relaxed mb-6">
                 {trimester.description}
               </p>
 
@@ -135,13 +165,13 @@ export default function TrimesterGuide() {
                 {trimester.highlights.map((highlight, idx) => (
                   <span
                     key={idx}
-                    className="text-xs font-medium text-primary bg-primary/10 px-3 py-1.5 rounded-full"
+                    className="text-xs text-waxly-brown bg-white px-3 py-1.5 border border-waxly-border"
                   >
                     {highlight}
                   </span>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

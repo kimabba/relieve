@@ -11,10 +11,10 @@ export default function MapSection() {
   const naverMapUrl = `https://map.naver.com/p/entry/place/${placeInfo.id}`;
 
   return (
-    <section className="py-20 lg:py-28 bg-white">
+    <section className="py-20 lg:py-28 bg-waxly-cream">
       <div className="section-container">
         <motion.div
-          className="rounded-3xl overflow-hidden shadow-xl"
+          className="overflow-hidden border border-waxly-border"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -34,12 +34,15 @@ export default function MapSection() {
           </div>
 
           {/* Map Footer */}
-          <div className="bg-[#FFFAF4] p-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <div className="bg-white p-6 flex flex-col sm:flex-row justify-between items-center gap-4">
             <div className="text-center sm:text-left">
-              <h3 className="font-bold text-gray-800 text-lg mb-1">
+              <h3
+                className="text-waxly-brown text-lg mb-1"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
                 {isKo ? placeInfo.name : placeInfo.nameEn}
               </h3>
-              <p className="text-gray-600">
+              <p className="text-waxly-brownLight font-light">
                 {isKo ? location.address.road : location.address.roadEn}
               </p>
             </div>
@@ -47,7 +50,7 @@ export default function MapSection() {
               href={naverMapUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#9B8AC4] hover:bg-[#8577B0] text-white rounded-full font-bold transition-all shadow-md hover:shadow-lg hover:scale-105"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-waxly-brown hover:bg-waxly-brownDark text-white font-light tracking-wider transition-all"
             >
               <span className="material-symbols-outlined text-lg">open_in_new</span>
               {isKo ? "네이버 지도에서 보기" : "View on Naver Map"}
