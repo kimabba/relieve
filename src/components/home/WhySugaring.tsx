@@ -61,18 +61,18 @@ export default function WhySugaring() {
         >
           <span className="inline-flex items-center gap-2 py-2.5 px-6 rounded-full bg-[#7D6B7D]/10 text-[#7D6B7D] text-sm font-bold mb-6">
             <span className="material-symbols-outlined text-base">spa</span>
-            {isKo ? "왜 슈가링인가요?" : "Why Sugaring?"}
+            {isKo ? "왜 슈가링일까요?" : "Why Sugaring?"}
           </span>
           <h2
             className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-800 mb-6"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
-            {isKo ? "자연에서 온 부드러운 케어" : "Gentle Care from Nature"}
+            {isKo ? "일반 왁싱과 무엇이 다를까요?" : "What Makes It Different?"}
           </h2>
-          <p className="text-gray-600 text-lg lg:text-xl leading-relaxed">
+          <p className="text-gray-600 text-lg lg:text-xl leading-relaxed" style={{ wordBreak: "keep-all" }}>
             {isKo
-              ? "슈가링은 설탕, 레몬, 물로만 만들어 임산부에게도 안전합니다. 체온과 비슷한 온도로 화상 걱정 없이, 털 성장 방향으로 제거하여 통증을 최소화합니다."
-              : "Made only with sugar, lemon, and water, sugaring is safe even for expectant mothers. Applied at body temperature with no burn risk."}
+              ? "슈가링은 설탕, 레몬, 물로만 만들어 임산부도 안심합니다. 체온과 비슷한 37°C로 화상 걱정 없이, 모발 성장 방향으로 제거해 통증을 최소화합니다."
+              : "Made only with sugar, lemon, and water, safe for expectant mothers. Applied at 37°C body temperature with no burn risk."}
           </p>
         </motion.div>
 
@@ -221,12 +221,12 @@ className="relative bg-[#7D6B7D] rounded-[2rem] p-8 lg:p-12 overflow-hidden"
                 className="text-3xl lg:text-4xl font-bold text-white mb-4"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
-                {isKo ? "임산부를 위한\n안심 케어" : "Safe Care for\nExpectant Mothers"}
+                {isKo ? "임산부도 안심하는 이유" : "Why Expectant Mothers Trust Us"}
               </h3>
-              <p className="text-white/80 text-lg mb-6">
+              <p className="text-white/80 text-lg mb-6" style={{ wordBreak: "keep-all" }}>
                 {isKo
-                  ? "모든 과정이 임산부를 배려하여 설계되었습니다"
-                  : "Every step designed with expectant mothers in mind"}
+                  ? "전 과정 임산부 배려 설계, 편안한 자세로 케어받으세요"
+                  : "Every process designed for expectant mothers' comfort"}
               </p>
 
               {/* Pregnant Woman Image */}

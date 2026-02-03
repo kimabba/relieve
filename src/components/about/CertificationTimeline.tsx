@@ -42,7 +42,7 @@ export default function CertificationTimeline() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
             >
-              {isKo ? "임산부를 위한 안심 케어" : "Safe Care for Expectant Mothers"}
+              {isKo ? "8년 경력, 검증된 전문성" : "8 Years of Proven Expertise"}
             </motion.h1>
             <motion.p
               className="text-waxly-brownLight font-light text-lg lg:text-xl max-w-2xl mx-auto"
@@ -51,8 +51,8 @@ export default function CertificationTimeline() {
               transition={{ delay: 0.2 }}
             >
               {isKo
-                ? "100% 천연 슈가링으로 임산부도 안심하고 받으실 수 있습니다"
-                : "100% natural sugaring safe for expectant mothers"}
+                ? "국제대회 그랑프리 수상, 교육이사 위촉까지. 검증된 실력으로 케어합니다"
+                : "International Grand Prix winner and Education Director. Care backed by proven expertise"}
             </motion.p>
           </div>
         </div>
@@ -75,7 +75,7 @@ export default function CertificationTimeline() {
               className="text-3xl lg:text-4xl text-waxly-brown"
               style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
             >
-              {isKo ? "검증된 전문가의 케어" : "Care by Certified Experts"}
+              {isKo ? "믿을 수 있는 자격과 경력" : "Trusted Credentials"}
             </h2>
           </motion.div>
 

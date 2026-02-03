@@ -161,7 +161,7 @@ export default function EducationPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
-                {isKo ? "왁싱 전문 교육" : "Professional Waxing Education"}
+                {isKo ? "프로가 되는 가장 빠른 길" : "The Fastest Path to Pro"}
               </motion.h1>
 
               {/* Subtitle */}
@@ -172,13 +172,13 @@ export default function EducationPage() {
                 transition={{ delay: 0.3 }}
               >
                 {isKo
-                  ? "국제대회 그랑프리 수상자가 직접 가르치는\n체계적인 왁싱 & 슈가링 전문 교육 프로그램"
-                  : "Systematic waxing & sugaring education program\ntaught directly by an International Grand Prix winner"}
+                  ? "국제대회 수상자에게 직접 배우는 1:1 맞춤 커리큘럼"
+                  : "1:1 customized curriculum taught directly by an international award winner"}
               </motion.p>
 
               {/* CTA */}
               <motion.div
-                className="flex flex-col sm:flex-row gap-4 justify-center"
+                className="flex flex-col gap-3 sm:flex-row sm:gap-4 justify-center"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
