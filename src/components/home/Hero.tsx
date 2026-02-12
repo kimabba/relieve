@@ -2,7 +2,7 @@
 
 import { useLocale } from "next-intl";
 import { motion } from "framer-motion";
-import { placeInfo } from "@/lib/data";
+import { placeInfo, contact, reviews } from "@/lib/data";
 import Image from "next/image";
 
 export default function Hero() {
@@ -29,7 +29,22 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-4 items-center min-h-[calc(100vh-8rem)]">
           {/* Left Content - Text */}
           <div className="lg:col-span-5 text-center lg:text-left z-10">
-            {/* Main Title */}
+            {/* Trust Badge */}
+            <motion.div
+              className="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-waxly-brown/5 border border-waxly-brown/15 rounded-full"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <span className="material-symbols-outlined text-waxly-gold text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+              <span className="text-waxly-brown text-sm font-light">
+                {isKo
+                  ? `4.9점 (${reviews.total}건 리뷰)`
+                  : `4.9 Rating (${reviews.total} Reviews)`}
+              </span>
+            </motion.div>
+
+            {/* Main Title - SEO Optimized H1 */}
             <motion.h1
               className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-waxly-brown leading-tight mb-8"
               style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
@@ -39,26 +54,26 @@ export default function Hero() {
             >
               {isKo ? (
                 <>
-                  매끄러운
+                  광주
                   <br />
-                  피부를 위한
+                  프리미엄
                   <br />
-                  선택
+                  슈가링 케어
                 </>
               ) : (
                 <>
-                  Get The
+                  Gwangju
                   <br />
-                  Smooth Look
+                  Premium
                   <br />
-                  You Want
+                  Sugaring Care
                 </>
               )}
             </motion.h1>
 
             {/* Subtitle */}
             <motion.p
-              className="text-waxly-brownLight font-light text-base lg:text-lg mb-10 max-w-md mx-auto lg:mx-0 leading-relaxed"
+              className="text-waxly-brownLight font-light text-base lg:text-lg mb-6 max-w-md mx-auto lg:mx-0 leading-relaxed"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.6 }}
@@ -68,7 +83,19 @@ export default function Hero() {
                 : "Experience smooth, healthy skin with 100% natural sugaring. Pure care made from sugar, lemon, and water."}
             </motion.p>
 
-            {/* CTA Button - Waxly Style (Outlined, Square) */}
+            {/* Price Transparency */}
+            <motion.p
+              className="text-waxly-brown font-light text-sm mb-8 max-w-md mx-auto lg:mx-0"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.5 }}
+            >
+              {isKo
+                ? "첫 방문 특가 50,000원부터 | 임산부 케어 80,000원부터"
+                : "First visit from 50,000 KRW | Maternity care from 80,000 KRW"}
+            </motion.p>
+
+            {/* CTA Button - Unified Style */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -78,11 +105,34 @@ export default function Hero() {
                 href={placeInfo.bookingUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-8 py-5 border border-waxly-brown text-waxly-brown font-light tracking-wider hover:bg-waxly-brown hover:text-white transition-all duration-300"
+                className="inline-flex items-center gap-3 px-8 py-5 bg-waxly-brown text-white font-light tracking-wider hover:bg-waxly-brownDark transition-all duration-300"
               >
-                {isKo ? "예약하기" : "Discover More"}
+                {isKo ? "예약하기" : "Book Now"}
                 <span className="material-symbols-outlined text-lg">arrow_forward</span>
               </a>
+            </motion.div>
+
+            {/* Contact Info Bar */}
+            <motion.div
+              className="mt-8 flex flex-wrap justify-center lg:justify-start gap-4 text-waxly-brownLight text-xs"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.7, duration: 0.5 }}
+            >
+              <a href={`tel:${contact.phone}`} className="flex items-center gap-1 hover:text-waxly-brown transition-colors">
+                <span className="material-symbols-outlined text-sm">call</span>
+                {contact.phone}
+              </a>
+              <span className="hidden sm:inline text-waxly-border">|</span>
+              <span className="flex items-center gap-1">
+                <span className="material-symbols-outlined text-sm">schedule</span>
+                {isKo ? "월-토 10:00~20:00" : "Mon-Sat 10:00-20:00"}
+              </span>
+              <span className="hidden sm:inline text-waxly-border">|</span>
+              <span className="flex items-center gap-1">
+                <span className="material-symbols-outlined text-sm">location_on</span>
+                {isKo ? "광주 북구 운암동" : "Buk-gu, Gwangju"}
+              </span>
             </motion.div>
           </div>
 
@@ -99,7 +149,7 @@ export default function Hero() {
                 <div className="relative aspect-[3/4] rounded-tl-[100px] overflow-hidden">
                   <Image
                     src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&h=800&fit=crop&q=80"
-                    alt="Beauty treatment"
+                    alt={isKo ? "광주 슈가링 시술 - 릴리브" : "Sugaring treatment at Relieve Gwangju"}
                     fill
                     className="object-cover"
                     priority
@@ -135,7 +185,7 @@ export default function Hero() {
               >
                 <Image
                   src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=300&h=400&fit=crop&q=80"
-                  alt="Natural ingredients"
+                  alt={isKo ? "천연 슈가링 재료" : "Natural sugaring ingredients"}
                   fill
                   className="object-cover"
                 />

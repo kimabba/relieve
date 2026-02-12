@@ -96,7 +96,7 @@ export default function ReviewHighlights() {
               className="text-4xl lg:text-5xl text-waxly-brown mb-10"
               style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
             >
-              {isKo ? "What Clients Say" : "What Clients Say"}
+              {isKo ? "고객 후기" : "What Clients Say"}
             </h2>
 
             {/* Quote Icon */}
@@ -180,14 +180,19 @@ export default function ReviewHighlights() {
           ))}
         </motion.div>
 
-        {/* Naver Review Link */}
+        {/* Blog Review Count + Naver Review Link */}
         <motion.div
-          className="text-center mt-12"
+          className="text-center mt-12 space-y-4"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
         >
+          <p className="text-waxly-brownLight font-light text-sm">
+            {isKo
+              ? `방문자 리뷰 ${reviews.total}건 · 블로그 리뷰 ${reviews.blogCount}건`
+              : `${reviews.total} Visitor Reviews · ${reviews.blogCount} Blog Reviews`}
+          </p>
           <a
             href="https://m.place.naver.com/beauty/1306755661/review/visitor"
             target="_blank"

@@ -106,7 +106,7 @@ export default function Header() {
             </span>
           </Link>
 
-          {/* Right Menu */}
+          {/* Right Menu + Booking Button */}
           <div className="hidden lg:flex items-center gap-8">
             {rightNavItems.map((item) => (
               <Link
@@ -121,6 +121,14 @@ export default function Header() {
                 {item.label}
               </Link>
             ))}
+            <a
+              href={placeInfo.bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2.5 bg-waxly-brown text-white text-sm font-light tracking-wider hover:bg-waxly-brownDark transition-all duration-300"
+            >
+              {isKo ? "예약" : "BOOK"}
+            </a>
           </div>
 
           {/* Mobile Menu Toggle */}

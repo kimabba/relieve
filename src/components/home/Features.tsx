@@ -70,13 +70,13 @@ export default function Features() {
               className="text-4xl lg:text-5xl text-waxly-brown mb-6"
               style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
             >
-              {isKo ? "Our Story" : "Our Story"}
+              {isKo ? "릴리브 이야기" : "Our Story"}
             </h2>
 
             {/* Description */}
             <p className="text-waxly-brownLight font-light leading-relaxed mb-8">
               {isKo
-                ? "릴리브는 2016년부터 광주에서 프리미엄 슈가링 서비스를 제공해왔습니다. 100% 천연 성분만을 사용하여 피부에 자극 없는 안전한 제모를 선사합니다. 2023년 국제 왁싱 기능 경기 대회에서 그랑프리를 수상한 전문가가 직접 시술합니다."
+                ? "릴리브는 2016년부터 광주에서 프리미엄 슈가링 서비스를 제공해왔습니다. 100% 천연 성분만을 사용하여 피부에 자극 없는 안전한 제모와 피부관리를 선사합니다. 2023년 국제 왁싱 기능 경기 대회에서 그랑프리를 수상한 전문가가 직접 시술합니다."
                 : "Relieve has been providing premium sugaring services in Gwangju since 2016. Using only 100% natural ingredients for safe, irritation-free hair removal. Treatments are performed by our Grand Prix winning expert."}
             </p>
 
