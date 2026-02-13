@@ -144,7 +144,7 @@ export default function ServiceHighlights() {
           >
             <div className="relative aspect-[3/4] rounded-bl-[80px] overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=500&h=700&fit=crop&q=80"
+                src="https://images.unsplash.com/photo-1709755491926-f7aa83748967?w=500&h=700&fit=crop&q=80"
                 alt={isKo ? "광주 슈가링 왁싱 시술" : "Sugaring treatment"}
                 fill
                 className="object-cover"

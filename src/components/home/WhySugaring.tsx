@@ -90,7 +90,7 @@ export default function WhySugaring() {
               {/* Main Image */}
               <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&h=750&fit=crop&q=80"
+                  src="https://images.unsplash.com/photo-1573697610008-4c72b4e9508f?w=600&h=750&fit=crop&q=80"
                   alt="Natural sugaring ingredients"
                   fill
                   className="object-cover"
@@ -145,7 +145,7 @@ export default function WhySugaring() {
                 transition={{ delay: 0.4 }}
               >
                 <Image
-                  src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=200&h=200&fit=crop&q=80"
+                  src="https://images.unsplash.com/photo-1448062885262-aa6670248b0e?w=200&h=200&fit=crop&q=80"
                   alt="Honey and natural ingredients"
                   fill
                   className="object-cover"
@@ -232,7 +232,7 @@ className="relative bg-[#7D6B7D] rounded-[2rem] p-8 lg:p-12 overflow-hidden"
               {/* Pregnant Woman Image */}
               <div className="relative w-full max-w-[280px] aspect-square rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20 hidden lg:block">
                 <Image
-                  src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=400&fit=crop&q=80"
+                  src="https://images.unsplash.com/photo-1747073727403-af14e690b8de?w=400&h=400&fit=crop&q=80"
                   alt="Relaxing spa treatment"
                   fill
                   className="object-cover"

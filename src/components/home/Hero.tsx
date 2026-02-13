@@ -148,7 +148,7 @@ export default function Hero() {
               <div className="relative w-full max-w-lg ml-auto">
                 <div className="relative aspect-[3/4] rounded-tl-[100px] overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&h=800&fit=crop&q=80"
+                    src="https://images.unsplash.com/photo-1593260853607-d0e0f639bdab?w=600&h=800&fit=crop&q=80"
                     alt={isKo ? "광주 슈가링 시술 - 릴리브" : "Sugaring treatment at Relieve Gwangju"}
                     fill
                     className="object-cover"
@@ -184,7 +184,7 @@ export default function Hero() {
                 transition={{ delay: 0.8 }}
               >
                 <Image
-                  src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=300&h=400&fit=crop&q=80"
+                  src="https://images.unsplash.com/photo-1573697610008-4c72b4e9508f?w=300&h=400&fit=crop&q=80"
                   alt={isKo ? "천연 슈가링 재료" : "Natural sugaring ingredients"}
                   fill
                   className="object-cover"
