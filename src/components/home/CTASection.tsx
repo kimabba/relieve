@@ -14,7 +14,7 @@ export default function CTASection() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1709755491926-f7aa83748967?w=1920&h=800&fit=crop&q=80"
+          src="https://images.unsplash.com/photo-1722350766824-f8520e9676ac?w=1920&h=800&fit=crop&q=80"
           alt="Spa background"
           fill
           className="object-cover"
