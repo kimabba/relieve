@@ -21,6 +21,30 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Body scroll lock when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMobileMenuOpen]);
+
+  // Close mobile menu on ESC key
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsMobileMenuOpen(false);
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [isMobileMenuOpen]);
+
   const leftNavItems = [
     { href: "/", label: isKo ? "홈" : "HOME" },
     { href: "/about", label: isKo ? "소개" : "ABOUT" },
@@ -58,10 +82,10 @@ export default function Header() {
             </span>
           </div>
           <div className="flex items-center gap-4 ml-auto">
-            <a href="https://instagram.com" className="hover:text-white transition-colors">
+            <a href="https://instagram.com" className="inline-flex items-center justify-center px-2 py-1 min-w-[44px] min-h-[44px] hover:text-white transition-colors" aria-label="Instagram">
               <span className="text-xs font-bold">IG</span>
             </a>
-            <a href={placeInfo.naverMapUrl} className="hover:text-white transition-colors">
+            <a href={placeInfo.naverMapUrl} className="inline-flex items-center justify-center px-2 py-1 min-w-[44px] min-h-[44px] hover:text-white transition-colors" aria-label="Naver Map">
               <span className="text-xs font-bold">N</span>
             </a>
             <LanguageSwitcher />

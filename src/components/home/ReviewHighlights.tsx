@@ -58,6 +58,7 @@ export default function ReviewHighlights() {
                   src={galleryImages[0]}
                   alt="Client experience"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 25vw"
                   className="object-cover"
                 />
               </div>
@@ -69,6 +70,7 @@ export default function ReviewHighlights() {
                     src={galleryImages[1]}
                     alt="Treatment"
                     fill
+                    sizes="(max-width: 1024px) 100vw, 25vw"
                     className="object-cover"
                   />
                 </div>
@@ -77,6 +79,7 @@ export default function ReviewHighlights() {
                     src={galleryImages[2]}
                     alt="Relaxation"
                     fill
+                    sizes="(max-width: 1024px) 100vw, 25vw"
                     className="object-cover"
                   />
                 </div>
@@ -110,7 +113,7 @@ export default function ReviewHighlights() {
             </div>
 
             {/* Testimonial Text */}
-            <p className="text-waxly-brownLight font-light text-lg leading-relaxed mb-8">
+            <p className="text-waxly-brownLight font-light text-lg leading-relaxed mb-8 max-w-prose">
               {isKo ? testimonial.textKo : testimonial.textEn}
             </p>
 
@@ -134,6 +137,7 @@ export default function ReviewHighlights() {
                   src={testimonial.avatar}
                   alt={isKo ? testimonial.nameKo : testimonial.nameEn}
                   fill
+                  sizes="56px"
                   className="object-cover"
                 />
               </div>
