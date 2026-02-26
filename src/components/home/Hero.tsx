@@ -2,7 +2,7 @@
 
 import { useLocale } from "next-intl";
 import { motion } from "framer-motion";
-import { placeInfo, contact, reviews } from "@/lib/data";
+import { placeInfo, contact, reviews, businessHours } from "@/lib/data";
 import Image from "next/image";
 
 export default function Hero() {
@@ -126,7 +126,7 @@ export default function Hero() {
               <span className="hidden sm:inline text-waxly-border">|</span>
               <span className="flex items-center gap-1">
                 <span className="material-symbols-outlined text-sm">schedule</span>
-                {isKo ? "월-토 10:00~20:00" : "Mon-Sat 10:00-20:00"}
+                {isKo ? `${businessHours.days} ${businessHours.formatted}` : `${businessHours.daysEn} ${businessHours.formattedEn}`}
               </span>
               <span className="hidden sm:inline text-waxly-border">|</span>
               <span className="flex items-center gap-1">

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useLocale } from "next-intl";
 import { Link, usePathname } from "@/i18n/routing";
 import LanguageSwitcher from "./LanguageSwitcher";
-import { placeInfo, contact, location } from "@/lib/data";
+import { placeInfo, contact, location, socialLinks } from "@/lib/data";
 
 export default function Header() {
   const locale = useLocale();
@@ -74,7 +74,7 @@ export default function Header() {
             </span>
             <span className="flex items-center gap-1">
               <span className="material-symbols-outlined text-sm">mail</span>
-              relieve@email.com
+              {contact.email}
             </span>
             <span className="flex items-center gap-1">
               <span className="material-symbols-outlined text-sm">call</span>
@@ -82,10 +82,10 @@ export default function Header() {
             </span>
           </div>
           <div className="flex items-center gap-4 ml-auto">
-            <a href="https://instagram.com" className="inline-flex items-center justify-center px-2 py-1 min-w-[44px] min-h-[44px] hover:text-white transition-colors" aria-label="Instagram">
+            <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-2 py-1 min-w-[44px] min-h-[44px] hover:text-white transition-colors" aria-label="Instagram">
               <span className="text-xs font-bold">IG</span>
             </a>
-            <a href={placeInfo.naverMapUrl} className="inline-flex items-center justify-center px-2 py-1 min-w-[44px] min-h-[44px] hover:text-white transition-colors" aria-label="Naver Map">
+            <a href={socialLinks.naver} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-2 py-1 min-w-[44px] min-h-[44px] hover:text-white transition-colors" aria-label="Naver Map">
               <span className="text-xs font-bold">N</span>
             </a>
             <LanguageSwitcher />

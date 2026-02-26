@@ -2,7 +2,7 @@
 
 import { useLocale } from "next-intl";
 import { Link } from "@/i18n/routing";
-import { placeInfo, location, contact, menuItems } from "@/lib/data";
+import { placeInfo, location, contact, menuItems, socialLinks, businessHours } from "@/lib/data";
 
 export default function Footer() {
   const locale = useLocale();
@@ -49,7 +49,7 @@ export default function Footer() {
             {/* Social Icons */}
             <div className="flex gap-3">
               <a
-                href="https://www.instagram.com"
+                href={socialLinks.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -58,7 +58,7 @@ export default function Footer() {
                 <span className="text-sm font-light">IG</span>
               </a>
               <a
-                href={placeInfo.naverMapUrl}
+                href={socialLinks.naver}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Naver Map"
@@ -174,7 +174,7 @@ export default function Footer() {
                 <span className="material-symbols-outlined text-lg text-waxly-cream/50 shrink-0" style={{ fontVariationSettings: "'wght' 200" }}>
                   schedule
                 </span>
-                <span>{isKo ? "10:00 - 20:00" : "10:00 AM - 8:00 PM"}</span>
+                <span>{isKo ? businessHours.formatted : businessHours.formattedEn}</span>
               </li>
             </ul>
 
@@ -198,12 +198,12 @@ export default function Footer() {
             {isKo ? "모든 권리 보유." : "All rights reserved."}
           </p>
           <div className="flex gap-6 text-xs text-waxly-cream/50 font-light">
-            <span className="hover:text-waxly-cream/70 cursor-pointer transition-colors">
+            <Link href="/privacy" className="hover:text-waxly-cream/70 hover:underline transition-colors">
               {isKo ? "개인정보처리방침" : "Privacy Policy"}
-            </span>
-            <span className="hover:text-waxly-cream/70 cursor-pointer transition-colors">
+            </Link>
+            <Link href="/terms" className="hover:text-waxly-cream/70 hover:underline transition-colors">
               {isKo ? "이용약관" : "Terms of Service"}
-            </span>
+            </Link>
           </div>
         </div>
       </div>

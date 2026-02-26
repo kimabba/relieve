@@ -37,13 +37,25 @@ export const location = {
 
 export const contact = {
   phone: "0507-1472-0432",
+  email: "relieve@email.com", // TODO: 실제 이메일 주소로 교체
   talktalk: true,
+  talktalkUrl: `https://talk.naver.com/wc4ynp`, // TODO: 실제 네이버 톡톡 URL 확인
+};
+
+export const socialLinks = {
+  instagram: "https://www.instagram.com/relieve_sugaring", // TODO: 실제 계정 URL 확인
+  naver: "https://map.naver.com/p/entry/place/1053630091",
 };
 
 export const businessHours = {
   openTime: "10:00",
+  closeTime: "20:00",
+  days: "월-토",
+  daysEn: "Mon-Sat",
   description: "10:00에 영업 시작",
   descriptionEn: "Opens at 10:00",
+  formatted: "10:00 - 20:00",
+  formattedEn: "10:00 AM - 8:00 PM",
 };
 
 export const facilities = [

@@ -72,7 +72,7 @@ export default function FloatingCTA() {
 
         {/* TalkTalk Chat */}
         <a
-          href={placeInfo.naverMapUrl}
+          href={contact.talktalkUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2.5 bg-white text-waxly-brown pl-4 pr-5 py-3 rounded-full shadow-lg hover:shadow-xl transition-all whitespace-nowrap border border-waxly-border"
