@@ -36,7 +36,7 @@ export default function CertificationTimeline() {
               {isKo ? "임산부 케어" : "Maternity Care"}
             </motion.span>
             <motion.h1
-              className="text-4xl lg:text-5xl xl:text-6xl text-waxly-brown mb-6"
+              className="text-4xl lg:text-5xl xl:text-6xl text-waxly-brown mb-6 text-balance"
               style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}

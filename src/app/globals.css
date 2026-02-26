@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Accessibility: Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 @layer base {
   :root {
     --background: #FFF7EF;
@@ -25,25 +34,25 @@
 @layer components {
   /* P1: Joy Button Styles - 포커스 상태 & 일관성 개선 */
   .btn-primary {
-    @apply bg-joy-pink text-white font-bold py-4 px-8 rounded-full transition-all duration-300 shadow-glow hover:bg-joy-pinkDark hover:scale-105;
-    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-joy-pink focus-visible:ring-offset-2;
+    @apply bg-waxly-brown text-white font-bold py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:bg-waxly-brownDark hover:shadow-xl;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-waxly-brown focus-visible:ring-offset-2;
     min-height: 48px; /* P1: 터치 영역 최소 48px */
   }
 
   .btn-secondary {
-    @apply bg-joy-teal text-white font-bold py-4 px-8 rounded-full transition-all duration-300 shadow-glow-teal hover:bg-joy-tealDark;
-    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-joy-teal focus-visible:ring-offset-2;
+    @apply bg-waxly-brownLight text-white font-bold py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:bg-waxly-brown;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-waxly-brownLight focus-visible:ring-offset-2;
     min-height: 48px;
   }
 
   .btn-outline {
-    @apply bg-white/60 backdrop-blur-sm text-joy-dark font-bold py-4 px-8 rounded-full transition-all duration-300 hover:bg-white;
-    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-joy-dark focus-visible:ring-offset-2;
+    @apply bg-white/60 backdrop-blur-sm text-waxly-brown font-bold py-4 px-8 rounded-full transition-all duration-300 hover:bg-white;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-waxly-brown focus-visible:ring-offset-2;
     min-height: 48px;
   }
 
   .btn-naver {
-    @apply bg-[#03C75A] text-white font-bold py-4 px-6 rounded-full shadow-lg hover:bg-[#02b150] transition-all hover:scale-105;
+    @apply bg-[#03C75A] text-white font-bold py-4 px-6 rounded-full shadow-lg hover:bg-[#02b150] transition-all hover:shadow-xl;
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#03C75A] focus-visible:ring-offset-2;
     min-height: 48px;
   }

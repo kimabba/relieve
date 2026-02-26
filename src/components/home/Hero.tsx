@@ -46,7 +46,7 @@ export default function Hero() {
 
             {/* Main Title - SEO Optimized H1 */}
             <motion.h1
-              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-waxly-brown leading-tight mb-8"
+              className="text-4xl sm:text-5xl lg:text-6xl xl:text-6xl text-waxly-brown leading-tight mb-8 text-balance"
               style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -151,6 +151,7 @@ export default function Hero() {
                     src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&h=800&fit=crop&q=80"
                     alt={isKo ? "광주 슈가링 시술 - 릴리브" : "Sugaring treatment at Relieve Gwangju"}
                     fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover"
                     priority
                   />
@@ -187,6 +188,7 @@ export default function Hero() {
                   src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=300&h=400&fit=crop&q=80"
                   alt={isKo ? "천연 슈가링 재료" : "Natural sugaring ingredients"}
                   fill
+                  sizes="160px"
                   className="object-cover"
                 />
               </motion.div>

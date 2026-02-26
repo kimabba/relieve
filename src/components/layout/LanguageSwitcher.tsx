@@ -16,7 +16,7 @@ export default function LanguageSwitcher() {
   return (
     <button
       onClick={toggleLocale}
-      className="flex items-center gap-1.5 text-sm font-medium text-text-main hover:text-primary dark:text-white dark:hover:text-primary transition-colors"
+      className="flex items-center gap-1.5 text-sm font-medium text-waxly-cream hover:text-white transition-colors"
       aria-label={locale === "ko" ? "Switch to English" : "한국어로 전환"}
     >
       <span className="material-symbols-outlined text-lg">language</span>

@@ -52,7 +52,8 @@ export default function Footer() {
                 href="https://www.instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 border border-waxly-cream/30 hover:bg-waxly-cream hover:text-waxly-brown flex items-center justify-center transition-all duration-300"
+                aria-label="Instagram"
+                className="w-11 h-11 border border-waxly-cream/30 hover:bg-waxly-cream hover:text-waxly-brown flex items-center justify-center transition-all duration-300"
               >
                 <span className="text-sm font-light">IG</span>
               </a>
@@ -60,13 +61,15 @@ export default function Footer() {
                 href={placeInfo.naverMapUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 border border-waxly-cream/30 hover:bg-[#03C75A] hover:border-[#03C75A] flex items-center justify-center transition-all duration-300"
+                aria-label="Naver Map"
+                className="w-11 h-11 border border-waxly-cream/30 hover:bg-[#03C75A] hover:border-[#03C75A] flex items-center justify-center transition-all duration-300"
               >
                 <span className="text-sm font-light">N</span>
               </a>
               <a
                 href={`tel:${contact.phone}`}
-                className="w-10 h-10 border border-waxly-cream/30 hover:bg-waxly-cream hover:text-waxly-brown flex items-center justify-center transition-all duration-300"
+                aria-label={isKo ? "전화하기" : "Call us"}
+                className="w-11 h-11 border border-waxly-cream/30 hover:bg-waxly-cream hover:text-waxly-brown flex items-center justify-center transition-all duration-300"
               >
                 <span className="material-symbols-outlined text-lg">call</span>
               </a>
@@ -86,7 +89,7 @@ export default function Footer() {
                 <li key={item.name}>
                   <Link
                     href="/services"
-                    className="hover:text-waxly-cream transition-colors duration-300"
+                    className="hover:text-waxly-cream hover:underline transition-colors duration-300"
                   >
                     {isKo ? item.name : item.nameEn}
                   </Link>
@@ -107,7 +110,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/about"
-                  className="hover:text-waxly-cream transition-colors duration-300"
+                  className="hover:text-waxly-cream hover:underline transition-colors duration-300"
                 >
                   {isKo ? "소개" : "About Us"}
                 </Link>
@@ -115,7 +118,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/about"
-                  className="hover:text-waxly-cream transition-colors duration-300"
+                  className="hover:text-waxly-cream hover:underline transition-colors duration-300"
                 >
                   {isKo ? "임산부 케어" : "Maternity Care"}
                 </Link>
@@ -123,7 +126,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/location"
-                  className="hover:text-waxly-cream transition-colors duration-300"
+                  className="hover:text-waxly-cream hover:underline transition-colors duration-300"
                 >
                   {isKo ? "오시는 길" : "Location"}
                 </Link>
@@ -131,7 +134,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/services"
-                  className="hover:text-waxly-cream transition-colors duration-300"
+                  className="hover:text-waxly-cream hover:underline transition-colors duration-300"
                 >
                   {isKo ? "서비스 메뉴" : "Services"}
                 </Link>

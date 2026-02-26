@@ -1,7 +1,6 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode: "class",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -50,16 +49,6 @@ const config: Config = {
           textLight: "#6B6B6B",   // P0: 대비율 개선
           dark: "#2D2D2D",
         },
-        // Legacy aliases for compatibility
-        primary: "#FF9E9E",
-        "primary-dark": "#FF8E8E",
-        "background-light": "#FFFAF4",
-        "background-dark": "#3D3D3D",
-        "secondary-bg": "#FFF5E6",
-        "accent-green": "#73C7C7",
-        "accent-teal": "#5EAAAA",
-        "text-main": "#4A4A4A",
-        "text-muted": "#8A8A8A",
       },
       fontFamily: {
         sans: ["var(--font-noto-sans)", "Noto Sans KR", "sans-serif"],

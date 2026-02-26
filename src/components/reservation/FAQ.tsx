@@ -103,7 +103,10 @@ export default function FAQ() {
               className="bg-white overflow-hidden border border-waxly-brown/10"
             >
               <button
+                id={`faq-button-${index}`}
                 onClick={() => toggleItem(index)}
+                aria-expanded={openIndex === index}
+                aria-controls={`faq-panel-${index}`}
                 className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-waxly-cream/50 transition-colors"
               >
                 <span className="font-medium text-waxly-brown pr-4">
@@ -123,6 +126,9 @@ export default function FAQ() {
                 </div>
               </button>
               <div
+                id={`faq-panel-${index}`}
+                role="region"
+                aria-labelledby={`faq-button-${index}`}
                 className={`overflow-hidden transition-all duration-300 ${
                   openIndex === index ? "max-h-96" : "max-h-0"
                 }`}
