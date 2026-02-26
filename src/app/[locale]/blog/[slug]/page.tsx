@@ -17,15 +17,35 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const title = isKo ? post.titleKo : post.titleEn;
   const description = isKo ? post.excerptKo : post.excerptEn;
 
+  const baseUrl = "https://relieve.kr";
+
   return {
     title: `${title} | ${placeInfo.name}`,
     description,
+    authors: [{ name: isKo ? placeInfo.name : placeInfo.nameEn }],
     openGraph: {
       title,
       description,
       type: "article",
       publishedTime: post.date,
       tags: post.tags,
+      locale: isKo ? "ko_KR" : "en_US",
+      siteName: placeInfo.name,
+      images: [
+        {
+          url: "https://ldb-phinf.pstatic.net/20240912_148/1726129302827Yc1Ak_JPEG/%BB%E7%BA%BB_-KakaoTalk_20240624_150315412.jpg",
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+    alternates: {
+      canonical: `${baseUrl}/${locale}/blog/${slug}`,
+      languages: {
+        ko: `${baseUrl}/ko/blog/${slug}`,
+        en: `${baseUrl}/en/blog/${slug}`,
+      },
     },
   };
 }
@@ -70,8 +90,31 @@ export default async function BlogPostPage({ params }: Props) {
 
   const contentParagraphs = content.split("\n\n").filter((p) => p.trim());
 
+  const blogPostingSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: title,
+    description: excerpt,
+    datePublished: post.date,
+    dateModified: post.date,
+    author: {
+      "@type": "Organization",
+      name: isKo ? placeInfo.name : placeInfo.nameEn,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: isKo ? placeInfo.name : placeInfo.nameEn,
+    },
+    inLanguage: isKo ? "ko" : "en",
+    keywords: post.tags.join(", "),
+  };
+
   return (
     <section className="py-20 bg-waxly-cream">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
+      />
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         {/* Back link */}
         <Link
