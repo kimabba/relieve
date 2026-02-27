@@ -72,14 +72,10 @@ export default function Header() {
               <span className="material-symbols-outlined text-sm">location_on</span>
               {isKo ? location.address.formatted : "Gwangju, Korea"}
             </span>
-            <span className="flex items-center gap-1">
-              <span className="material-symbols-outlined text-sm">mail</span>
-              {contact.email}
-            </span>
-            <span className="flex items-center gap-1">
+            <a href={`tel:${contact.phone}`} className="flex items-center gap-1 hover:text-white transition-colors">
               <span className="material-symbols-outlined text-sm">call</span>
               {contact.phone}
-            </span>
+            </a>
           </div>
           <div className="flex items-center gap-4 ml-auto">
             <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-2 py-1 min-w-[44px] min-h-[44px] hover:text-white transition-colors" aria-label="Instagram">

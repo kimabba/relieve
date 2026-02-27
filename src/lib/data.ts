@@ -5,7 +5,7 @@ export const placeInfo = {
   name: "광주왁싱 슈가링 릴리브",
   nameEn: "Gwangju Waxing Sugaring Relieve",
   naverMapUrl: "https://map.naver.com/p/entry/place/1053630091",
-  bookingUrl: "https://booking.naver.com/booking/13/bizes/84...",
+  bookingUrl: "https://booking.naver.com/booking/13/bizes/840598",
   category: {
     main: "왁싱,제모",
     keywords: [
@@ -37,13 +37,12 @@ export const location = {
 
 export const contact = {
   phone: "0507-1472-0432",
-  email: "relieve@email.com", // TODO: 실제 이메일 주소로 교체
   talktalk: true,
-  talktalkUrl: `https://talk.naver.com/wc4ynp`, // TODO: 실제 네이버 톡톡 URL 확인
+  talktalkUrl: "https://talk.naver.com/ct/w4hvyv?frm=mnmb#nafullscreen",
 };
 
 export const socialLinks = {
-  instagram: "https://www.instagram.com/relieve_sugaring", // TODO: 실제 계정 URL 확인
+  instagram: "https://www.instagram.com/relieve_waxing/",
   naver: "https://map.naver.com/p/entry/place/1053630091",
 };
 
