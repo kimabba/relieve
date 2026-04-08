@@ -68,21 +68,20 @@ export default function NaturalProducts() {
   const content = locale === "ko" ? productsData.ko : productsData.en;
 
   return (
-    <div className="bg-white p-6 lg:p-8 border border-waxly-border">
+    <div className="bg-white p-6 lg:p-8 border border-primary/10">
       {/* Header */}
       <div className="flex items-start justify-between mb-6">
         <div>
-          <span className="text-waxly-brownLight text-sm tracking-widest uppercase mb-2 block">
+          <span className="text-text-muted text-sm tracking-widest uppercase mb-2 block">
             {content.sectionLabel}
           </span>
           <h4
-            className="text-xl text-waxly-brown mt-1"
-            style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
+            className="text-xl text-text-main mt-1"
           >
             {content.title}
           </h4>
         </div>
-        <span className="text-[10px] uppercase tracking-widest bg-waxly-cream text-waxly-brown px-3 py-1.5 flex items-center gap-1 border border-waxly-border">
+        <span className="text-[10px] uppercase tracking-widest bg-background-light text-text-main px-3 py-1.5 flex items-center gap-1 border border-primary/10">
           <span className="material-symbols-outlined text-xs" style={{ fontVariationSettings: "'wght' 200" }}>verified</span>
           {content.badge}
         </span>
@@ -93,14 +92,14 @@ export default function NaturalProducts() {
         {content.products.map((product, index) => (
           <motion.div
             key={index}
-            className="group flex items-center gap-4 p-4 bg-waxly-cream border border-waxly-border transition-all duration-300 hover:border-waxly-brown"
+            className="group flex items-center gap-4 p-4 bg-background-light border border-primary/10 transition-all duration-300 hover:border-primary"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
           >
             {/* Product Image */}
-            <div className="w-16 h-16 bg-white shrink-0 overflow-hidden relative border border-waxly-border">
+            <div className="w-16 h-16 bg-white shrink-0 overflow-hidden relative border border-primary/10">
               <Image
                 src={product.image}
                 alt={product.name}
@@ -113,18 +112,17 @@ export default function NaturalProducts() {
             {/* Product Info */}
             <div className="flex-1 min-w-0">
               <h5
-                className="text-waxly-brown text-sm mb-0.5"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+                className="text-text-main text-sm mb-0.5"
               >
                 {product.name}
               </h5>
-              <p className="text-xs text-waxly-brownLight font-light">
+              <p className="text-xs text-text-muted font-light">
                 {product.description}
               </p>
             </div>
 
             {/* Benefit Badge */}
-            <span className="text-[10px] uppercase tracking-wider text-waxly-brown bg-white px-2 py-1 shrink-0 border border-waxly-border">
+            <span className="text-[10px] uppercase tracking-wider text-text-main bg-white px-2 py-1 shrink-0 border border-primary/10">
               {product.benefit}
             </span>
           </motion.div>
@@ -132,8 +130,8 @@ export default function NaturalProducts() {
       </div>
 
       {/* Footer Note */}
-      <div className="mt-6 pt-4 border-t border-waxly-border flex items-center gap-2 text-xs text-waxly-brownLight font-light">
-        <span className="material-symbols-outlined text-waxly-brown text-sm" style={{ fontVariationSettings: "'wght' 200" }}>
+      <div className="mt-6 pt-4 border-t border-primary/10 flex items-center gap-2 text-xs text-text-muted font-light">
+        <span className="material-symbols-outlined text-text-main text-sm" style={{ fontVariationSettings: "'wght' 200" }}>
           eco
         </span>
         {locale === "ko"

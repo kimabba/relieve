@@ -9,7 +9,7 @@ export default function SafetyPromise() {
   const isKo = locale === "ko";
 
   return (
-    <section className="relative py-24 lg:py-32 bg-waxly-cream overflow-hidden">
+    <section className="relative py-24 lg:py-32 bg-secondary-bg overflow-hidden">
       <div className="section-container relative">
         {/* Section Header */}
         <motion.div
@@ -19,17 +19,14 @@ export default function SafetyPromise() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <span className="inline-flex items-center gap-2 py-2 px-5 border border-waxly-brown/20 text-waxly-brown text-sm font-light tracking-wider mb-6">
+          <span className="inline-flex items-center gap-2 py-2 px-5 border border-primary/20 text-primary text-sm font-light tracking-wider mb-6">
             <span className="material-symbols-outlined text-base">verified_user</span>
             {isKo ? "안심 케어" : "Safe Care"}
           </span>
-          <h2
-            className="text-4xl lg:text-5xl text-waxly-brown mb-4"
-            style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
-          >
+          <h2 className="font-display text-4xl lg:text-5xl text-text-main mb-4 font-normal">
             {isKo ? "엄마와 아기, 모두 안심" : "Safe for Mom and Baby"}
           </h2>
-          <p className="text-waxly-brownLight font-light leading-relaxed" style={{ wordBreak: "keep-all" }}>
+          <p className="text-text-muted font-light leading-relaxed" style={{ wordBreak: "keep-all" }}>
             {isKo
               ? "의료급 위생 시스템과 100% 천연 성분으로 안전하게 케어합니다"
               : "Safe care with medical-grade hygiene systems and 100% natural ingredients"}
@@ -41,27 +38,24 @@ export default function SafetyPromise() {
           {safetyPromises.map((promise, index) => (
             <motion.div
               key={promise.icon}
-              className="group flex flex-col items-center text-center p-8 bg-white border border-waxly-border hover:border-waxly-brown transition-all duration-300"
+              className="group flex flex-col items-center text-center p-8 bg-white border border-primary/10 hover:border-primary/40 transition-all duration-300"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               {/* Icon */}
-              <div className="w-16 h-16 flex items-center justify-center mb-6 text-waxly-brown">
+              <div className="w-16 h-16 flex items-center justify-center mb-6 text-primary">
                 <span className="material-symbols-outlined text-4xl" style={{ fontVariationSettings: "'wght' 200" }}>
                   {promise.icon}
                 </span>
               </div>
 
               {/* Content */}
-              <h3
-                className="text-xl text-waxly-brown mb-3"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
+              <h3 className="font-display text-xl text-text-main mb-3 font-normal">
                 {isKo ? promise.title : promise.titleEn}
               </h3>
-              <p className="text-waxly-brownLight font-light leading-relaxed text-sm">
+              <p className="text-text-muted font-light leading-relaxed text-sm">
                 {isKo ? promise.description : promise.descriptionEn}
               </p>
             </motion.div>
@@ -70,7 +64,7 @@ export default function SafetyPromise() {
 
         {/* Maternity Care Banner */}
         <motion.div
-          className="relative bg-waxly-brown p-8 lg:p-12 overflow-hidden"
+          className="relative bg-primary p-8 lg:p-12 overflow-hidden"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -92,10 +86,7 @@ export default function SafetyPromise() {
 
             {/* Content */}
             <div className="flex-1 text-center lg:text-left">
-              <h3
-                className="text-2xl lg:text-3xl text-white mb-3"
-                style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
-              >
+              <h3 className="font-display text-2xl lg:text-3xl text-white mb-3 font-normal">
                 {isKo ? "임산부 전용 케어 시스템" : "Maternity Care System"}
               </h3>
               <p className="text-white/80 font-light leading-relaxed">
@@ -115,12 +106,11 @@ export default function SafetyPromise() {
                 transition={{ duration: 0.4, delay: 0.4 }}
               >
                 <span
-                  className="block text-2xl text-waxly-brown"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
+                  className="block text-2xl text-text-main"
                 >
                   99.9%
                 </span>
-                <span className="text-xs text-waxly-brownLight font-light">
+                <span className="text-xs text-text-muted font-light">
                   {isKo ? "멸균율" : "Sterile"}
                 </span>
               </motion.div>
@@ -132,12 +122,11 @@ export default function SafetyPromise() {
                 transition={{ duration: 0.4, delay: 0.5 }}
               >
                 <span
-                  className="block text-2xl text-waxly-brown"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
+                  className="block text-2xl text-text-main"
                 >
                   5
                 </span>
-                <span className="text-xs text-waxly-brownLight font-light">
+                <span className="text-xs text-text-muted font-light">
                   {isKo ? "단계 위생" : "Steps"}
                 </span>
               </motion.div>

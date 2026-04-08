@@ -55,7 +55,7 @@ export default function FloatingCTA() {
           href={placeInfo.bookingUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2.5 bg-white text-waxly-brown pl-4 pr-5 py-3 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 whitespace-nowrap border border-waxly-border"
+          className="flex items-center gap-2.5 bg-white text-text-main pl-4 pr-5 py-3 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 whitespace-nowrap border border-primary/10"
         >
           <span className="material-symbols-outlined text-lg">calendar_month</span>
           <span className="text-sm font-light">{isKo ? "네이버 예약" : "Naver Booking"}</span>
@@ -64,7 +64,7 @@ export default function FloatingCTA() {
         {/* Phone Call */}
         <a
           href={`tel:${contact.phone}`}
-          className="flex items-center gap-2.5 bg-white text-waxly-brown pl-4 pr-5 py-3 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 whitespace-nowrap border border-waxly-border"
+          className="flex items-center gap-2.5 bg-white text-text-main pl-4 pr-5 py-3 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 whitespace-nowrap border border-primary/10"
         >
           <span className="material-symbols-outlined text-lg">call</span>
           <span className="text-sm font-light">{isKo ? "전화 문의" : "Call Us"}</span>
@@ -75,7 +75,7 @@ export default function FloatingCTA() {
           href={placeInfo.naverMapUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2.5 bg-white text-waxly-brown pl-4 pr-5 py-3 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 whitespace-nowrap border border-waxly-border"
+          className="flex items-center gap-2.5 bg-white text-text-main pl-4 pr-5 py-3 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105 whitespace-nowrap border border-primary/10"
         >
           <span className="material-symbols-outlined text-lg">chat</span>
           <span className="text-sm font-light">{isKo ? "톡톡 상담" : "Chat"}</span>
@@ -87,8 +87,8 @@ export default function FloatingCTA() {
         onClick={() => setIsExpanded(!isExpanded)}
         className={`flex items-center justify-center w-14 h-14 rounded-full shadow-2xl transition-all hover:scale-105 active:scale-95 ${
           isExpanded
-            ? "bg-waxly-brownDark text-white rotate-45"
-            : "bg-waxly-brown text-white"
+            ? "bg-primary-dark text-white rotate-45"
+            : "bg-primary text-white"
         }`}
         aria-label={isKo ? "예약 옵션" : "Booking options"}
       >

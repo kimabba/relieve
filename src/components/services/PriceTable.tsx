@@ -35,7 +35,7 @@ export default function PriceTable() {
   return (
     <>
       {/* Hero Section - Waxly Style */}
-      <section className="relative min-h-[50vh] overflow-hidden bg-waxly-cream">
+      <section className="relative min-h-[50vh] overflow-hidden bg-background-light">
         {/* Decorative Curved Line */}
         <svg
           className="absolute bottom-0 right-0 w-[500px] h-[300px] opacity-20 pointer-events-none"
@@ -53,15 +53,14 @@ export default function PriceTable() {
         <div className="relative min-h-[50vh] flex items-center pt-32 pb-16">
           <div className="section-container text-center">
             <motion.span
-              className="inline-block text-waxly-brown/60 text-sm tracking-widest uppercase mb-4"
+              className="inline-block text-text-main/60 text-sm tracking-widest uppercase mb-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
             >
               {isKo ? "시술 안내" : "Services"}
             </motion.span>
             <motion.h1
-              className="text-4xl lg:text-5xl xl:text-6xl text-waxly-brown mb-6"
-              style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
+              className="text-4xl lg:text-5xl xl:text-6xl text-text-main mb-6"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
@@ -69,7 +68,7 @@ export default function PriceTable() {
               {isKo ? "투명한 가격 안내" : "Transparent Pricing"}
             </motion.h1>
             <motion.p
-              className="text-waxly-brownLight font-light text-lg lg:text-xl max-w-2xl mx-auto"
+              className="text-text-muted font-light text-lg lg:text-xl max-w-2xl mx-auto"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
@@ -94,22 +93,21 @@ export default function PriceTable() {
               return (
                 <motion.div
                   key={category.key}
-                  className="bg-waxly-cream p-8 border border-waxly-border"
+                  className="bg-background-light p-8 border border-primary/10"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: catIndex * 0.1 }}
                 >
                   {/* Category Header */}
-                  <div className="flex items-center gap-3 mb-6 pb-4 border-b border-waxly-border">
-                    <div className="w-10 h-10 bg-waxly-brown flex items-center justify-center text-white">
+                  <div className="flex items-center gap-3 mb-6 pb-4 border-b border-primary/10">
+                    <div className="w-10 h-10 bg-primary flex items-center justify-center text-white">
                       <span className="material-symbols-outlined text-xl" style={{ fontVariationSettings: "'wght' 200" }}>
                         {category.icon}
                       </span>
                     </div>
                     <h2
-                      className="text-2xl text-waxly-brown"
-                      style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
+                      className="text-2xl text-text-main"
                     >
                       {t(category.key)}
                     </h2>
@@ -120,24 +118,23 @@ export default function PriceTable() {
                     {items.map((item, index) => (
                       <motion.div
                         key={item.name}
-                        className="flex justify-between items-start p-4 bg-white border border-waxly-border hover:border-waxly-brown transition-colors"
+                        className="flex justify-between items-start p-4 bg-white border border-primary/10 hover:border-primary transition-colors"
                         initial={{ opacity: 0, x: -10 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.05 }}
                       >
                         <div className="flex-1">
-                          <h3 className="text-waxly-brown mb-1" style={{ fontFamily: "'Playfair Display', serif" }}>
+                          <h3 className="text-text-main mb-1">
                             {isKo ? item.name : item.nameEn}
                           </h3>
-                          <p className="text-sm text-waxly-brownLight font-light">
+                          <p className="text-sm text-text-muted font-light">
                             {isKo ? item.description : item.descriptionEn}
                           </p>
                         </div>
                         <div className="text-right ml-4">
                           <span
-                            className="text-lg text-waxly-brown"
-                            style={{ fontFamily: "'Playfair Display', serif" }}
+                            className="text-lg text-text-main"
                           >
                             ₩{formatPrice(item.price)}
                           </span>
@@ -159,7 +156,7 @@ export default function PriceTable() {
           >
             <Link
               href="/reservation"
-              className="inline-flex items-center gap-3 px-10 py-5 bg-waxly-brown text-white font-light tracking-wider hover:bg-waxly-brownDark transition-all duration-300"
+              className="inline-flex items-center gap-3 px-10 py-5 bg-primary text-white font-light tracking-wider hover:bg-primary-dark transition-all duration-300"
             >
               <span className="material-symbols-outlined text-lg">calendar_month</span>
               {isKo ? "예약하기" : "Book Now"}

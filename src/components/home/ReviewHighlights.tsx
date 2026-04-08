@@ -35,7 +35,7 @@ export default function ReviewHighlights() {
       >
         <path
           d="M300 0C250 50 200 80 150 100C100 120 50 150 0 200"
-          stroke="#6A483C"
+          stroke="#b89c6f"
           strokeWidth="1"
           fill="none"
         />
@@ -92,25 +92,19 @@ export default function ReviewHighlights() {
             transition={{ duration: 0.6 }}
           >
             {/* Title */}
-            <h2
-              className="text-4xl lg:text-5xl text-waxly-brown mb-10"
-              style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
-            >
+            <h2 className="font-display text-4xl lg:text-5xl text-text-main mb-10 font-normal">
               {isKo ? "고객 후기" : "What Clients Say"}
             </h2>
 
             {/* Quote Icon */}
-            <div className="text-waxly-brown/20 mb-6">
-              <span
-                className="text-7xl leading-none"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
+            <div className="text-primary/20 mb-6">
+              <span className="font-display text-7xl leading-none">
                 &ldquo;&ldquo;
               </span>
             </div>
 
             {/* Testimonial Text */}
-            <p className="text-waxly-brownLight font-light text-lg leading-relaxed mb-8">
+            <p className="text-text-muted font-light text-lg leading-relaxed mb-8">
               {isKo ? testimonial.textKo : testimonial.textEn}
             </p>
 
@@ -119,7 +113,7 @@ export default function ReviewHighlights() {
               {[...Array(5)].map((_, i) => (
                 <span
                   key={i}
-                  className="material-symbols-outlined text-waxly-gold text-xl"
+                  className="material-symbols-outlined text-primary text-xl"
                   style={{ fontVariationSettings: "'FILL' 1" }}
                 >
                   star
@@ -139,12 +133,11 @@ export default function ReviewHighlights() {
               </div>
               <div>
                 <p
-                  className="text-waxly-brown text-lg"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
+                  className="font-display text-text-main text-lg font-normal"
                 >
                   {isKo ? testimonial.nameKo : testimonial.nameEn}
                 </p>
-                <p className="text-waxly-brownLight font-light text-sm">
+                <p className="text-text-muted font-light text-sm">
                   {isKo ? testimonial.titleKo : testimonial.titleEn}
                 </p>
               </div>
@@ -162,18 +155,17 @@ export default function ReviewHighlights() {
         >
           {reviews.highlights.map((highlight) => (
             <div key={highlight.keyword} className="text-center">
-              <div className="w-12 h-12 mx-auto mb-3 text-waxly-brown">
+              <div className="w-12 h-12 mx-auto mb-3 text-text-main">
                 <span className="material-symbols-outlined text-3xl" style={{ fontVariationSettings: "'wght' 200" }}>
                   {highlight.icon}
                 </span>
               </div>
               <p
-                className="text-2xl text-waxly-brown mb-1"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+                className="font-display text-2xl text-text-main mb-1 font-normal"
               >
                 {highlight.count}
               </p>
-              <p className="text-waxly-brownLight font-light text-xs">
+              <p className="text-text-muted font-light text-xs">
                 {isKo ? highlight.keyword : highlight.keywordEn}
               </p>
             </div>
@@ -188,7 +180,7 @@ export default function ReviewHighlights() {
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
         >
-          <p className="text-waxly-brownLight font-light text-sm">
+          <p className="text-text-muted font-light text-sm">
             {isKo
               ? `방문자 리뷰 ${reviews.total}건 · 블로그 리뷰 ${reviews.blogCount}건`
               : `${reviews.total} Visitor Reviews · ${reviews.blogCount} Blog Reviews`}
@@ -197,7 +189,7 @@ export default function ReviewHighlights() {
             href="https://m.place.naver.com/beauty/1306755661/review/visitor"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-waxly-brown font-light tracking-wider hover:gap-3 transition-all"
+            className="inline-flex items-center gap-2 text-text-main font-light tracking-wider hover:gap-3 transition-all"
           >
             {isKo ? "네이버에서 더 많은 리뷰 보기" : "See More Reviews on Naver"}
             <span className="material-symbols-outlined text-base">arrow_forward</span>

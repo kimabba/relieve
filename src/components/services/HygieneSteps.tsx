@@ -89,7 +89,7 @@ export default function HygieneSteps() {
   const content = locale === "ko" ? hygieneData.ko : hygieneData.en;
 
   return (
-    <section className="py-20 lg:py-28 bg-waxly-cream overflow-hidden relative">
+    <section className="py-20 lg:py-28 bg-background-light overflow-hidden relative">
       {/* Decorative Curved Line */}
       <svg
         className="absolute top-0 left-0 w-[300px] h-[200px] opacity-20 pointer-events-none"
@@ -112,16 +112,15 @@ export default function HygieneSteps() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <span className="text-waxly-brownLight text-sm tracking-widest uppercase mb-4 block">
+          <span className="text-text-muted text-sm tracking-widest uppercase mb-4 block">
             {content.sectionLabel}
           </span>
           <h2
-            className="text-3xl lg:text-4xl text-waxly-brown mb-4"
-            style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
+            className="text-3xl lg:text-4xl text-text-main mb-4"
           >
             {content.title}
           </h2>
-          <p className="text-waxly-brownLight font-light text-lg">
+          <p className="text-text-muted font-light text-lg">
             {content.description}
           </p>
         </motion.div>
@@ -133,8 +132,8 @@ export default function HygieneSteps() {
               key={index}
               className={`group bg-white p-6 flex flex-col items-center text-center transition-all duration-300 relative border ${
                 step.highlight
-                  ? "border-waxly-gold"
-                  : "border-waxly-border hover:border-waxly-brown"
+                  ? "border-primary"
+                  : "border-primary/10 hover:border-primary"
               }`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -142,7 +141,7 @@ export default function HygieneSteps() {
               transition={{ delay: index * 0.1 }}
             >
               {/* Step Number */}
-              <span className="absolute top-4 right-4 text-3xl text-waxly-border" style={{ fontFamily: "'Playfair Display', serif" }}>
+              <span className="absolute top-4 right-4 text-3xl text-primary/20">
                 {step.step}
               </span>
 
@@ -150,8 +149,8 @@ export default function HygieneSteps() {
               <div
                 className={`w-14 h-14 flex items-center justify-center mb-4 ${
                   step.highlight
-                    ? "bg-waxly-gold text-white"
-                    : "bg-waxly-cream text-waxly-brown"
+                    ? "bg-primary text-white"
+                    : "bg-background-light text-text-main"
                 }`}
               >
                 <span className="material-symbols-outlined text-2xl" style={{ fontVariationSettings: "'wght' 200" }}>
@@ -161,18 +160,17 @@ export default function HygieneSteps() {
 
               {/* Content */}
               <h4
-                className="text-waxly-brown mb-2"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+                className="text-text-main mb-2"
               >
                 {step.title}
               </h4>
-              <p className="text-xs text-waxly-brownLight font-light leading-relaxed">
+              <p className="text-xs text-text-muted font-light leading-relaxed">
                 {step.description}
               </p>
 
               {/* Highlight Badge */}
               {step.highlight && (
-                <span className="mt-4 text-[10px] uppercase tracking-wider bg-waxly-gold/10 text-waxly-gold px-3 py-1">
+                <span className="mt-4 text-[10px] uppercase tracking-wider bg-primary/10 text-primary px-3 py-1">
                   99.9%
                 </span>
               )}
@@ -182,26 +180,25 @@ export default function HygieneSteps() {
 
         {/* Trust Banner */}
         <motion.div
-          className="mt-12 bg-white p-6 flex flex-col sm:flex-row items-center justify-center gap-4 text-center sm:text-left border border-waxly-border"
+          className="mt-12 bg-white p-6 flex flex-col sm:flex-row items-center justify-center gap-4 text-center sm:text-left border border-primary/10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <div className="w-12 h-12 bg-waxly-cream flex items-center justify-center">
-            <span className="material-symbols-outlined text-waxly-brown text-2xl" style={{ fontVariationSettings: "'wght' 200" }}>
+          <div className="w-12 h-12 bg-background-light flex items-center justify-center">
+            <span className="material-symbols-outlined text-text-main text-2xl" style={{ fontVariationSettings: "'wght' 200" }}>
               verified_user
             </span>
           </div>
           <div>
             <p
-              className="text-waxly-brown"
-              style={{ fontFamily: "'Playfair Display', serif" }}
+              className="text-text-main"
             >
               {locale === "ko"
                 ? "의료급 멸균 인증"
                 : "Medical-Grade Sterilization Certified"}
             </p>
-            <p className="text-sm text-waxly-brownLight font-light">
+            <p className="text-sm text-text-muted font-light">
               {locale === "ko"
                 ? "모든 위생 프로세스는 의료 기준을 충족합니다"
                 : "All hygiene processes meet medical standards"}

@@ -25,22 +25,19 @@ export default function CTASection() {
       <div className="section-container relative">
         {/* Content Card */}
         <motion.div
-          className="max-w-2xl mx-auto bg-waxly-cream/95 backdrop-blur-sm p-10 lg:p-16 text-center"
+          className="max-w-2xl mx-auto bg-background-light/95 backdrop-blur-sm p-10 lg:p-16 text-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
           {/* Title */}
-          <h2
-            className="text-3xl lg:text-4xl xl:text-5xl text-waxly-brown mb-6"
-            style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
-          >
+          <h2 className="font-display text-3xl lg:text-4xl xl:text-5xl text-text-main mb-6 font-normal">
             {isKo ? "원치 않는 털을 부드럽게" : "Waxing Away Unwanted Hair"}
           </h2>
 
           {/* Description */}
-          <p className="text-waxly-brownLight font-light leading-relaxed mb-10">
+          <p className="text-text-muted font-light leading-relaxed mb-10">
             {isKo
               ? "100% 천연 슈가링으로 부드럽고 건강한 피부를 경험하세요. 전문가의 섬세한 케어로 편안한 시술을 약속드립니다."
               : "Experience smooth, healthy skin with 100% natural sugaring. We promise comfortable treatment with expert care."}
@@ -51,7 +48,7 @@ export default function CTASection() {
             href={placeInfo.bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-10 py-5 bg-waxly-brown text-white font-light tracking-wider hover:bg-waxly-brownDark transition-all duration-300"
+            className="inline-flex items-center gap-3 px-10 py-5 bg-primary text-white font-light tracking-wider hover:bg-primary-dark transition-all duration-300"
           >
             {isKo ? "지금 예약하기" : "Book Now"}
             <span className="material-symbols-outlined text-lg">arrow_forward</span>

@@ -102,16 +102,15 @@ export default function TrimesterGuide() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <span className="text-waxly-brownLight text-sm tracking-widest uppercase mb-4 block">
+          <span className="text-text-muted text-sm tracking-widest uppercase mb-4 block">
             {content.sectionLabel}
           </span>
           <h2
-            className="text-3xl lg:text-4xl text-waxly-brown mb-4"
-            style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
+            className="text-3xl lg:text-4xl text-text-main mb-4"
           >
             {content.title}
           </h2>
-          <p className="text-waxly-brownLight font-light text-lg">
+          <p className="text-text-muted font-light text-lg">
             {content.description}
           </p>
         </motion.div>
@@ -121,14 +120,14 @@ export default function TrimesterGuide() {
           {content.trimesters.map((trimester, index) => (
             <motion.div
               key={index}
-              className="group bg-waxly-cream p-8 border border-waxly-border hover:border-waxly-brown transition-all duration-300"
+              className="group bg-background-light p-8 border border-primary/10 hover:border-primary transition-all duration-300"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
               {/* Icon */}
-              <div className="w-14 h-14 mb-6 flex items-center justify-center text-waxly-brown">
+              <div className="w-14 h-14 mb-6 flex items-center justify-center text-text-main">
                 <span className="material-symbols-outlined text-3xl" style={{ fontVariationSettings: "'wght' 200" }}>
                   {trimester.icon}
                 </span>
@@ -137,26 +136,24 @@ export default function TrimesterGuide() {
               {/* Label & Period */}
               <div className="flex items-center gap-2 mb-3">
                 <span
-                  className="text-waxly-brown text-sm"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
+                  className="text-text-main text-sm"
                 >
                   {trimester.label}
                 </span>
-                <span className="text-xs text-waxly-brownLight bg-white px-2 py-0.5">
+                <span className="text-xs text-text-muted bg-white px-2 py-0.5">
                   {trimester.period}
                 </span>
               </div>
 
               {/* Title */}
               <h3
-                className="text-xl text-waxly-brown mb-3"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+                className="text-xl text-text-main mb-3"
               >
                 {trimester.title}
               </h3>
 
               {/* Description */}
-              <p className="text-waxly-brownLight font-light text-sm leading-relaxed mb-6">
+              <p className="text-text-muted font-light text-sm leading-relaxed mb-6">
                 {trimester.description}
               </p>
 
@@ -165,7 +162,7 @@ export default function TrimesterGuide() {
                 {trimester.highlights.map((highlight, idx) => (
                   <span
                     key={idx}
-                    className="text-xs text-waxly-brown bg-white px-3 py-1.5 border border-waxly-border"
+                    className="text-xs text-text-main bg-white px-3 py-1.5 border border-primary/10"
                   >
                     {highlight}
                   </span>

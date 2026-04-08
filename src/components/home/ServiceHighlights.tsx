@@ -67,12 +67,11 @@ export default function ServiceHighlights() {
           transition={{ duration: 0.5 }}
         >
           <h2
-            className="text-4xl lg:text-5xl text-waxly-brown mb-6"
-            style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
+            className="text-4xl lg:text-5xl text-text-main mb-6"
           >
             {isKo ? "슈가링 & 왁싱 시술" : "Sugaring & Waxing"}
           </h2>
-          <p className="text-waxly-brownLight font-light leading-relaxed">
+          <p className="text-text-muted font-light leading-relaxed">
             {isKo
               ? "100% 천연 슈가링으로 피부 건강과 아름다움을 동시에 케어합니다. 전문가의 섬세한 손길로 편안한 시술을 경험하세요."
               : "We care for your skin health and beauty with 100% natural sugaring. Experience comfortable treatment with expert care."}
@@ -86,14 +85,14 @@ export default function ServiceHighlights() {
             {services.map((service, index) => (
               <motion.div
                 key={service.titleKo}
-                className="group border border-waxly-border p-6 lg:p-8 hover:border-waxly-brown transition-all duration-300"
+                className="group border border-primary/10 p-6 lg:p-8 hover:border-primary transition-all duration-300"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 {/* Icon */}
-                <div className="w-12 h-12 mb-5 text-waxly-brown">
+                <div className="w-12 h-12 mb-5 text-text-main">
                   <span className="material-symbols-outlined text-4xl" style={{ fontVariationSettings: "'wght' 200" }}>
                     {service.icon}
                   </span>
@@ -101,14 +100,13 @@ export default function ServiceHighlights() {
 
                 {/* Title */}
                 <h3
-                  className="text-xl text-waxly-brown mb-3"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
+                  className="text-xl text-text-main mb-3"
                 >
                   {isKo ? service.titleKo : service.titleEn}
                 </h3>
 
                 {/* Description */}
-                <p className="text-waxly-brownLight font-light text-sm mb-5 leading-relaxed">
+                <p className="text-text-muted font-light text-sm mb-5 leading-relaxed">
                   {isKo ? service.descKo : service.descEn}
                 </p>
 
@@ -116,7 +114,7 @@ export default function ServiceHighlights() {
                 <div className="flex items-center gap-4">
                   <Link
                     href="/services"
-                    className="inline-flex items-center gap-2 text-waxly-brownLight text-sm font-light tracking-wider group-hover:text-waxly-brown transition-all"
+                    className="inline-flex items-center gap-2 text-text-muted text-sm font-light tracking-wider group-hover:text-text-main transition-all"
                   >
                     {isKo ? "자세히 보기" : "Learn More"}
                     <span className="material-symbols-outlined text-base">arrow_forward</span>
@@ -125,7 +123,7 @@ export default function ServiceHighlights() {
                     href={placeInfo.bookingUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-sm font-light tracking-wider text-waxly-brown border-b border-waxly-brown/30 hover:border-waxly-brown transition-all"
+                    className="inline-flex items-center gap-1.5 text-sm font-light tracking-wider text-text-main border-b border-primary/30 hover:border-primary transition-all"
                   >
                     {isKo ? "예약" : "Book"}
                   </a>
@@ -163,7 +161,7 @@ export default function ServiceHighlights() {
         >
           <Link
             href="/services"
-            className="inline-flex items-center gap-3 px-10 py-5 bg-waxly-brown text-white font-light tracking-wider hover:bg-waxly-brownDark transition-all duration-300"
+            className="inline-flex items-center gap-3 px-10 py-5 bg-primary text-white font-light tracking-wider hover:bg-primary-dark transition-all duration-300"
           >
             {isKo ? "전체 서비스 보기" : "View All Services"}
             <span className="material-symbols-outlined text-lg">arrow_forward</span>

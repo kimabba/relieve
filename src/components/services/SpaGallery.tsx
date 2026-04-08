@@ -70,20 +70,19 @@ export default function SpaGallery() {
           viewport={{ once: true }}
         >
           <div className="max-w-xl">
-            <span className="text-waxly-brownLight text-sm tracking-widest uppercase mb-4 block">
+            <span className="text-text-muted text-sm tracking-widest uppercase mb-4 block">
               {content.sectionLabel}
             </span>
             <h3
-              className="text-3xl lg:text-4xl text-waxly-brown mb-4"
-              style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
+              className="text-3xl lg:text-4xl text-text-main mb-4"
             >
               {content.title}
             </h3>
-            <p className="text-waxly-brownLight font-light">
+            <p className="text-text-muted font-light">
               {content.description}
             </p>
           </div>
-          <button className="inline-flex items-center gap-2 text-waxly-brown font-light text-sm tracking-wider hover:gap-3 transition-all">
+          <button className="inline-flex items-center gap-2 text-text-main font-light text-sm tracking-wider hover:gap-3 transition-all">
             {content.exploreButton}
             <span className="material-symbols-outlined text-lg">arrow_forward</span>
           </button>
@@ -110,7 +109,6 @@ export default function SpaGallery() {
             <div className="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-black/60 to-transparent w-full">
               <h4
                 className="text-white text-xl"
-                style={{ fontFamily: "'Playfair Display', serif" }}
               >
                 {content.rooms[0].title}
               </h4>

@@ -76,7 +76,7 @@ export default function TheSanctuary() {
   const content = locale === "ko" ? sanctuaryData.ko : sanctuaryData.en;
 
   return (
-    <section className="py-20 lg:py-28 bg-waxly-cream overflow-hidden relative">
+    <section className="py-20 lg:py-28 bg-background-light overflow-hidden relative">
       {/* Decorative Curved Line */}
       <svg
         className="absolute top-0 right-0 w-[400px] h-[300px] opacity-20 pointer-events-none"
@@ -111,24 +111,23 @@ export default function TheSanctuary() {
                   sizes="(max-width: 768px) 50vw, 25vw"
                 />
               </div>
-              <div className="p-6 bg-white text-center border border-waxly-border">
+              <div className="p-6 bg-white text-center border border-primary/10">
                 <span
-                  className="text-waxly-brown text-3xl"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
+                  className="text-text-main text-3xl"
                 >
                   24°C
                 </span>
-                <p className="text-xs uppercase tracking-wider mt-2 text-waxly-brownLight font-light">
+                <p className="text-xs uppercase tracking-wider mt-2 text-text-muted font-light">
                   {content.tempLabel}
                 </p>
               </div>
             </div>
             <div className="space-y-4">
-              <div className="p-6 bg-white text-center flex flex-col items-center justify-center h-32 border border-waxly-border">
-                <span className="material-symbols-outlined text-4xl text-waxly-brown mb-2" style={{ fontVariationSettings: "'wght' 200" }}>
+              <div className="p-6 bg-white text-center flex flex-col items-center justify-center h-32 border border-primary/10">
+                <span className="material-symbols-outlined text-4xl text-text-main mb-2" style={{ fontVariationSettings: "'wght' 200" }}>
                   chair
                 </span>
-                <p className="text-xs uppercase tracking-wider text-waxly-brownLight font-light">
+                <p className="text-xs uppercase tracking-wider text-text-muted font-light">
                   {content.adjustableLabel}
                 </p>
               </div>
@@ -153,18 +152,17 @@ export default function TheSanctuary() {
             transition={{ duration: 0.6 }}
           >
             <div>
-              <span className="text-waxly-brownLight text-sm tracking-widest uppercase mb-4 block">
+              <span className="text-text-muted text-sm tracking-widest uppercase mb-4 block">
                 {content.sectionLabel}
               </span>
               <h2
-                className="text-3xl lg:text-4xl text-waxly-brown mt-2 mb-4"
-                style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
+                className="text-3xl lg:text-4xl text-text-main mt-2 mb-4"
               >
                 {content.title}
                 <br />
                 <span className="italic">{content.titleHighlight}</span>
               </h2>
-              <p className="text-waxly-brownLight font-light text-lg leading-relaxed">
+              <p className="text-text-muted font-light text-lg leading-relaxed">
                 {content.description}
               </p>
             </div>
@@ -173,19 +171,18 @@ export default function TheSanctuary() {
             <div className="flex flex-col gap-5 mt-4">
               {content.features.map((feature, index) => (
                 <div key={index} className="flex gap-4 items-start group">
-                  <div className="w-12 h-12 bg-white flex items-center justify-center shrink-0 text-waxly-brown border border-waxly-border group-hover:border-waxly-brown transition-colors">
+                  <div className="w-12 h-12 bg-white flex items-center justify-center shrink-0 text-text-main border border-primary/10 group-hover:border-primary transition-colors">
                     <span className="material-symbols-outlined text-xl" style={{ fontVariationSettings: "'wght' 200" }}>
                       {feature.icon}
                     </span>
                   </div>
                   <div>
                     <h4
-                      className="text-lg text-waxly-brown mb-1"
-                      style={{ fontFamily: "'Playfair Display', serif" }}
+                      className="text-lg text-text-main mb-1"
                     >
                       {feature.title}
                     </h4>
-                    <p className="text-sm text-waxly-brownLight font-light leading-relaxed">
+                    <p className="text-sm text-text-muted font-light leading-relaxed">
                       {feature.description}
                     </p>
                   </div>

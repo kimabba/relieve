@@ -11,7 +11,7 @@ export default function CertificationTimeline() {
   return (
     <>
       {/* Hero Section - Waxly Style */}
-      <section className="relative min-h-[50vh] overflow-hidden bg-waxly-cream">
+      <section className="relative min-h-[50vh] overflow-hidden bg-background-light">
         {/* Decorative Curved Line */}
         <svg
           className="absolute bottom-0 right-0 w-[500px] h-[300px] opacity-20 pointer-events-none"
@@ -29,15 +29,14 @@ export default function CertificationTimeline() {
         <div className="relative min-h-[50vh] flex items-center pt-32 pb-16">
           <div className="section-container text-center">
             <motion.span
-              className="inline-block text-waxly-brown/60 text-sm tracking-widest uppercase mb-4"
+              className="inline-block text-text-main/60 text-sm tracking-widest uppercase mb-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
             >
               {isKo ? "임산부 케어" : "Maternity Care"}
             </motion.span>
             <motion.h1
-              className="text-4xl lg:text-5xl xl:text-6xl text-waxly-brown mb-6"
-              style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
+              className="text-4xl lg:text-5xl xl:text-6xl text-text-main mb-6"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
@@ -45,7 +44,7 @@ export default function CertificationTimeline() {
               {isKo ? "8년 경력, 검증된 전문성" : "8 Years of Proven Expertise"}
             </motion.h1>
             <motion.p
-              className="text-waxly-brownLight font-light text-lg lg:text-xl max-w-2xl mx-auto"
+              className="text-text-muted font-light text-lg lg:text-xl max-w-2xl mx-auto"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
@@ -68,12 +67,11 @@ export default function CertificationTimeline() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="text-waxly-gold text-sm tracking-widest uppercase mb-4 block">
+            <span className="text-primary text-sm tracking-widest uppercase mb-4 block">
               {isKo ? "전문 자격" : "Certifications"}
             </span>
             <h2
-              className="text-3xl lg:text-4xl text-waxly-brown"
-              style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
+              className="text-3xl lg:text-4xl text-text-main"
             >
               {isKo ? "믿을 수 있는 자격과 경력" : "Trusted Credentials"}
             </h2>
@@ -83,7 +81,7 @@ export default function CertificationTimeline() {
           <div className="max-w-3xl mx-auto">
             <div className="relative">
               {/* Timeline Line */}
-              <div className="absolute left-4 top-0 bottom-0 w-[1px] bg-waxly-border"></div>
+              <div className="absolute left-4 top-0 bottom-0 w-[1px] bg-primary/10"></div>
 
               {/* Timeline Items */}
               <div className="space-y-4">
@@ -100,8 +98,8 @@ export default function CertificationTimeline() {
                     <div
                       className={`absolute left-0 top-1 w-8 h-8 flex items-center justify-center ${
                         cert.highlight
-                          ? "bg-waxly-gold text-white"
-                          : "bg-waxly-cream text-waxly-brown"
+                          ? "bg-primary text-white"
+                          : "bg-background-light text-text-main"
                       }`}
                     >
                       <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'wght' 200" }}>
@@ -113,20 +111,20 @@ export default function CertificationTimeline() {
                     <div
                       className={`p-4 ${
                         cert.highlight
-                          ? "bg-waxly-gold/10 border border-waxly-gold/30"
-                          : "bg-waxly-cream"
+                          ? "bg-primary/10 border border-primary/30"
+                          : "bg-background-light"
                       }`}
                     >
                       {cert.year && (
-                        <span className="text-sm text-waxly-brownLight mb-1 block">
+                        <span className="text-sm text-text-muted mb-1 block">
                           {cert.year}
                         </span>
                       )}
                       <h3
                         className={`font-light ${
                           cert.highlight
-                            ? "text-waxly-brown"
-                            : "text-waxly-brownLight"
+                            ? "text-text-main"
+                            : "text-text-muted"
                         }`}
                       >
                         {isKo ? cert.title : cert.titleEn}

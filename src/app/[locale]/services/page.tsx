@@ -23,7 +23,7 @@ export default function ServicesPage() {
       <HygieneSteps />
       <SpaGallery />
       {/* Aftercare & Products Section */}
-      <section className="py-20 lg:py-28 bg-waxly-cream">
+      <section className="py-20 lg:py-28 bg-background-light">
         <div className="section-container">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
             {/* Aftercare Timeline - Takes 3 columns */}
