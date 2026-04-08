@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://relieve.kr";
   const locales = ["ko", "en"];
-  const pages = ["", "/services", "/about", "/location", "/reservation", "/blog"];
+  const pages = ["", "/services", "/maternity", "/aftercare", "/reservation", "/about", "/location", "/blog"];
 
   const entries: MetadataRoute.Sitemap = [];
 
@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         url: `${baseUrl}/${locale}${page}`,
         lastModified: new Date(),
         changeFrequency: page === "" ? "weekly" : "monthly",
-        priority: page === "" ? 1 : page === "/services" ? 0.9 : 0.8,
+        priority: page === "" ? 1 : page === "/services" || page === "/maternity" ? 0.9 : 0.8,
         alternates: {
           languages: {
             ko: `${baseUrl}/ko${page}`,
