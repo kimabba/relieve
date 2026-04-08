@@ -21,18 +21,18 @@ export default function SafetyPromise() {
         >
           <span className="inline-flex items-center gap-2 py-2 px-5 border border-waxly-brown/20 text-waxly-brown text-sm font-light tracking-wider mb-6">
             <span className="material-symbols-outlined text-base">verified_user</span>
-            {isKo ? "안전 약속" : "Safety Promise"}
+            {isKo ? "안심 케어" : "Safe Care"}
           </span>
           <h2
             className="text-4xl lg:text-5xl text-waxly-brown mb-4"
             style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
           >
-            {isKo ? "안전하고 위생적인 케어" : "Safe & Hygienic Care"}
+            {isKo ? "엄마와 아기, 모두 안심" : "Safe for Mom and Baby"}
           </h2>
-          <p className="text-waxly-brownLight font-light leading-relaxed">
+          <p className="text-waxly-brownLight font-light leading-relaxed" style={{ wordBreak: "keep-all" }}>
             {isKo
-              ? "철저한 위생 관리와 천연 성분으로 임산부도 안심하고 받을 수 있는 케어를 제공합니다"
-              : "Safe care with strict hygiene standards and natural ingredients, even for expectant mothers"}
+              ? "의료급 위생 시스템과 100% 천연 성분으로 안전하게 케어합니다"
+              : "Safe care with medical-grade hygiene systems and 100% natural ingredients"}
           </p>
         </motion.div>
 

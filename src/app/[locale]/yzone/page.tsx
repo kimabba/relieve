@@ -108,36 +108,32 @@ export default function YZonePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
-                {isKo ? "Y존 테라피" : "Y-Zone Therapy"}
+                {isKo ? "Y존 집중 케어" : "Y-Zone Care"}
               </motion.h1>
 
               {/* Subtitle */}
               <motion.p
                 className="text-lg lg:text-xl text-white/90 mb-8 leading-relaxed"
+                style={{ wordBreak: "keep-all" }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3 }}
               >
                 {isKo
-                  ? "민감한 Y존을 위한 프리미엄 집중 케어 프로그램\n피부 진정, 보습, 색소 침착 개선까지 한 번에"
-                  : "Premium intensive care program for sensitive Y-zone\nSoothing, hydration, and pigmentation improvement all in one"}
+                  ? "민감한 부위도 안심하는 프리미엄 케어\n진정 · 보습 · 톤업까지 한 번에"
+                  : "Premium care safe for sensitive areas\nSoothing, hydration, and brightening in one"}
               </motion.p>
 
               {/* Event Period */}
               <motion.div
-                className="inline-flex items-center gap-3 px-6 py-3 bg-white/10 text-white border border-white/30 mb-8"
+                className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2.5 sm:py-3 bg-white/20 backdrop-blur-sm rounded-full text-white border border-white/30 mb-8"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
               >
-                <span
-                  className="material-symbols-outlined"
-                  style={{ fontVariationSettings: "'wght' 200" }}
-                >
-                  event
-                </span>
-                <span className="font-medium">
-                  {isKo ? "이벤트 기간: 2025.12.18 ~ 2026.01.31" : "Event Period: Dec 18, 2025 - Jan 31, 2026"}
+                <span className="material-symbols-outlined text-lg sm:text-xl">event</span>
+                <span className="font-medium text-sm sm:text-base">
+                  {isKo ? "~2026.01.31까지" : "Until Jan 31, 2026"}
                 </span>
               </motion.div>
 
@@ -309,7 +305,7 @@ export default function YZonePage() {
                 className="text-3xl lg:text-4xl text-white mb-8"
                 style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
               >
-                {isKo ? "Y존 테라피 가격 안내" : "Y-Zone Therapy Pricing"}
+                {isKo ? "런칭 특가, 지금만!" : "Launch Special, Limited Time!"}
               </h2>
 
               <div className="bg-waxly-cream p-8 border border-waxly-border">

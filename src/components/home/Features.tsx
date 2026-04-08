@@ -40,7 +40,7 @@ export default function Features() {
               {/* Main Image */}
               <div className="relative aspect-[4/5] rounded-tr-[80px] overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1519824145371-296894a0daa9?w=500&h=600&fit=crop&q=80"
+                  src="https://images.unsplash.com/photo-1588135862932-8ec0d62d1e6b?w=500&h=600&fit=crop&q=80"
                   alt="Our story"
                   fill
                   className="object-cover"
@@ -121,7 +121,7 @@ export default function Features() {
               <div className="hidden sm:flex gap-3">
                 <div className="relative w-24 h-28 rounded-lg overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=200&h=250&fit=crop&q=80"
+                    src="https://images.unsplash.com/photo-1625600243103-1dc6824c6c8a?w=200&h=250&fit=crop&q=80"
                     alt="Natural ingredients"
                     fill
                     className="object-cover"
@@ -129,7 +129,7 @@ export default function Features() {
                 </div>
                 <div className="relative w-20 h-24 rounded-lg overflow-hidden mt-4">
                   <Image
-                    src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=150&h=200&fit=crop&q=80"
+                    src="https://images.unsplash.com/photo-1676313816468-2c944d4fb27d?w=150&h=200&fit=crop&q=80"
                     alt="Honey"
                     fill
                     className="object-cover"

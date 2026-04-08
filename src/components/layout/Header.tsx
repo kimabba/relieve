@@ -48,11 +48,13 @@ export default function Header() {
   const leftNavItems = [
     { href: "/", label: isKo ? "홈" : "HOME" },
     { href: "/about", label: isKo ? "소개" : "ABOUT" },
+    { href: "/maternity", label: isKo ? "임산부" : "MATERNITY" },
     { href: "/services", label: isKo ? "서비스" : "SERVICES" },
   ];
 
   const rightNavItems = [
-    { href: "/education", label: isKo ? "교육" : "EDUCATION" },
+    { href: "/reservation", label: isKo ? "예약" : "BOOKING" },
+    { href: "/aftercare", label: isKo ? "시술 후 관리" : "AFTERCARE" },
     { href: "/yzone", label: isKo ? "Y존" : "Y-ZONE" },
     { href: "/location", label: isKo ? "오시는 길" : "CONTACT" },
   ];

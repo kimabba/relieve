@@ -66,7 +66,7 @@ export default function PriceTable() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
             >
-              {isKo ? "시술 메뉴 & 가격" : "Services & Pricing"}
+              {isKo ? "투명한 가격 안내" : "Transparent Pricing"}
             </motion.h1>
             <motion.p
               className="text-waxly-brownLight font-light text-lg lg:text-xl max-w-2xl mx-auto"
@@ -75,8 +75,8 @@ export default function PriceTable() {
               transition={{ delay: 0.2 }}
             >
               {isKo
-                ? "프리미엄 슈가링과 왁싱 서비스를 합리적인 가격에 경험하세요"
-                : "Experience premium sugaring and waxing services at reasonable prices"}
+                ? "추가 비용 없이 정직한 가격, 확실한 결과를 약속드립니다"
+                : "We promise honest pricing with no hidden costs and guaranteed results"}
             </motion.p>
           </div>
         </div>
