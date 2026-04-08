@@ -1,146 +1,116 @@
 "use client";
 
-import { useTranslations, useLocale } from "next-intl";
-import { placeInfo, contact, paymentMethods, events } from "@/lib/data";
+import { useLocale } from "next-intl";
+import { placeInfo, contact, paymentMethods, events, location } from "@/lib/data";
 
 export default function ReservationInfo() {
-  const t = useTranslations("reservation");
   const locale = useLocale();
   const isKo = locale === "ko";
-
   const activeEvent = events.find((e) => e.active);
 
   return (
-    <section className="py-20 lg:py-28 bg-white">
+    <section className="py-16 lg:py-20 bg-white border-y border-[#f2f3f3]">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h1
-            className="text-4xl lg:text-5xl text-waxly-brown mb-4"
-            style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
-          >
-            {t("title")}
-          </h1>
-          <p className="text-waxly-brownLight text-lg">
-            {t("subtitle")}
+        <div className="flex flex-col gap-2 text-center mb-10">
+          <h2 className="font-display text-2xl lg:text-3xl font-bold text-text-main">
+            {isKo ? "지금 예약하기" : "Book Your Appointment"}
+          </h2>
+          <p className="text-text-muted text-sm">
+            {isKo ? "네이버 예약 또는 전화로 편리하게 예약하세요" : "Book via Naver or give us a call"}
           </p>
         </div>
 
         {/* Event Banner */}
         {activeEvent && (
-          <div className="mb-12 p-6 bg-waxly-cream border border-waxly-brown/20 text-center">
-            <span
-              className="material-symbols-outlined text-3xl text-waxly-gold mb-2"
-              style={{ fontVariationSettings: "'wght' 200" }}
-            >
-              campaign
-            </span>
-            <h3
-              className="text-lg text-waxly-brown mb-2"
-              style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
-            >
+          <div className="mb-10 p-4 bg-primary/5 border border-primary/20 rounded-lg text-center">
+            <span className="material-symbols-outlined text-primary text-2xl mb-1">campaign</span>
+            <p className="font-bold text-text-main text-sm">
               {isKo ? activeEvent.title : activeEvent.titleEn}
-            </h3>
-            <p className="text-sm text-waxly-brownLight">
-              {activeEvent.period}
             </p>
+            <p className="text-text-muted text-xs mt-1">{activeEvent.period}</p>
           </div>
         )}
 
         {/* Booking Options */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
-          {/* Naver Booking */}
-          <div className="p-8 text-center bg-waxly-cream border border-waxly-brown/10">
-            <span
-              className="material-symbols-outlined text-5xl text-waxly-brown mb-4"
-              style={{ fontVariationSettings: "'wght' 200" }}
-            >
-              calendar_month
-            </span>
-            <h3
-              className="text-2xl text-waxly-brown mb-4"
-              style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
-            >
-              {t("naverBooking")}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-10">
+          <div className="p-8 text-center bg-secondary-bg rounded-xl border border-primary/10">
+            <span className="material-symbols-outlined text-5xl text-primary mb-4">calendar_month</span>
+            <h3 className="font-display text-xl font-bold text-text-main mb-3">
+              {isKo ? "네이버 예약" : "Naver Booking"}
             </h3>
-            <p className="text-waxly-brownLight mb-6">
-              {isKo
-                ? "24시간 언제든 편리하게 예약하세요"
-                : "Book anytime, 24/7 convenience"}
+            <p className="text-text-muted text-sm mb-6">
+              {isKo ? "24시간 언제든 편리하게 예약하세요" : "Book anytime, 24/7 convenience"}
             </p>
             <a
               href={placeInfo.bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 w-full justify-center px-6 py-3 bg-waxly-brown text-white hover:bg-waxly-brownLight transition-colors"
+              className="inline-flex items-center gap-2 w-full justify-center px-6 py-3 bg-primary text-white hover:bg-primary-dark rounded-lg transition-colors font-bold"
             >
-              <span
-                className="material-symbols-outlined"
-                style={{ fontVariationSettings: "'wght' 200" }}
-              >
-                open_in_new
-              </span>
-              {t("naverBooking")}
+              <span className="material-symbols-outlined text-sm">open_in_new</span>
+              {isKo ? "네이버 예약" : "Book on Naver"}
             </a>
           </div>
 
-          {/* Phone Booking */}
-          <div className="p-8 text-center bg-waxly-cream border border-waxly-brown/10">
-            <span
-              className="material-symbols-outlined text-5xl text-waxly-brown mb-4"
-              style={{ fontVariationSettings: "'wght' 200" }}
-            >
-              call
-            </span>
-            <h3
-              className="text-2xl text-waxly-brown mb-4"
-              style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
-            >
-              {t("phoneBooking")}
+          <div className="p-8 text-center bg-secondary-bg rounded-xl border border-primary/10">
+            <span className="material-symbols-outlined text-5xl text-primary mb-4">call</span>
+            <h3 className="font-display text-xl font-bold text-text-main mb-3">
+              {isKo ? "전화 예약" : "Phone Booking"}
             </h3>
-            <p className="text-waxly-brownLight mb-6">
-              {isKo
-                ? "전화로 직접 상담 후 예약하세요"
-                : "Call for consultation and booking"}
+            <p className="text-text-muted text-sm mb-6">
+              {isKo ? "전화로 직접 상담 후 예약하세요" : "Call for consultation and booking"}
             </p>
             <a
               href={`tel:${contact.phone}`}
-              className="inline-flex items-center gap-2 w-full justify-center px-6 py-3 border border-waxly-brown text-waxly-brown hover:bg-waxly-brown hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 w-full justify-center px-6 py-3 border-2 border-primary text-primary hover:bg-primary hover:text-white rounded-lg transition-colors font-bold"
             >
-              <span
-                className="material-symbols-outlined"
-                style={{ fontVariationSettings: "'wght' 200" }}
-              >
-                call
-              </span>
+              <span className="material-symbols-outlined text-sm">call</span>
               {contact.phone}
             </a>
           </div>
         </div>
 
         {/* Payment Methods */}
-        <div className="max-w-2xl mx-auto">
-          <h3
-            className="text-xl text-waxly-brown mb-6 text-center flex items-center justify-center gap-2"
-            style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
-          >
-            <span
-              className="material-symbols-outlined text-waxly-gold"
-              style={{ fontVariationSettings: "'wght' 200" }}
-            >
-              payments
-            </span>
-            {t("payment")}
-          </h3>
-          <div className="flex flex-wrap justify-center gap-4">
+        <div className="max-w-xl mx-auto text-center">
+          <p className="text-text-muted text-sm mb-4">
+            {isKo ? "결제 수단" : "Payment methods"}
+          </p>
+          <div className="flex flex-wrap justify-center gap-3">
             {paymentMethods.map((method) => (
               <span
                 key={method}
-                className="px-4 py-2 bg-waxly-cream border border-waxly-brown/10 text-sm font-medium text-waxly-brown"
+                className="px-4 py-2 bg-secondary-bg border border-primary/15 text-sm text-text-main rounded-lg"
               >
                 {method}
               </span>
             ))}
+          </div>
+        </div>
+
+        {/* Location Quick Info */}
+        <div className="mt-10 pt-10 border-t border-[#f2f3f3] max-w-3xl mx-auto">
+          <h3 className="font-display text-lg font-bold text-text-main mb-4 text-center">
+            {isKo ? "오시는 길" : "Visit Our Sanctuary"}
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-text-muted">
+            <div className="flex items-start gap-3">
+              <span className="material-symbols-outlined text-primary text-lg mt-0.5">location_on</span>
+              <span>{isKo ? location.address.road : location.address.roadEn}</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="material-symbols-outlined text-primary text-lg">call</span>
+              <a href={`tel:${contact.phone}`} className="hover:text-primary transition-colors">
+                {contact.phone}
+              </a>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="material-symbols-outlined text-primary text-lg">directions_car</span>
+              <span>{isKo ? "황솔촌 운암점 주차 (1시간 무료)" : "Hwangsolchon parking (1hr free)"}</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="material-symbols-outlined text-primary text-lg">schedule</span>
+              <span>{isKo ? "매일 10:00 오픈" : "Opens at 10:00 daily"}</span>
+            </div>
           </div>
         </div>
       </div>
