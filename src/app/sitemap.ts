@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://relieve.kr";
   const locales = ["ko", "en"];
-  const pages = ["", "/services", "/maternity", "/aftercare", "/reservation", "/about", "/location", "/blog"];
+  const pages = ["", "/services", "/maternity", "/aftercare", "/reservation", "/yzone", "/about", "/location", "/blog"];
 
   const entries: MetadataRoute.Sitemap = [];
 
