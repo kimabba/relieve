@@ -92,16 +92,15 @@ export default function MaternityTestimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <span className="text-waxly-brownLight text-sm tracking-widest uppercase mb-4 block">
+          <span className="text-text-muted text-sm tracking-widest uppercase mb-4 block">
             {content.sectionLabel}
           </span>
           <h2
-            className="text-3xl lg:text-4xl text-waxly-brown mb-4"
-            style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
+            className="text-3xl lg:text-4xl text-text-main mb-4"
           >
             {content.title}
           </h2>
-          <p className="text-waxly-brownLight font-light text-lg">
+          <p className="text-text-muted font-light text-lg">
             {content.description}
           </p>
         </motion.div>
@@ -111,14 +110,14 @@ export default function MaternityTestimonials() {
           {content.testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
-              className="bg-waxly-cream p-8 border-l-2 border-waxly-brown"
+              className="bg-background-light p-8 border-l-2 border-primary"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
               {/* Stars */}
-              <div className="flex gap-1 text-waxly-gold mb-4">
+              <div className="flex gap-1 text-primary mb-4">
                 {[...Array(5)].map((_, i) => (
                   <span key={i} className="material-symbols-outlined text-base" style={{ fontVariationSettings: "'FILL' 1" }}>
                     star
@@ -127,12 +126,12 @@ export default function MaternityTestimonials() {
               </div>
 
               {/* Quote */}
-              <p className="text-waxly-brownLight font-light text-lg italic leading-relaxed mb-6">
+              <p className="text-text-muted font-light text-lg italic leading-relaxed mb-6">
                 &ldquo;{testimonial.text}&rdquo;
               </p>
 
               {/* Author */}
-              <div className="flex items-center gap-3 pt-4 border-t border-waxly-border">
+              <div className="flex items-center gap-3 pt-4 border-t border-primary/10">
                 <div className="w-12 h-12 rounded-full overflow-hidden relative">
                   <Image
                     src={testimonial.image}
@@ -144,13 +143,12 @@ export default function MaternityTestimonials() {
                 </div>
                 <div>
                   <p
-                    className="text-sm text-waxly-brown"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
+                    className="text-sm text-text-main"
                   >
                     {testimonial.name}
                   </p>
-                  <p className="text-xs text-waxly-brownLight font-light flex items-center gap-1">
-                    <span className="material-symbols-outlined text-waxly-brown text-sm" style={{ fontVariationSettings: "'wght' 200" }}>
+                  <p className="text-xs text-text-muted font-light flex items-center gap-1">
+                    <span className="material-symbols-outlined text-text-main text-sm" style={{ fontVariationSettings: "'wght' 200" }}>
                       pregnant_woman
                     </span>
                     {testimonial.week}

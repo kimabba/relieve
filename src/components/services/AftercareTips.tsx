@@ -69,19 +69,18 @@ export default function AftercareTips() {
   const content = locale === "ko" ? aftercareData.ko : aftercareData.en;
 
   return (
-    <div className="bg-waxly-cream p-6 lg:p-8 border border-waxly-border">
+    <div className="bg-background-light p-6 lg:p-8 border border-primary/10">
       {/* Header */}
       <div className="mb-8">
-        <span className="text-waxly-brownLight text-sm tracking-widest uppercase mb-2 block">
+        <span className="text-text-muted text-sm tracking-widest uppercase mb-2 block">
           {content.sectionLabel}
         </span>
         <h4
-          className="text-xl text-waxly-brown mt-1"
-          style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
+          className="text-xl text-text-main mt-1"
         >
           {content.title}
         </h4>
-        <p className="mt-2 text-waxly-brownLight font-light text-sm leading-relaxed">
+        <p className="mt-2 text-text-muted font-light text-sm leading-relaxed">
           {content.description}
         </p>
       </div>
@@ -89,7 +88,7 @@ export default function AftercareTips() {
       {/* Timeline */}
       <div className="relative">
         {/* Timeline Line */}
-        <div className="absolute left-5 top-6 bottom-6 w-[1px] bg-waxly-border" />
+        <div className="absolute left-5 top-6 bottom-6 w-[1px] bg-primary/10" />
 
         <div className="flex flex-col gap-0">
           {content.steps.map((step, index) => (
@@ -103,7 +102,7 @@ export default function AftercareTips() {
             >
               {/* Icon Column */}
               <div className="flex flex-col items-center z-10">
-                <div className="w-10 h-10 bg-white text-waxly-brown flex items-center justify-center shrink-0 group-hover:bg-waxly-brown group-hover:text-white transition-colors duration-300 border border-waxly-border">
+                <div className="w-10 h-10 bg-white text-text-main flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-colors duration-300 border border-primary/10">
                   <span className="material-symbols-outlined text-lg" style={{ fontVariationSettings: "'wght' 200" }}>
                     {step.icon}
                   </span>
@@ -113,16 +112,15 @@ export default function AftercareTips() {
               {/* Content */}
               <div className={`flex-1 ${index < content.steps.length - 1 ? "pb-8" : ""}`}>
                 {/* Time Badge */}
-                <span className="inline-block text-xs text-waxly-brown bg-white px-2 py-0.5 mb-2 border border-waxly-border">
+                <span className="inline-block text-xs text-text-main bg-white px-2 py-0.5 mb-2 border border-primary/10">
                   {step.time}
                 </span>
                 <h5
-                  className="text-base text-waxly-brown"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
+                  className="text-base text-text-main"
                 >
                   {step.title}
                 </h5>
-                <p className="text-waxly-brownLight font-light text-sm mt-1 leading-relaxed">
+                <p className="text-text-muted font-light text-sm mt-1 leading-relaxed">
                   {step.description}
                 </p>
               </div>

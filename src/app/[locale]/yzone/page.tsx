@@ -76,7 +76,7 @@ export default function YZonePage() {
       {/* Hero Section */}
       <section className="relative min-h-[70vh] overflow-hidden">
         {/* Background */}
-        <div className="absolute inset-0 bg-waxly-brown" />
+        <div className="absolute inset-0 bg-primary" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" />
 
         <div className="relative min-h-[70vh] flex items-center pt-32 pb-20">
@@ -89,7 +89,7 @@ export default function YZonePage() {
                 transition={{ duration: 0.5 }}
                 className="mb-6"
               >
-                <span className="inline-flex items-center gap-2 py-2.5 px-6 bg-waxly-gold text-waxly-brown text-sm font-bold border border-waxly-gold">
+                <span className="inline-flex items-center gap-2 py-2.5 px-6 bg-primary text-text-main text-sm font-bold border border-primary">
                   <span
                     className="material-symbols-outlined text-base"
                     style={{ fontVariationSettings: "'wght' 200" }}
@@ -103,7 +103,6 @@ export default function YZonePage() {
               {/* Title */}
               <motion.h1
                 className="text-4xl sm:text-5xl lg:text-6xl text-white mb-6"
-                style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
@@ -147,7 +146,7 @@ export default function YZonePage() {
                   href={placeInfo.bookingUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-3 px-10 py-4 bg-waxly-cream text-waxly-brown font-bold text-lg border border-waxly-cream hover:bg-white transition-all duration-300"
+                  className="inline-flex items-center justify-center gap-3 px-10 py-4 bg-background-light text-text-main font-bold text-lg border border-background-light hover:bg-white transition-all duration-300"
                 >
                   <span
                     className="material-symbols-outlined"
@@ -164,7 +163,7 @@ export default function YZonePage() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-24 lg:py-32 bg-waxly-cream">
+      <section className="py-24 lg:py-32 bg-background-light">
         <div className="section-container">
           <motion.div
             className="text-center max-w-2xl mx-auto mb-16"
@@ -172,7 +171,7 @@ export default function YZonePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="inline-flex items-center gap-2 py-2 px-5 bg-waxly-brown/10 text-waxly-brown text-sm font-bold mb-6 border border-waxly-brown/20">
+            <span className="inline-flex items-center gap-2 py-2 px-5 bg-primary/10 text-text-main text-sm font-bold mb-6 border border-primary/20">
               <span
                 className="material-symbols-outlined text-base"
                 style={{ fontVariationSettings: "'wght' 200" }}
@@ -182,8 +181,7 @@ export default function YZonePage() {
               {isKo ? "Y존 테라피 효과" : "Y-Zone Therapy Benefits"}
             </span>
             <h2
-              className="text-3xl lg:text-4xl text-waxly-brown mb-4"
-              style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
+              className="text-3xl lg:text-4xl text-text-main mb-4"
             >
               {isKo ? "이런 분들께 추천해요" : "Recommended For"}
             </h2>
@@ -193,25 +191,25 @@ export default function YZonePage() {
             {benefits.map((benefit, index) => (
               <motion.div
                 key={benefit.icon}
-                className="bg-white p-6 border border-waxly-border hover:border-waxly-brown/30 transition-all duration-300 text-center"
+                className="bg-white p-6 border border-primary/10 hover:border-primary/30 transition-all duration-300 text-center"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -5 }}
               >
-                <div className="w-16 h-16 bg-waxly-brown/10 flex items-center justify-center mx-auto mb-4 border border-waxly-brown/20">
+                <div className="w-16 h-16 bg-primary/10 flex items-center justify-center mx-auto mb-4 border border-primary/20">
                   <span
-                    className="material-symbols-outlined text-3xl text-waxly-brown"
+                    className="material-symbols-outlined text-3xl text-text-main"
                     style={{ fontVariationSettings: "'wght' 200" }}
                   >
                     {benefit.icon}
                   </span>
                 </div>
-                <h3 className="text-lg font-bold text-waxly-brown mb-2">
+                <h3 className="text-lg font-bold text-text-main mb-2">
                   {isKo ? benefit.titleKo : benefit.titleEn}
                 </h3>
-                <p className="text-waxly-brownLight text-sm leading-relaxed">
+                <p className="text-text-muted text-sm leading-relaxed">
                   {isKo ? benefit.descKo : benefit.descEn}
                 </p>
               </motion.div>
@@ -229,7 +227,7 @@ export default function YZonePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="inline-flex items-center gap-2 py-2 px-5 bg-waxly-brownLight/10 text-waxly-brownLight text-sm font-bold mb-6 border border-waxly-brownLight/20">
+            <span className="inline-flex items-center gap-2 py-2 px-5 bg-primaryLight/10 text-text-muted text-sm font-bold mb-6 border border-primaryLight/20">
               <span
                 className="material-symbols-outlined text-base"
                 style={{ fontVariationSettings: "'wght' 200" }}
@@ -239,8 +237,7 @@ export default function YZonePage() {
               {isKo ? "시술 과정" : "Treatment Process"}
             </span>
             <h2
-              className="text-3xl lg:text-4xl text-waxly-brown"
-              style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
+              className="text-3xl lg:text-4xl text-text-main"
             >
               {isKo ? "4단계 집중 케어" : "4-Step Intensive Care"}
             </h2>
@@ -256,21 +253,21 @@ export default function YZonePage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.15 }}
               >
-                <div className="bg-waxly-cream p-6 h-full border border-waxly-border">
-                  <span className="text-4xl text-waxly-brown/30 mb-4 block" style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}>
+                <div className="bg-background-light p-6 h-full border border-primary/10">
+                  <span className="text-4xl text-text-main/30 mb-4 block">
                     {step.step}
                   </span>
-                  <h3 className="text-lg font-bold text-waxly-brown mb-2">
+                  <h3 className="text-lg font-bold text-text-main mb-2">
                     {isKo ? step.titleKo : step.titleEn}
                   </h3>
-                  <p className="text-waxly-brownLight text-sm leading-relaxed">
+                  <p className="text-text-muted text-sm leading-relaxed">
                     {isKo ? step.descKo : step.descEn}
                   </p>
                 </div>
                 {index < processSteps.length - 1 && (
                   <div className="hidden lg:block absolute top-1/2 -right-3 transform -translate-y-1/2">
                     <span
-                      className="material-symbols-outlined text-waxly-brown/30"
+                      className="material-symbols-outlined text-text-main/30"
                       style={{ fontVariationSettings: "'wght' 200" }}
                     >
                       arrow_forward
@@ -284,7 +281,7 @@ export default function YZonePage() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-24 lg:py-32 bg-waxly-brown">
+      <section className="py-24 lg:py-32 bg-primary">
         <div className="section-container">
           <div className="max-w-2xl mx-auto text-center">
             <motion.div
@@ -303,32 +300,30 @@ export default function YZonePage() {
               </span>
               <h2
                 className="text-3xl lg:text-4xl text-white mb-8"
-                style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
               >
                 {isKo ? "런칭 특가, 지금만!" : "Launch Special, Limited Time!"}
               </h2>
 
-              <div className="bg-waxly-cream p-8 border border-waxly-border">
+              <div className="bg-background-light p-8 border border-primary/10">
                 <div className="flex items-center justify-center gap-4 mb-4">
-                  <span className="text-waxly-brownLight/60 line-through text-2xl">₩150,000</span>
-                  <span className="px-3 py-1 bg-waxly-gold text-waxly-brown text-sm font-bold">
+                  <span className="text-text-muted/60 line-through text-2xl">₩150,000</span>
+                  <span className="px-3 py-1 bg-primary text-text-main text-sm font-bold">
                     {isKo ? "런칭 할인" : "Launch Discount"}
                   </span>
                 </div>
                 <div
-                  className="text-5xl text-waxly-brown mb-2"
-                  style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
+                  className="text-5xl text-text-main mb-2"
                 >
                   ₩99,000
                 </div>
-                <p className="text-waxly-brownLight mb-6">
+                <p className="text-text-muted mb-6">
                   {isKo ? "1회 기준 / 약 60분 소요" : "Per session / Approx. 60 min"}
                 </p>
                 <a
                   href={placeInfo.bookingUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-3 w-full py-4 bg-waxly-brown text-white font-bold text-lg hover:bg-waxly-brownLight transition-colors border border-waxly-brown"
+                  className="inline-flex items-center justify-center gap-3 w-full py-4 bg-primary text-white font-bold text-lg hover:bg-primaryLight transition-colors border border-primary"
                 >
                   <span
                     className="material-symbols-outlined"

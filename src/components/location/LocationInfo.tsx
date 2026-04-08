@@ -37,7 +37,7 @@ export default function LocationInfo() {
   return (
     <>
       {/* Hero Section - Waxly Style */}
-      <section className="relative min-h-[50vh] overflow-hidden bg-waxly-cream">
+      <section className="relative min-h-[50vh] overflow-hidden bg-background-light">
         {/* Decorative Curved Line */}
         <svg
           className="absolute bottom-0 right-0 w-[500px] h-[300px] opacity-20 pointer-events-none"
@@ -55,15 +55,14 @@ export default function LocationInfo() {
         <div className="relative min-h-[50vh] flex items-center pt-32 pb-16">
           <div className="section-container text-center">
             <motion.span
-              className="inline-block text-waxly-brown/60 text-sm tracking-widest uppercase mb-4"
+              className="inline-block text-text-main/60 text-sm tracking-widest uppercase mb-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
             >
               {isKo ? "오시는 길" : "Location"}
             </motion.span>
             <motion.h1
-              className="text-4xl lg:text-5xl xl:text-6xl text-waxly-brown mb-6"
-              style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
+              className="text-4xl lg:text-5xl xl:text-6xl text-text-main mb-6"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
@@ -71,7 +70,7 @@ export default function LocationInfo() {
               {t("title")}
             </motion.h1>
             <motion.p
-              className="text-waxly-brownLight font-light text-lg lg:text-xl max-w-2xl mx-auto"
+              className="text-text-muted font-light text-lg lg:text-xl max-w-2xl mx-auto"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
@@ -90,33 +89,32 @@ export default function LocationInfo() {
             {infoItems.map((item, index) => (
               <motion.div
                 key={item.icon}
-                className="bg-waxly-cream p-6 flex items-start gap-4 border border-waxly-border hover:border-waxly-brown transition-all"
+                className="bg-background-light p-6 flex items-start gap-4 border border-primary/10 hover:border-primary transition-all"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <div className="w-12 h-12 bg-white flex items-center justify-center shrink-0 border border-waxly-border">
-                  <span className="material-symbols-outlined text-2xl text-waxly-brown" style={{ fontVariationSettings: "'wght' 200" }}>
+                <div className="w-12 h-12 bg-white flex items-center justify-center shrink-0 border border-primary/10">
+                  <span className="material-symbols-outlined text-2xl text-text-main" style={{ fontVariationSettings: "'wght' 200" }}>
                     {item.icon}
                   </span>
                 </div>
                 <div>
                   <h3
-                    className="text-waxly-brown mb-2"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
+                    className="text-text-main mb-2"
                   >
                     {item.title}
                   </h3>
                   {item.isLink ? (
                     <a
                       href={item.href}
-                      className="text-waxly-brownLight font-light hover:text-waxly-brown transition-colors"
+                      className="text-text-muted font-light hover:text-text-main transition-colors"
                     >
                       {item.content}
                     </a>
                   ) : (
-                    <p className="text-waxly-brownLight font-light leading-relaxed">
+                    <p className="text-text-muted font-light leading-relaxed">
                       {item.content}
                     </p>
                   )}
@@ -132,27 +130,27 @@ export default function LocationInfo() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="text-waxly-brownLight text-sm tracking-widest uppercase mb-6 block">
+            <span className="text-text-muted text-sm tracking-widest uppercase mb-6 block">
               {t("navigation")}
             </span>
             <div className="flex flex-wrap justify-center gap-4">
               <a
                 href={`nmap://place?lat=${location.coordinate.latitude}&lng=${location.coordinate.longitude}&name=${encodeURIComponent(isKo ? "광주왁싱 슈가링 릴리브" : "Gwangju Sugaring Relieve")}`}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-waxly-cream text-waxly-brown font-light border border-waxly-border hover:border-waxly-brown transition-all"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-background-light text-text-main font-light border border-primary/10 hover:border-primary transition-all"
               >
                 <span className="material-symbols-outlined text-lg" style={{ fontVariationSettings: "'wght' 200" }}>navigation</span>
                 네이버맵
               </a>
               <a
                 href={`kakaomap://look?p=${location.coordinate.latitude},${location.coordinate.longitude}`}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-waxly-cream text-waxly-brown font-light border border-waxly-border hover:border-waxly-brown transition-all"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-background-light text-text-main font-light border border-primary/10 hover:border-primary transition-all"
               >
                 <span className="material-symbols-outlined text-lg" style={{ fontVariationSettings: "'wght' 200" }}>navigation</span>
                 카카오맵
               </a>
               <a
                 href={`tmap://route?goalx=${location.coordinate.longitude}&goaly=${location.coordinate.latitude}&goalname=${encodeURIComponent(isKo ? "광주왁싱 슈가링 릴리브" : "Gwangju Sugaring Relieve")}`}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-waxly-cream text-waxly-brown font-light border border-waxly-border hover:border-waxly-brown transition-all"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-background-light text-text-main font-light border border-primary/10 hover:border-primary transition-all"
               >
                 <span className="material-symbols-outlined text-lg" style={{ fontVariationSettings: "'wght' 200" }}>navigation</span>
                 T맵

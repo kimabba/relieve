@@ -71,12 +71,12 @@ export default async function BlogPostPage({ params }: Props) {
   const contentParagraphs = content.split("\n\n").filter((p) => p.trim());
 
   return (
-    <section className="py-20 bg-waxly-cream">
+    <section className="py-20 bg-background-light">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         {/* Back link */}
         <Link
           href="/blog"
-          className="inline-flex items-center gap-1 text-waxly-brownLight hover:text-waxly-brown transition-colors mb-8"
+          className="inline-flex items-center gap-1 text-text-muted hover:text-text-main transition-colors mb-8"
         >
           <span
             className="material-symbols-outlined text-lg"
@@ -94,16 +94,16 @@ export default async function BlogPostPage({ params }: Props) {
           <header className="mb-10">
             {/* Category & date */}
             <div className="flex items-center gap-3 mb-4">
-              <span className="inline-block px-3 py-1 border border-waxly-brown/30 text-waxly-brown text-xs uppercase tracking-wide">
+              <span className="inline-block px-3 py-1 border border-primary/30 text-text-main text-xs uppercase tracking-wide">
                 {categoryLabel}
               </span>
-              <time className="text-xs text-waxly-brownLight/70">
+              <time className="text-xs text-text-muted/70">
                 {new Date(post.date).toLocaleDateString(
                   isKo ? "ko-KR" : "en-US",
                   { year: "numeric", month: "long", day: "numeric" }
                 )}
               </time>
-              <span className="text-xs text-waxly-brownLight/70 flex items-center gap-1">
+              <span className="text-xs text-text-muted/70 flex items-center gap-1">
                 <span
                   className="material-symbols-outlined text-sm"
                   style={{ fontVariationSettings: "'wght' 200" }}
@@ -118,9 +118,8 @@ export default async function BlogPostPage({ params }: Props) {
 
             {/* Title */}
             <h1
-              className="text-3xl lg:text-4xl text-waxly-brown mb-4 leading-snug"
+              className="text-3xl lg:text-4xl text-text-main mb-4 leading-snug"
               style={{
-                fontFamily: "'Playfair Display', serif",
                 fontWeight: 400,
               }}
             >
@@ -128,20 +127,20 @@ export default async function BlogPostPage({ params }: Props) {
             </h1>
 
             {/* Excerpt */}
-            <p className="text-waxly-brownLight text-lg leading-relaxed">
+            <p className="text-text-muted text-lg leading-relaxed">
               {excerpt}
             </p>
           </header>
 
           {/* Divider */}
-          <div className="w-12 h-px bg-waxly-brown/30 mb-10" />
+          <div className="w-12 h-px bg-primary/30 mb-10" />
 
           {/* Content */}
           <div className="space-y-5">
             {contentParagraphs.map((paragraph, index) => (
               <p
                 key={index}
-                className="text-waxly-brown/90 leading-relaxed text-base"
+                className="text-text-main/90 leading-relaxed text-base"
               >
                 {paragraph}
               </p>
@@ -149,12 +148,12 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
 
           {/* Tags */}
-          <div className="mt-10 pt-6 border-t border-waxly-brown/10">
+          <div className="mt-10 pt-6 border-t border-primary/10">
             <div className="flex flex-wrap gap-2">
               {post.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="text-xs px-2 py-1 bg-waxly-peach/50 text-waxly-brownLight"
+                  className="text-xs px-2 py-1 bg-secondary-bg/50 text-text-muted"
                 >
                   #{tag}
                 </span>
@@ -164,17 +163,16 @@ export default async function BlogPostPage({ params }: Props) {
         </article>
 
         {/* CTA */}
-        <div className="mt-12 p-8 bg-white border border-waxly-brown/20 text-center">
+        <div className="mt-12 p-8 bg-white border border-primary/20 text-center">
           <h3
-            className="text-xl text-waxly-brown mb-2"
+            className="text-xl text-text-main mb-2"
             style={{
-              fontFamily: "'Playfair Display', serif",
               fontWeight: 400,
             }}
           >
             {isKo ? "예약 상담이 필요하신가요?" : "Ready to Book?"}
           </h3>
-          <p className="text-waxly-brownLight text-sm mb-6">
+          <p className="text-text-muted text-sm mb-6">
             {isKo
               ? "릴리브에서 전문적인 시술을 경험해보세요"
               : "Experience professional care at Relieve"}
@@ -183,7 +181,7 @@ export default async function BlogPostPage({ params }: Props) {
             href={placeInfo.bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-waxly-brown text-white text-sm tracking-wide hover:bg-waxly-brownDark transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white text-sm tracking-wide hover:bg-primary-dark transition-colors"
           >
             <span
               className="material-symbols-outlined text-lg"
@@ -199,9 +197,8 @@ export default async function BlogPostPage({ params }: Props) {
         {relatedPosts.length > 0 && (
           <div className="mt-16">
             <h2
-              className="text-2xl text-waxly-brown mb-8"
+              className="text-2xl text-text-main mb-8"
               style={{
-                fontFamily: "'Playfair Display', serif",
                 fontWeight: 400,
               }}
             >
@@ -212,23 +209,22 @@ export default async function BlogPostPage({ params }: Props) {
                 <Link
                   key={related.slug}
                   href={`/blog/${related.slug}`}
-                  className="group block bg-white border border-waxly-brown/20 p-5 hover:border-waxly-brown/40 transition-colors"
+                  className="group block bg-white border border-primary/20 p-5 hover:border-primary/40 transition-colors"
                 >
-                  <span className="inline-block px-2 py-0.5 border border-waxly-brown/20 text-waxly-brownLight text-[10px] uppercase tracking-wide mb-2">
+                  <span className="inline-block px-2 py-0.5 border border-primary/20 text-text-muted text-[10px] uppercase tracking-wide mb-2">
                     {isKo
                       ? categoryLabels[related.category].ko
                       : categoryLabels[related.category].en}
                   </span>
                   <h3
-                    className="text-sm text-waxly-brown group-hover:text-waxly-brownDark transition-colors line-clamp-2 mb-2"
+                    className="text-sm text-text-main group-hover:text-text-main transition-colors line-clamp-2 mb-2"
                     style={{
-                      fontFamily: "'Playfair Display', serif",
                       fontWeight: 400,
                     }}
                   >
                     {isKo ? related.titleKo : related.titleEn}
                   </h3>
-                  <time className="text-[11px] text-waxly-brownLight/60">
+                  <time className="text-[11px] text-text-muted/60">
                     {new Date(related.date).toLocaleDateString(
                       isKo ? "ko-KR" : "en-US",
                       { year: "numeric", month: "short", day: "numeric" }

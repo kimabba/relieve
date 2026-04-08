@@ -144,7 +144,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         <LocalBusinessJsonLd />
         <FAQJsonLd />
       </head>
-      <body className="bg-waxly-cream text-waxly-brown antialiased overflow-x-hidden selection:bg-waxly-brown selection:text-white">
+      <body className="bg-background-light text-text-main antialiased overflow-x-hidden selection:bg-primary selection:text-white">
         <NextIntlClientProvider messages={messages}>
           <Header />
           <main>{children}</main>

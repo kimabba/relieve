@@ -23,20 +23,19 @@ export default function BlogPage() {
       : allPosts.filter((post) => post.category === activeCategory);
 
   return (
-    <section className="py-20 bg-waxly-cream">
+    <section className="py-20 bg-background-light">
       <div className="section-container">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
           <h1
-            className="text-4xl lg:text-5xl text-waxly-brown mb-4"
+            className="text-4xl lg:text-5xl text-text-main mb-4"
             style={{
-              fontFamily: "'Playfair Display', serif",
               fontWeight: 400,
             }}
           >
             {t("blog")}
           </h1>
-          <p className="text-waxly-brownLight text-lg">
+          <p className="text-text-muted text-lg">
             {isKo
               ? "시술 가이드, 팁, 자주 묻는 질문을 확인하세요"
               : "Browse our guides, tips, and frequently asked questions"}
@@ -49,8 +48,8 @@ export default function BlogPage() {
             onClick={() => setActiveCategory("all")}
             className={`px-4 py-2 text-sm tracking-wide border transition-colors ${
               activeCategory === "all"
-                ? "bg-waxly-brown text-white border-waxly-brown"
-                : "bg-white text-waxly-brownLight border-waxly-brown/20 hover:border-waxly-brown/40"
+                ? "bg-primary text-white border-primary"
+                : "bg-white text-text-muted border-primary/20 hover:border-primary/40"
             }`}
           >
             {isKo ? "전체" : "All"}
@@ -61,8 +60,8 @@ export default function BlogPage() {
               onClick={() => setActiveCategory(cat)}
               className={`px-4 py-2 text-sm tracking-wide border transition-colors ${
                 activeCategory === cat
-                  ? "bg-waxly-brown text-white border-waxly-brown"
-                  : "bg-white text-waxly-brownLight border-waxly-brown/20 hover:border-waxly-brown/40"
+                  ? "bg-primary text-white border-primary"
+                  : "bg-white text-text-muted border-primary/20 hover:border-primary/40"
               }`}
             >
               {isKo ? categoryLabels[cat].ko : categoryLabels[cat].en}
@@ -78,11 +77,11 @@ export default function BlogPage() {
               href={`/blog/${post.slug}`}
               className="group block"
             >
-              <article className="bg-white border border-waxly-brown/20 overflow-hidden transition-all duration-300 group-hover:border-waxly-brown/40 group-hover:shadow-sm h-full flex flex-col">
+              <article className="bg-white border border-primary/20 overflow-hidden transition-all duration-300 group-hover:border-primary/40 group-hover:shadow-sm h-full flex flex-col">
                 {/* Placeholder Image */}
-                <div className="h-48 bg-waxly-cream flex items-center justify-center border-b border-waxly-brown/10">
+                <div className="h-48 bg-background-light flex items-center justify-center border-b border-primary/10">
                   <span
-                    className="material-symbols-outlined text-5xl text-waxly-brown/30"
+                    className="material-symbols-outlined text-5xl text-text-main/30"
                     style={{ fontVariationSettings: "'wght' 200" }}
                   >
                     article
@@ -92,12 +91,12 @@ export default function BlogPage() {
                 <div className="p-6 flex flex-col flex-1">
                   {/* Category Badge & Reading Time */}
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="inline-block px-3 py-1 border border-waxly-brown/30 text-waxly-brown text-xs uppercase tracking-wide">
+                    <span className="inline-block px-3 py-1 border border-primary/30 text-text-main text-xs uppercase tracking-wide">
                       {isKo
                         ? categoryLabels[post.category].ko
                         : categoryLabels[post.category].en}
                     </span>
-                    <span className="text-xs text-waxly-brownLight/60 flex items-center gap-1">
+                    <span className="text-xs text-text-muted/60 flex items-center gap-1">
                       <span
                         className="material-symbols-outlined text-xs"
                         style={{ fontVariationSettings: "'wght' 200" }}
@@ -112,9 +111,8 @@ export default function BlogPage() {
 
                   {/* Title */}
                   <h2
-                    className="text-xl text-waxly-brown mb-2 group-hover:text-waxly-brownDark transition-colors line-clamp-2"
+                    className="text-xl text-text-main mb-2 group-hover:text-text-main transition-colors line-clamp-2"
                     style={{
-                      fontFamily: "'Playfair Display', serif",
                       fontWeight: 400,
                     }}
                   >
@@ -122,13 +120,13 @@ export default function BlogPage() {
                   </h2>
 
                   {/* Excerpt */}
-                  <p className="text-waxly-brownLight text-sm mb-4 line-clamp-2 flex-1">
+                  <p className="text-text-muted text-sm mb-4 line-clamp-2 flex-1">
                     {isKo ? post.excerptKo : post.excerptEn}
                   </p>
 
                   {/* Date & Read More */}
-                  <div className="flex items-center justify-between mt-auto pt-3 border-t border-waxly-brown/5">
-                    <time className="text-xs text-waxly-brownLight/70">
+                  <div className="flex items-center justify-between mt-auto pt-3 border-t border-primary/5">
+                    <time className="text-xs text-text-muted/70">
                       {new Date(post.date).toLocaleDateString(
                         isKo ? "ko-KR" : "en-US",
                         {
@@ -138,7 +136,7 @@ export default function BlogPage() {
                         }
                       )}
                     </time>
-                    <span className="text-xs text-waxly-brown flex items-center gap-1 group-hover:gap-2 transition-all">
+                    <span className="text-xs text-text-main flex items-center gap-1 group-hover:gap-2 transition-all">
                       {isKo ? "자세히 보기" : "Read more"}
                       <span
                         className="material-symbols-outlined text-sm"
@@ -158,12 +156,12 @@ export default function BlogPage() {
         {filteredPosts.length === 0 && (
           <div className="text-center py-12">
             <span
-              className="material-symbols-outlined text-4xl text-waxly-brown/30 mb-4 block"
+              className="material-symbols-outlined text-4xl text-text-main/30 mb-4 block"
               style={{ fontVariationSettings: "'wght' 200" }}
             >
               search_off
             </span>
-            <p className="text-waxly-brownLight">
+            <p className="text-text-muted">
               {isKo
                 ? "해당 카테고리에 작성된 글이 없습니다."
                 : "No posts found in this category."}

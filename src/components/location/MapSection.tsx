@@ -11,10 +11,10 @@ export default function MapSection() {
   const naverMapUrl = `https://map.naver.com/p/entry/place/${placeInfo.id}`;
 
   return (
-    <section className="py-20 lg:py-28 bg-waxly-cream">
+    <section className="py-20 lg:py-28 bg-background-light">
       <div className="section-container">
         <motion.div
-          className="overflow-hidden border border-waxly-border"
+          className="overflow-hidden border border-primary/10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -37,12 +37,11 @@ export default function MapSection() {
           <div className="bg-white p-6 flex flex-col sm:flex-row justify-between items-center gap-4">
             <div className="text-center sm:text-left">
               <h3
-                className="text-waxly-brown text-lg mb-1"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+                className="text-text-main text-lg mb-1"
               >
                 {isKo ? placeInfo.name : placeInfo.nameEn}
               </h3>
-              <p className="text-waxly-brownLight font-light">
+              <p className="text-text-muted font-light">
                 {isKo ? location.address.road : location.address.roadEn}
               </p>
             </div>
@@ -50,7 +49,7 @@ export default function MapSection() {
               href={naverMapUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-waxly-brown hover:bg-waxly-brownDark text-white font-light tracking-wider transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-dark text-white font-light tracking-wider transition-all"
             >
               <span className="material-symbols-outlined text-lg">open_in_new</span>
               {isKo ? "네이버 지도에서 보기" : "View on Naver Map"}

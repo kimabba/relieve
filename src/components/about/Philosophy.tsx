@@ -62,7 +62,7 @@ export default function Philosophy() {
   const content = locale === "ko" ? philosophyData.ko : philosophyData.en;
 
   return (
-    <section className="py-20 lg:py-28 bg-waxly-cream overflow-hidden relative">
+    <section className="py-20 lg:py-28 bg-background-light overflow-hidden relative">
       {/* Decorative Curved Line */}
       <svg
         className="absolute top-0 left-0 w-[300px] h-[200px] opacity-20 pointer-events-none"
@@ -85,16 +85,15 @@ export default function Philosophy() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <span className="text-waxly-brownLight text-sm tracking-widest uppercase mb-4 block">
+          <span className="text-text-muted text-sm tracking-widest uppercase mb-4 block">
             {content.sectionLabel}
           </span>
           <h2
-            className="text-3xl lg:text-4xl text-waxly-brown mb-6"
-            style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400 }}
+            className="text-3xl lg:text-4xl text-text-main mb-6"
           >
             {content.title}
           </h2>
-          <p className="text-waxly-brownLight font-light text-lg leading-relaxed">
+          <p className="text-text-muted font-light text-lg leading-relaxed">
             {content.description}
           </p>
         </motion.div>
@@ -104,14 +103,14 @@ export default function Philosophy() {
           {content.features.map((feature, index) => (
             <motion.div
               key={index}
-              className="group bg-white p-8 text-center border border-waxly-border hover:border-waxly-brown transition-all duration-300"
+              className="group bg-white p-8 text-center border border-primary/10 hover:border-primary transition-all duration-300"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
               {/* Icon */}
-              <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center text-waxly-brown">
+              <div className="w-16 h-16 mx-auto mb-6 flex items-center justify-center text-text-main">
                 <span className="material-symbols-outlined text-4xl" style={{ fontVariationSettings: "'wght' 200" }}>
                   {feature.icon}
                 </span>
@@ -119,12 +118,11 @@ export default function Philosophy() {
 
               {/* Content */}
               <h3
-                className="text-lg text-waxly-brown mb-3"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+                className="text-lg text-text-main mb-3"
               >
                 {feature.title}
               </h3>
-              <p className="text-sm text-waxly-brownLight font-light leading-relaxed">
+              <p className="text-sm text-text-muted font-light leading-relaxed">
                 {feature.description}
               </p>
             </motion.div>
@@ -138,12 +136,11 @@ export default function Philosophy() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <div className="bg-white p-8 text-center relative border border-waxly-border">
+          <div className="bg-white p-8 text-center relative border border-primary/10">
             {/* Decorative Quote Mark */}
-            <div className="text-waxly-brown/20 mb-4">
+            <div className="text-text-main/20 mb-4">
               <span
                 className="text-6xl leading-none"
-                style={{ fontFamily: "'Playfair Display', serif" }}
               >
                 &ldquo;&ldquo;
               </span>
@@ -151,17 +148,16 @@ export default function Philosophy() {
 
             <blockquote>
               <p
-                className="text-xl lg:text-2xl text-waxly-brown italic leading-relaxed mb-4"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+                className="text-xl lg:text-2xl text-text-main italic leading-relaxed mb-4"
               >
                 {content.quote}
               </p>
               <footer className="flex items-center justify-center gap-2">
-                <div className="w-8 h-[1px] bg-waxly-brown/30" />
-                <cite className="text-sm text-waxly-brownLight font-light not-italic">
+                <div className="w-8 h-[1px] bg-primary/30" />
+                <cite className="text-sm text-text-muted font-light not-italic">
                   {content.quoteAuthor}
                 </cite>
-                <div className="w-8 h-[1px] bg-waxly-brown/30" />
+                <div className="w-8 h-[1px] bg-primary/30" />
               </footer>
             </blockquote>
           </div>
