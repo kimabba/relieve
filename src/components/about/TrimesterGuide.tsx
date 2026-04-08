@@ -1,6 +1,7 @@
 "use client";
 
 import { useLocale } from "next-intl";
+import { Link } from "@/i18n/routing";
 import { motion } from "framer-motion";
 
 const trimesterData = {
@@ -174,6 +175,22 @@ export default function TrimesterGuide() {
             </motion.div>
           ))}
         </div>
+
+        {/* CTA to dedicated maternity page */}
+        <motion.div
+          className="mt-12 text-center"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <Link
+            href="/maternity"
+            className="inline-flex items-center gap-2 border border-waxly-brown text-waxly-brown text-sm font-light tracking-wider px-8 py-3 hover:bg-waxly-brown hover:text-white transition-all duration-300"
+          >
+            {locale === "ko" ? "임산부 케어 전문 페이지 보기" : "View Maternity Care Details"}
+            <span className="material-symbols-outlined text-lg">arrow_forward</span>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
