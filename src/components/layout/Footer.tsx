@@ -114,10 +114,26 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/about"
+                  href="/maternity"
                   className="hover:text-waxly-cream transition-colors duration-300"
                 >
                   {isKo ? "임산부 케어" : "Maternity Care"}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/aftercare"
+                  className="hover:text-waxly-cream transition-colors duration-300"
+                >
+                  {isKo ? "시술 후 관리" : "Aftercare"}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/reservation"
+                  className="hover:text-waxly-cream transition-colors duration-300"
+                >
+                  {isKo ? "예약 안내" : "Booking"}
                 </Link>
               </li>
               <li>
@@ -126,14 +142,6 @@ export default function Footer() {
                   className="hover:text-waxly-cream transition-colors duration-300"
                 >
                   {isKo ? "오시는 길" : "Location"}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services"
-                  className="hover:text-waxly-cream transition-colors duration-300"
-                >
-                  {isKo ? "서비스 메뉴" : "Services"}
                 </Link>
               </li>
             </ul>
