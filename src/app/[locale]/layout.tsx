@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Sans_KR, Playfair_Display } from "next/font/google";
+import { Noto_Sans_KR, Noto_Serif, Playfair_Display } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -23,6 +23,13 @@ const playfairDisplay = Playfair_Display({
   weight: ["400", "600", "700"],
   style: ["normal", "italic"],
   variable: "--font-playfair",
+  display: "swap",
+});
+
+const notoSerif = Noto_Serif({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  variable: "--font-noto-serif",
   display: "swap",
 });
 
@@ -128,7 +135,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={`${notoSansKR.variable} ${playfairDisplay.variable}`}>
+    <html lang={locale} className={`${notoSansKR.variable} ${playfairDisplay.variable} ${notoSerif.variable}`}>
       <head>
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"

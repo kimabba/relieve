@@ -50,20 +50,20 @@ const config: Config = {
           textLight: "#6B6B6B",   // P0: 대비율 개선
           dark: "#2D2D2D",
         },
-        // Legacy aliases for compatibility
-        primary: "#FF9E9E",
-        "primary-dark": "#FF8E8E",
-        "background-light": "#FFFAF4",
-        "background-dark": "#3D3D3D",
-        "secondary-bg": "#FFF5E6",
-        "accent-green": "#73C7C7",
-        "accent-teal": "#5EAAAA",
-        "text-main": "#4A4A4A",
-        "text-muted": "#8A8A8A",
+        // Stitch design system tokens (premium sugaring theme)
+        primary: "#b89c6f",
+        "primary-dark": "#9a825a",
+        "background-light": "#faf7f5",
+        "background-dark": "#282820",
+        "secondary-bg": "#F3EFE9",
+        "accent-green": "#5C6F68",
+        "text-main": "#282820",
+        "text-muted": "#5d5d55",
       },
       fontFamily: {
         sans: ["var(--font-noto-sans)", "Noto Sans KR", "sans-serif"],
         serif: ["var(--font-playfair)", "Playfair Display", "serif"],
+        display: ["var(--font-noto-serif)", "Noto Serif", "serif"],
       },
       // P1: 통일된 라운드니스 시스템
       borderRadius: {

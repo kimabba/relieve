@@ -1,6 +1,6 @@
 import Hero from "@/components/home/Hero";
-import ServiceHighlights from "@/components/home/ServiceHighlights";
-import Features from "@/components/home/Features";
+import WhySugaring from "@/components/home/WhySugaring";
+import FeaturedTreatments from "@/components/home/FeaturedTreatments";
 import ReviewHighlights from "@/components/home/ReviewHighlights";
 import SafetyPromise from "@/components/home/SafetyPromise";
 import CTASection from "@/components/home/CTASection";
@@ -9,8 +9,8 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <ServiceHighlights />
-      <Features />
+      <WhySugaring />
+      <FeaturedTreatments />
       <ReviewHighlights />
       <SafetyPromise />
       <CTASection />
