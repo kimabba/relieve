@@ -148,7 +148,7 @@ export default function Hero() {
               <div className="relative w-full max-w-lg ml-auto">
                 <div className="relative aspect-[3/4] rounded-tl-[100px] overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&h=800&fit=crop&q=80"
+                    src="https://images.unsplash.com/photo-1589525231707-f2de2428f59c?w=600&h=800&fit=crop&q=80"
                     alt={isKo ? "광주 슈가링 시술 - 릴리브" : "Sugaring treatment at Relieve Gwangju"}
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
@@ -185,7 +185,7 @@ export default function Hero() {
                 transition={{ delay: 0.8 }}
               >
                 <Image
-                  src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=300&h=400&fit=crop&q=80"
+                  src="https://images.unsplash.com/photo-1676313816468-2c944d4fb27d?w=300&h=400&fit=crop&q=80"
                   alt={isKo ? "천연 슈가링 재료" : "Natural sugaring ingredients"}
                   fill
                   sizes="160px"

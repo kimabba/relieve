@@ -58,5 +58,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
+  // Add individual blog post entries for each locale
+  const posts = getAllPosts();
+  for (const locale of locales) {
+    for (const post of posts) {
+      entries.push({
+        url: `${baseUrl}/${locale}/blog/${post.slug}`,
+        lastModified: new Date(post.date),
+        changeFrequency: "monthly",
+        priority: 0.7,
+        alternates: {
+          languages: {
+            ko: `${baseUrl}/ko/blog/${post.slug}`,
+            en: `${baseUrl}/en/blog/${post.slug}`,
+          },
+        },
+      });
+    }
+  }
+
   return entries;
 }

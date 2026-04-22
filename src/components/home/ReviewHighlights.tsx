@@ -12,13 +12,13 @@ const testimonial = {
   nameEn: "Judy Morris",
   titleKo: "임산부 고객",
   titleEn: "Maternity Client",
-  avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&q=80",
+  avatar: "https://images.unsplash.com/photo-1616836070174-35840b73f5a7?w=100&h=100&fit=crop&q=80",
 };
 
 const galleryImages = [
-  "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=300&h=400&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1519824145371-296894a0daa9?w=300&h=200&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=200&h=300&fit=crop&q=80",
+  "https://images.unsplash.com/photo-1589525231707-f2de2428f59c?w=300&h=400&fit=crop&q=80",
+  "https://images.unsplash.com/photo-1588135862932-8ec0d62d1e6b?w=300&h=200&fit=crop&q=80",
+  "https://images.unsplash.com/photo-1770294759101-fae1377d4d34?w=200&h=300&fit=crop&q=80",
 ];
 
 export default function ReviewHighlights() {
