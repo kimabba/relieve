@@ -36,7 +36,7 @@ export default function Certifications() {
             <div className="space-y-4">
               {certifications.map((cert, index) => (
                 <motion.div
-                  key={cert.title}
+                  key={index}
                   className="relative pl-12"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
