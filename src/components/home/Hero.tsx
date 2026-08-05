@@ -4,10 +4,21 @@ import { useLocale } from "next-intl";
 import { motion } from "framer-motion";
 import { placeInfo, contact, reviews, businessHours } from "@/lib/data";
 import Image from "next/image";
+import dynamic from "next/dynamic";
+import { useEffect, useState } from "react";
+
+const Hero3D = dynamic(() => import("./Hero3D"), { ssr: false });
 
 export default function Hero() {
   const locale = useLocale();
   const isKo = locale === "ko";
+
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setPrefersReducedMotion(mediaQuery.matches);
+  }, []);
 
   return (
     <section className="relative min-h-screen bg-waxly-cream overflow-hidden pt-28 lg:pt-32">
@@ -54,19 +65,19 @@ export default function Hero() {
             >
               {isKo ? (
                 <>
-                  광주
+                  믿을 수 있는
                   <br />
-                  프리미엄
+                  병원급 청결
                   <br />
-                  슈가링 케어
+                  임산부 왁싱 전문
                 </>
               ) : (
                 <>
-                  Gwangju
+                  Trusted Care,
                   <br />
-                  Premium
+                  Hospital-Grade
                   <br />
-                  Sugaring Care
+                  Maternity Waxing
                 </>
               )}
             </motion.h1>
@@ -79,8 +90,8 @@ export default function Hero() {
               transition={{ delay: 0.3, duration: 0.6 }}
             >
               {isKo
-                ? "100% 천연 슈가링으로 부드럽고 건강한 피부를 경험하세요. 설탕, 레몬, 물로만 만든 순수한 케어."
-                : "Experience smooth, healthy skin with 100% natural sugaring. Pure care made from sugar, lemon, and water."}
+                ? "위생 인증과 전문 자격을 갖춘 손길로, 임산부와 민감성 피부도 안심하고 맡기는 케어를 제공합니다."
+                : "Certified hygiene standards and expert credentials — care trusted by expectant mothers and sensitive skin alike."}
             </motion.p>
 
             {/* Price Transparency */}
@@ -136,17 +147,16 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Right Content - Image Collage */}
+          {/* Right Content - 3D Hero or Static Fallback */}
           <motion.div
             className="lg:col-span-7 relative z-10"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            <div className="relative">
-              {/* Main Image */}
-              <div className="relative w-full max-w-lg ml-auto">
-                <div className="relative aspect-[3/4] rounded-tl-[100px] overflow-hidden">
+            <div className="relative w-full max-w-lg ml-auto aspect-[3/4]">
+              {prefersReducedMotion ? (
+                <div className="relative w-full h-full rounded-tl-[100px] overflow-hidden">
                   <Image
                     src="https://images.unsplash.com/photo-1589525231707-f2de2428f59c?w=600&h=800&fit=crop&q=80"
                     alt={isKo ? "광주 슈가링 시술 - 릴리브" : "Sugaring treatment at Relieve Gwangju"}
@@ -156,41 +166,27 @@ export default function Hero() {
                     priority
                   />
                 </div>
+              ) : (
+                <Hero3D />
+              )}
 
-                {/* Circular Badge */}
-                <motion.div
-                  className="absolute -left-8 top-1/4 w-32 h-32 rounded-full bg-white shadow-lg flex items-center justify-center"
-                  initial={{ scale: 0, rotate: -180 }}
-                  animate={{ scale: 1, rotate: 0 }}
-                  transition={{ delay: 0.6, type: "spring" }}
-                >
-                  <div className="text-center">
-                    <div
-                      className="text-waxly-brown text-xs tracking-wider"
-                      style={{ fontFamily: "'Playfair Display', serif" }}
-                    >
-                      <span className="block text-[10px] tracking-[0.2em]">RELIEVE</span>
-                      <span className="block text-lg mt-1">슈가링</span>
-                      <span className="block text-[10px] tracking-[0.2em]">SALON</span>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-
-              {/* Secondary Image - Bottom Left */}
+              {/* Circular Badge */}
               <motion.div
-                className="absolute -bottom-8 left-0 w-40 h-48 rounded-tr-[40px] overflow-hidden shadow-xl hidden lg:block"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.8 }}
+                className="absolute -left-8 top-1/4 w-32 h-32 rounded-full bg-white shadow-lg flex items-center justify-center"
+                initial={{ scale: 0, rotate: -180 }}
+                animate={{ scale: 1, rotate: 0 }}
+                transition={{ delay: 0.6, type: "spring" }}
               >
-                <Image
-                  src="https://images.unsplash.com/photo-1676313816468-2c944d4fb27d?w=300&h=400&fit=crop&q=80"
-                  alt={isKo ? "천연 슈가링 재료" : "Natural sugaring ingredients"}
-                  fill
-                  sizes="160px"
-                  className="object-cover"
-                />
+                <div className="text-center">
+                  <div
+                    className="text-waxly-brown text-xs tracking-wider"
+                    style={{ fontFamily: "'Playfair Display', serif" }}
+                  >
+                    <span className="block text-[10px] tracking-[0.2em]">RELIEVE</span>
+                    <span className="block text-lg mt-1">슈가링</span>
+                    <span className="block text-[10px] tracking-[0.2em]">SALON</span>
+                  </div>
+                </div>
               </motion.div>
             </div>
           </motion.div>
