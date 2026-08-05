@@ -49,8 +49,8 @@ export const socialLinks = {
 export const businessHours = {
   openTime: "10:00",
   closeTime: "20:00",
-  days: "월-토",
-  daysEn: "Mon-Sat",
+  days: "연중무휴",
+  daysEn: "Every day",
   description: "10:00에 영업 시작",
   descriptionEn: "Opens at 10:00",
   formatted: "10:00 - 20:00",
@@ -75,7 +75,6 @@ export const paymentMethods = [
   "지역화폐 (모바일형)",
   "지역화폐 (카드형)",
   "제로페이",
-  "N Pay",
 ];
 
 export const certifications = [
@@ -224,16 +223,16 @@ export const menuItems: MenuItem[] = [
 ];
 
 export const reviews = {
-  total: 724,
-  participantCount: 487,
+  total: 772,
+  participantCount: 515,
   highlights: [
-    { keyword: "시술이 꼼꼼해요", keywordEn: "Thorough treatment", count: 651, icon: "verified" },
-    { keyword: "친절해요", keywordEn: "Kind & friendly", count: 610, icon: "favorite" },
-    { keyword: "손이 빨라요", keywordEn: "Quick service", count: 480, icon: "speed" },
-    { keyword: "매장이 청결해요", keywordEn: "Clean facility", count: 464, icon: "cleaning_services" },
-    { keyword: "분위기가 편안해요", keywordEn: "Comfortable atmosphere", count: 379, icon: "spa" },
+    { keyword: "시술이 꼼꼼해요", keywordEn: "Thorough treatment", count: 702, icon: "verified" },
+    { keyword: "친절해요", keywordEn: "Kind & friendly", count: 648, icon: "favorite" },
+    { keyword: "손이 빨라요", keywordEn: "Quick service", count: 520, icon: "speed" },
+    { keyword: "매장이 청결해요", keywordEn: "Clean facility", count: 497, icon: "cleaning_services" },
+    { keyword: "분위기가 편안해요", keywordEn: "Comfortable atmosphere", count: 396, icon: "spa" },
   ],
-  blogCount: 164,
+  blogCount: 179,
 };
 
 export const events = [
