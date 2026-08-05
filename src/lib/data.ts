@@ -274,3 +274,45 @@ export const safetyPromises = [
     descriptionEn: "Medical-grade cleanliness",
   },
 ];
+
+export interface ReviewTestimonial {
+  nickname: string;
+  visitInfo: string;
+  visitInfoEn: string;
+  textKo: string;
+  textEn: string;
+  rating: number;
+}
+
+export const reviewTestimonials: ReviewTestimonial[] = [
+  {
+    nickname: "항2항이",
+    visitInfo: "임신 31주 · 1번째 방문",
+    visitInfoEn: "31 Weeks Pregnant · 1st Visit",
+    textKo:
+      "31주 임산부라서 출산 전에 관리하려고 방문했어요. 배가 많이 나와 자세가 불편할까봐 걱정을 많이 했는데, 그런 생각이 들지도 않도록 정확하고 빠르게 진행해주셔서 좋았습니다. 그리고 원장님이 출산경력이 있으셔서 산모님들 배려가 최고에요. 위생도 깔끔했고 시술도 꼼꼼해서 만족했습니다.",
+    textEn:
+      "As a 31-week pregnant visitor, I was worried my belly would make positioning uncomfortable, but the treatment was quick and precise so I never had to worry. The owner has given birth herself, so she truly understands what expectant mothers need. Everything was clean and thorough.",
+    rating: 5,
+  },
+  {
+    nickname: "루체떼라니",
+    visitInfo: "임산부 케어 · 3번째 방문",
+    visitInfoEn: "Maternity Care · 3rd Visit",
+    textKo:
+      "이번에 출산 전 관리로 임산부 브라질리언 왁싱 받고 왔어요. 평소에도 꾸준히 다니던 곳이라 믿고 다시 방문했는데, 역시 만족스러웠어요. 슈가링 왁싱이라 자극이 적고 원장님 손이 정말 빨라서 30분 정도 만에 꼼꼼하게 시술과 진정관리까지 끝났어요. 위생관리가 철저하고 친절하게 배려해주셔서 편안하게 받을 수 있었어요.",
+    textEn:
+      "I came back for maternity Brazilian sugaring before giving birth. I've been a regular here and was fully satisfied once again. Sugaring is gentle, and the treatment plus soothing care finished in about 30 minutes thanks to the owner's speed and precision. Hygiene was thorough and the care was attentive.",
+    rating: 5,
+  },
+  {
+    nickname: "lin****",
+    visitInfo: "임신 33주 · 1번째 방문",
+    visitInfoEn: "33 Weeks Pregnant · 1st Visit",
+    textKo:
+      "33주차 임산부입니다! 출산전 2~3회 왁싱 받으면 위생관리에 좋다고 들어서 검색하던 차에 릴리브를 알게 되었어요. 사전에 톡톡 문의로 예상방문일자 및 방문주기도 추천해 주셔서 좋더라구요. 매장도 깔끔했고 배때문에 반듯하게 오래 누워있기 힘든데 속전속결로 끝내주셔서 너무 좋았습니다!",
+    textEn:
+      "I'm 33 weeks pregnant. I heard that 2-3 sugaring sessions before birth help with hygiene, and that's how I found Relieve. They even recommended a visit schedule beforehand through chat consultation. The salon was spotless, and since lying flat is hard this far along, they finished quickly and precisely.",
+    rating: 5,
+  },
+];

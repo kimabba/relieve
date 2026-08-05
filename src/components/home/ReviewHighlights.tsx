@@ -1,19 +1,9 @@
 "use client";
 
 import { useLocale } from "next-intl";
-import { reviews } from "@/lib/data";
+import { placeInfo, reviews, reviewTestimonials } from "@/lib/data";
 import { motion } from "framer-motion";
 import Image from "next/image";
-
-const testimonial = {
-  textKo: "임신 34주에 방문했는데 선생님이 정말 세심하게 케어해주셨어요. 임산부 전용 쿠션 덕분에 너무 편했습니다. 피부가 예민한데 슈가링 후 트러블이 전혀 없었어요. 천연 성분이라 안심되고 효과도 좋아요.",
-  textEn: "Visited at 34 weeks pregnant and the care was incredibly attentive. The pregnancy pillows made it so comfortable. My skin is very sensitive but had no trouble after sugaring. Natural ingredients give peace of mind and great results.",
-  nameKo: "김지연",
-  nameEn: "Judy Morris",
-  titleKo: "임산부 고객",
-  titleEn: "Maternity Client",
-  avatar: "https://images.unsplash.com/photo-1616836070174-35840b73f5a7?w=100&h=100&fit=crop&q=80",
-};
 
 const galleryImages = [
   "https://images.unsplash.com/photo-1589525231707-f2de2428f59c?w=300&h=400&fit=crop&q=80",
@@ -112,14 +102,14 @@ export default function ReviewHighlights() {
               </span>
             </div>
 
-            {/* Testimonial Text */}
-            <p className="text-waxly-brownLight font-light text-lg leading-relaxed mb-8 max-w-prose">
-              {isKo ? testimonial.textKo : testimonial.textEn}
+            {/* Featured Testimonial */}
+            <p className="text-waxly-brownLight font-light text-lg leading-relaxed mb-6 max-w-prose">
+              {isKo ? reviewTestimonials[0].textKo : reviewTestimonials[0].textEn}
             </p>
 
             {/* Stars */}
-            <div className="flex gap-1 mb-8">
-              {[...Array(5)].map((_, i) => (
+            <div className="flex gap-1 mb-4">
+              {[...Array(reviewTestimonials[0].rating)].map((_, i) => (
                 <span
                   key={i}
                   className="material-symbols-outlined text-waxly-gold text-xl"
@@ -131,27 +121,38 @@ export default function ReviewHighlights() {
             </div>
 
             {/* Author */}
-            <div className="flex items-center gap-4">
-              <div className="relative w-14 h-14 rounded-full overflow-hidden">
-                <Image
-                  src={testimonial.avatar}
-                  alt={isKo ? testimonial.nameKo : testimonial.nameEn}
-                  fill
-                  sizes="56px"
-                  className="object-cover"
-                />
+            <div className="flex items-center gap-4 mb-10">
+              <div className="w-14 h-14 rounded-full bg-waxly-brown/10 flex items-center justify-center flex-shrink-0">
+                <span className="material-symbols-outlined text-waxly-brown text-2xl" style={{ fontVariationSettings: "'wght' 200" }}>
+                  pregnant_woman
+                </span>
               </div>
               <div>
                 <p
                   className="text-waxly-brown text-lg"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
-                  {isKo ? testimonial.nameKo : testimonial.nameEn}
+                  {reviewTestimonials[0].nickname}
                 </p>
                 <p className="text-waxly-brownLight font-light text-sm">
-                  {isKo ? testimonial.titleKo : testimonial.titleEn}
+                  {isKo ? reviewTestimonials[0].visitInfo : reviewTestimonials[0].visitInfoEn}
                 </p>
               </div>
+            </div>
+
+            {/* Secondary Testimonials */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {reviewTestimonials.slice(1).map((t) => (
+                <div key={t.nickname} className="bg-waxly-cream p-5">
+                  <p className="text-waxly-brownLight font-light text-sm leading-relaxed mb-3 line-clamp-4">
+                    {isKo ? t.textKo : t.textEn}
+                  </p>
+                  <p className="text-waxly-brown text-sm">{t.nickname}</p>
+                  <p className="text-waxly-brownLight font-light text-xs">
+                    {isKo ? t.visitInfo : t.visitInfoEn}
+                  </p>
+                </div>
+              ))}
             </div>
           </motion.div>
         </div>
@@ -198,7 +199,7 @@ export default function ReviewHighlights() {
               : `${reviews.total} Visitor Reviews · ${reviews.blogCount} Blog Reviews`}
           </p>
           <a
-            href="https://m.place.naver.com/beauty/1306755661/review/visitor"
+            href={`https://m.place.naver.com/place/${placeInfo.id}/review/visitor`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-waxly-brown font-light tracking-wider hover:gap-3 transition-all"
