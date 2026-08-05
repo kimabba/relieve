@@ -13,9 +13,9 @@ const stats = [
   },
   {
     icon: "group",
-    value: `${reviews.participantCount}+`,
-    labelKo: "누적 참여 고객",
-    labelEn: "Total Clients",
+    value: `${reviews.participantCount}`,
+    labelKo: "리뷰 참여 고객",
+    labelEn: "Reviewers",
   },
   {
     icon: "workspace_premium",
@@ -38,10 +38,11 @@ export default function TrustBar() {
   return (
     <section className="relative bg-waxly-brown py-10 lg:py-14">
       <div className="section-container">
+        <h2 className="sr-only">{isKo ? "릴리브 신뢰 지표" : "Relieve Trust Metrics"}</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
-          {stats.map((stat) => (
+          {stats.map((stat, index) => (
             <motion.div
-              key={stat.labelKo}
+              key={index}
               className="text-center"
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}

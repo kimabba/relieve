@@ -142,8 +142,8 @@ export default function ReviewHighlights() {
 
             {/* Secondary Testimonials */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {reviewTestimonials.slice(1).map((t) => (
-                <div key={t.nickname} className="bg-waxly-cream p-5">
+              {reviewTestimonials.slice(1).map((t, index) => (
+                <div key={index} className="bg-waxly-cream p-5">
                   <p className="text-waxly-brownLight font-light text-sm leading-relaxed mb-3 line-clamp-4">
                     {isKo ? t.textKo : t.textEn}
                   </p>
@@ -193,11 +193,6 @@ export default function ReviewHighlights() {
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
         >
-          <p className="text-waxly-brownLight font-light text-sm">
-            {isKo
-              ? `방문자 리뷰 ${reviews.total}건 · 블로그 리뷰 ${reviews.blogCount}건`
-              : `${reviews.total} Visitor Reviews · ${reviews.blogCount} Blog Reviews`}
-          </p>
           <a
             href={`https://m.place.naver.com/place/${placeInfo.id}/review/visitor`}
             target="_blank"

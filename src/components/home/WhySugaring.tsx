@@ -80,7 +80,7 @@ export default function WhySugaring() {
             <div className="relative aspect-[4/5] rounded-tr-[80px] overflow-hidden">
               <Image
                 src="https://images.unsplash.com/photo-1676313816468-2c944d4fb27d?w=600&h=750&fit=crop&q=80"
-                alt="Natural sugaring ingredients"
+                alt={isKo ? "천연 슈가링 재료" : "Natural sugaring ingredients"}
                 fill
                 className="object-cover"
               />
@@ -97,7 +97,7 @@ export default function WhySugaring() {
           >
             {features.map((feature, index) => (
               <motion.div
-                key={feature.titleKo}
+                key={index}
                 className="flex items-start gap-5 p-6 bg-white border border-waxly-border"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -151,9 +151,9 @@ export default function WhySugaring() {
 
             {/* Right - Benefits List */}
             <div className="lg:col-span-7 space-y-3">
-              {benefits.map((benefit) => (
+              {benefits.map((benefit, index) => (
                 <motion.div
-                  key={benefit.ko}
+                  key={index}
                   className="flex items-center gap-4 bg-white/10 p-5"
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}

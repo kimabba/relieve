@@ -7,7 +7,12 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 
-const Hero3D = dynamic(() => import("./Hero3D"), { ssr: false });
+const Hero3D = dynamic(() => import("./Hero3D"), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-full rounded-tl-[100px] bg-gradient-to-br from-waxly-cream to-waxly-peach" />
+  ),
+});
 
 export default function Hero() {
   const locale = useLocale();
@@ -17,7 +22,8 @@ export default function Hero() {
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setPrefersReducedMotion(mediaQuery.matches);
+    const isSmallViewport = window.matchMedia("(max-width: 1023px)").matches;
+    setPrefersReducedMotion(mediaQuery.matches || isSmallViewport);
   }, []);
 
   return (

@@ -10,7 +10,7 @@ export default function Certifications() {
   const isKo = locale === "ko";
 
   return (
-    <section className="relative py-24 lg:py-32 bg-waxly-cream overflow-hidden">
+    <section className="relative py-24 lg:py-32 bg-white overflow-hidden">
       <div className="section-container relative">
         <motion.div
           className="text-center max-w-2xl mx-auto mb-16"
